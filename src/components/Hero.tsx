@@ -27,7 +27,6 @@ const Hero = () => {
       },
       { threshold: 0.1 }
     );
-
     const animElements = document.querySelectorAll('.animate-on-scroll');
     animElements.forEach((el) => observer.observe(el));
 
