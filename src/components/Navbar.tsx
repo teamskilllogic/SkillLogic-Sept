@@ -43,19 +43,18 @@ const Navbar = () => {
   };
 
   return (
-    <nav 
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-white/90 dark:bg-primary/90 backdrop-blur-md shadow-md py-3' 
+    <nav
+      className={`fixed w-full z-50 transition-all duration-300 ${scrolled
+          ? 'bg-white/90 dark:bg-primary/90 backdrop-blur-md shadow-md py-3'
           : 'bg-transparent py-5'
-      }`}
+        }`}
     >
       <div className="container-section flex justify-between items-center">
         {/* Logo & SkillLogic Text */}
         <Link to="/" className="flex items-center space-x-3 z-50">
-          <img 
-            src="/images/logo.png" 
-            alt="SkillLogic Logo" 
+          <img
+            src="/images/logo.png"
+            alt="SkillLogic Logo"
             className="h-9 w-auto md:h-10" // Slightly larger logo, responsive sizing
           />
           <span className="text-xl md:text-2xl font-extrabold text-primary dark:text-white tracking-tight">
@@ -92,10 +91,10 @@ const Navbar = () => {
               </a>
             )
           ))}
-          
+
           {/* Theme Toggle */}
-          <Toggle 
-            aria-label="Toggle theme" 
+          <Toggle
+            aria-label="Toggle theme"
             pressed={theme === 'dark'}
             onPressedChange={toggleTheme}
             className="mr-2"
@@ -106,8 +105,8 @@ const Navbar = () => {
               <Moon className="h-4 w-4" />
             )}
           </Toggle>
-          
-          <Button 
+
+          <Button
             className="bg-secondary hover:bg-secondary/80 text-white hover:shadow-lg hover:scale-105 transition-all duration-300"
             onClick={handleGetQuote}
           >
@@ -118,8 +117,8 @@ const Navbar = () => {
         {/* Mobile Navigation Toggle */}
         <div className="md:hidden flex items-center space-x-4 z-50">
           {/* Theme Toggle for Mobile */}
-          <Toggle 
-            aria-label="Toggle theme" 
+          <Toggle
+            aria-label="Toggle theme"
             pressed={theme === 'dark'}
             onPressedChange={toggleTheme}
           >
@@ -129,7 +128,7 @@ const Navbar = () => {
               <Moon className="h-4 w-4" />
             )}
           </Toggle>
-          
+
           <button
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
@@ -140,9 +139,8 @@ const Navbar = () => {
 
         {/* Mobile Navigation Menu */}
         <div
-          className={`fixed inset-0 bg-primary/95 dark:bg-gray-900/95 flex flex-col items-center justify-center space-y-8 ${
-            isOpen ? 'translate-x-0' : 'translate-x-full'
-          } transition-transform duration-300 ease-in-out md:hidden`}
+          className={`fixed inset-0 bg-primary/95 dark:bg-gray-900/95 flex flex-col items-center justify-center space-y-8 ${isOpen ? 'translate-x-0' : 'translate-x-full'
+            } transition-transform duration-300 ease-in-out md:hidden`}
         >
           {navItems.map((item) => (
             item.name === 'Services' ? (
@@ -174,7 +172,7 @@ const Navbar = () => {
               </a>
             )
           ))}
-          <Button 
+          <Button
             className="bg-secondary hover:bg-secondary/80 text-white mt-4 hover:shadow-lg hover:scale-105 transition-all duration-300"
             onClick={() => {
               handleGetQuote();
