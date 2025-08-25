@@ -14,13 +14,13 @@ const Service = () => {
       <main>
         {/* Section 2: Banner (two lines overview of services) */}
         <Banner />
-        
+
         {/* Section 3: Services */}
         <ServicesSection />
-        
+
         {/* Section 4: Tech We Use */}
         <TechStack />
-        
+
         {/* Section 5: Get Started with SkillLogic */}
         <GetStarted />
       </main>
@@ -31,5 +31,3 @@ const Service = () => {
 };
 
 export default Service;
-
-
