@@ -10,7 +10,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Service from "./pages/Service";
 import Services from "./pages/services/services";
-import Contact from "./pages/contact/Contact";
+
 
 const queryClient = new QueryClient();
 
