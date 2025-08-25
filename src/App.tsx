@@ -11,6 +11,7 @@ import NotFound from "./pages/NotFound";
 import Service from "./pages/Service";
 import Services from "./pages/services/services";
 import TestimonialsPage from "./pages/Testimonials/testimonials";
+import Contact from "./pages/contact/Contact";
 
 const queryClient = new QueryClient();
 
