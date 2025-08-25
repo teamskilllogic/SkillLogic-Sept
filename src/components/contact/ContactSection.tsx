@@ -4,7 +4,7 @@ import ContactMap from "./ContactMap";
 
 const ContactSection = () => {
     return (
-        <section className="w-full max-w-7xl mx-auto px-6 py-20">
+        <section className="w-full max-w-7xl mx-auto px-6 py-20 body-bg">
             <div className="text-center mb-16">
                 <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
                     Contact Us
@@ -26,7 +26,7 @@ const ContactSection = () => {
                 </div>
             </div>
 
-       
+
             <div className="mt-20 text-center">
                 <div className="bg-gray-100 rounded-2xl p-8 max-w-4xl mx-auto">
                     <h3 className="text-2xl font-bold text-black mb-4">
@@ -56,5 +56,3 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
-
-

@@ -24,7 +24,6 @@ const Service = () => {
                 {/* Section 5: Get Started with SkillLogic */}
                 <GetStarted />
             </main>
-
             <Footer />
         </div>
     );

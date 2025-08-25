@@ -19,7 +19,6 @@ function Navbar() {
     { title: "Services", href: "/services" },
     { title: "Portfolio", href: "/portfolio" },
     { title: "Testimonials", href: "/testimonials" },
-    { title: "Contact", href: "/contact" },
   ];
 
   const [isOpen, setOpen] = useState(false);
