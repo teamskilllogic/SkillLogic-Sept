@@ -9,7 +9,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Service from "./pages/Service";
 import Services from "./pages/services/services";
-import AboutUs from "./pages/about/AboutUs";
+import About from "./pages/about/about";
 
 
 const queryClient = new QueryClient();
@@ -30,7 +30,7 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/service" element={<Service />} />
-              <Route path="/about" element={<AboutUs />} />
+              <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
