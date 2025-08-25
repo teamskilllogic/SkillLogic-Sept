@@ -26,7 +26,7 @@ const ContactSection = () => {
                 </div>
             </div>
 
-            {/* Additional Contact Information */}
+       
             <div className="mt-20 text-center">
                 <div className="bg-gray-100 rounded-2xl p-8 max-w-4xl mx-auto">
                     <h3 className="text-2xl font-bold text-black mb-4">
