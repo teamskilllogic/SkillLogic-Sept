@@ -19,6 +19,7 @@ function Navbar() {
     { title: "Services", href: "/services" },
     { title: "Portfolio", href: "/portfolio" },
     { title: "Testimonials", href: "/testimonials" },
+    { title: "Contact", href: "/contact" },
   ];
 
   const [isOpen, setOpen] = useState(false);
@@ -56,11 +57,11 @@ function Navbar() {
               {navigationItems.map((item) => (
                 <NavigationMenuItem key={item.title}>
                   {item.href ? (
-                    <>
+                    <Link to={item.href}>
                       <NavigationMenuLink>
                         <Button variant="ghost">{item.title}</Button>
                       </NavigationMenuLink>
-                    </>
+                    </Link>
                   ) : (
                     <>
                       <NavigationMenuTrigger className="font-medium text-sm">
@@ -108,7 +109,9 @@ function Navbar() {
                 About
             </Button>
             <div className="border-r hidden md:inline"></div>
-            <Button variant="outline">Contact Us</Button>
+            <Link to="/contact">
+                <Button variant="outline">Contact Us</Button>
+            </Link>
             <Button>Get a Quote</Button>
         </div>
 
