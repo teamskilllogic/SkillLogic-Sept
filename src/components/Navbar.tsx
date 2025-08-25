@@ -82,6 +82,14 @@ const Navbar = () => {
               >
                 {item.name}
               </Link>
+            ) : item.name === 'Testimonials' ? (
+              <Link
+                key={item.name}
+                to="/testimonials"
+                className="text-sm font-medium transition-colors hover:text-secondary dark:text-white dark:hover:text-secondary"
+              >
+                {item.name}
+              </Link>
             ) : (
               <a
                 key={item.name}
@@ -158,6 +166,15 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to="/"
+                onClick={() => setIsOpen(false)}
+                className="text-xl font-medium text-white hover:text-secondary"
+              >
+                {item.name}
+              </Link>
+            ) : item.name === 'Testimonials' ? (
+              <Link
+                key={item.name}
+                to="/testimonials"
                 onClick={() => setIsOpen(false)}
                 className="text-xl font-medium text-white hover:text-secondary"
               >
