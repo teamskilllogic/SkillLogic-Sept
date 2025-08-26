@@ -55,7 +55,7 @@ const GetStarted = () => {
                 {/* Features */}
                 <div className="space-y-6">
                     <div className="flex items-start space-x-3">
-                        <MessageSquare className="h-6 w-6 text-blue-600" />
+                        <MessageSquare className="h-6 w-6 text-black" />
                         <div>
                             <h4 className="font-semibold text-black">Free Consultation</h4>
                             <p className="text-gray-600 text-sm">
@@ -65,7 +65,7 @@ const GetStarted = () => {
                     </div>
 
                     <div className="flex items-start space-x-3">
-                        <Phone className="h-6 w-6 text-blue-600" />
+                        <Phone className="h-6 w-6 text-black" />
                         <div>
                             <h4 className="font-semibold text-black">Quick Response</h4>
                             <p className="text-gray-600 text-sm">
@@ -75,7 +75,7 @@ const GetStarted = () => {
                     </div>
 
                     <div className="flex items-start space-x-3">
-                        <Headphones className="h-6 w-6 text-blue-600" />
+                        <Headphones className="h-6 w-6 text-black" />
                         <div>
                             <h4 className="font-semibold text-black">Support Hours</h4>
                             <p className="text-gray-600 text-sm">

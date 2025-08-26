@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/providers/ThemeProvider";
+import { Home } from "./pages/home/home";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
@@ -11,6 +12,7 @@ import Service from "./pages/Service";
 import Services from "./pages/services/services";
 import TestimonialsPage from "./pages/Testimonials/testimonials";
 import About from "./pages/about/about";
+import Contact from "./pages/contact/Contact";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +36,10 @@ const App = () => {
               <Route path="/testimonials" element={<TestimonialsPage />} />
               <Route path="/about" element={<About />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="/home" element={<Home />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/testimonials" element={<TestimonialsPage />} />
+              <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             <WhatsAppFloat phoneNumbers={phoneNumbers} />
