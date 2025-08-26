@@ -17,6 +17,7 @@ const TestimonialsPage = () => {
             <main>
                 {/* Section 1: Hero Banner */}
                 <Hero
+                    page="Skilllogic Technologies | Testimonials"
                     title="What clients say about SkillLogic"
                     description="Proof over promises — hear why teams trust us to deliver high‑impact products."
                     className="bg-transparent"

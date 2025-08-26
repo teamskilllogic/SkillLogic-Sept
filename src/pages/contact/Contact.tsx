@@ -14,6 +14,7 @@ const Contact = () => {
             <main>
                 {/* Hero Section */}
                 <Hero
+                    page="Skilllogic Technologies | Contact"
                     title="Get In Touch"
                     description="Ready to transform your business? Let's discuss your project and explore how our expertise can drive your success."
                 />

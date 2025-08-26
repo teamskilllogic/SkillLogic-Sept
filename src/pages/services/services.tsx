@@ -14,7 +14,8 @@ const Service = () => {
             <main>
                 {/* Section 2: Banner (two lines overview of services) */}
                 <Hero
-                    title="Professional Digital Solutions"
+                    page="Skilllogic Technologies | Services"
+                    title="Our Solutions for your Digital Growth"
                     description="We deliver cutting-edge technology solutions to transform your business and drive growth."
                 />
                 {/* Section 3: Services */}

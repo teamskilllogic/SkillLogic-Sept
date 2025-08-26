@@ -15,7 +15,7 @@ import { Toggle } from "@/components/ui/toggle";
 
 function Navbar() {
   const navigationItems = [
-    { title: "Home", href: "/" },
+    { title: "Home", href: "/home" },
     { title: "Services", href: "/services" },
     { title: "Portfolio", href: "/portfolio" },
     { title: "Testimonials", href: "/testimonials" },
