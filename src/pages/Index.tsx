@@ -8,7 +8,7 @@ import Services from '../components/Services';
 import Portfolio from '../components/Portfolio';
 import Pricing from '../components/Pricing';
 import About from '../components/About';
-import Testimonials from '../components/Testimonials';
+import Testimonials from '../components/HomeTestinomials';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';

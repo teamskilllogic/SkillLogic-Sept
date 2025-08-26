@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet';
 
 const testimonials = [
   {
     quote: "SkillLogic completely transformed our online presence. Their team not only designed a beautiful website but also helped us implement strategies that significantly increased our conversion rates. The ROI has been incredible!",
     author: "Nitesh Srivastava",
     context: "on website development & SEO",
-    color: "from-emerald-400 to-teal-500",
-    foldColor: "from-emerald-600 to-teal-700",
+    color: "from-blue-400 to-indigo-500",
+    foldColor: "from-blue-600 to-indigo-700",
     image: "/images/Nitesh.jpg"
   },
   {
     quote: "Their SEO expertise boosted our rankings in weeks. The team's knowledge and dedication to our success exceeded all expectations. Highly recommend SkillLogic for any digital marketing needs!",
     author: "Sanket Mishra",
     context: "on SEO & digital marketing",
-    color: "from-yellow-400 to-orange-400",
-    foldColor: "from-yellow-600 to-orange-600",
+    color: "from-blue-400 to-indigo-500",
+    foldColor: "from-blue-600 to-indigo-700",
     image: "/images/sanket.jpeg"
   },
   {
@@ -25,10 +24,18 @@ const testimonials = [
     color: "from-blue-400 to-indigo-500",
     foldColor: "from-blue-600 to-indigo-700",
     image: "/images/Sunny.jpeg"
+  },
+  {
+    quote: "Working with SkillLogic was the best decision we made for our website redesign.",
+    author: "Puja Patel",
+    context : "Marketing Head",
+    color: "from-blue-400 to-indigo-500",
+    foldColor: "from-blue-600 to-indigo-700",
+    image: "/images/puja.jpg",
   }
 ];
 
-const Testimonials = () => {
+const StickyNoteTestimonials = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -37,13 +44,9 @@ const Testimonials = () => {
 
   return (
     <section
-      id="testimonials"
-      className="relative overflow-hidden py-24 bg-gray-50"
+      id="sticky-note-testimonials"
+      className="relative overflow-hidden py-24 bg-transparent"
     >
-      <Helmet>
-        <title>Client Testimonials | What Our Clients Say | SkillLogic</title>
-      </Helmet>
-
       <div className="container-section relative z-10">
         {/* Header Section */}
         <div className="text-center mb-20">
@@ -51,7 +54,7 @@ const Testimonials = () => {
             OUR CUSTOMERS
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Hear from SkillLogic clients
+            Hear from <span className="text-blue-600">SkillLogic</span> clients
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Real stories of what it means to work with SkillLogic
@@ -74,34 +77,34 @@ const Testimonials = () => {
                   zIndex: testimonials.length - index 
                 }}
               >
-                                 {/* Sticky Note Card */}
-                 <div className={`sticky-note relative bg-gradient-to-br ${testimonial.color} rounded-lg shadow-xl transform rotate-1 hover:rotate-0 hover:scale-105 transition-all duration-300 cursor-pointer`}>
-                   {/* Folded Corner */}
-                   <div className="absolute top-0 right-0 w-0 h-0 border-l-[25px] border-l-transparent border-t-[25px] border-t-current rounded-bl-lg" style={{ borderTopColor: testimonial.foldColor.includes('emerald') ? '#059669' : testimonial.foldColor.includes('yellow') ? '#d97706' : '#2563eb' }}></div>
-                   
-                   {/* Content */}
-                   <div className="p-6 text-white">
-                     <blockquote className="text-sm leading-relaxed mb-4 font-medium">
-                       "{testimonial.quote}"
-                     </blockquote>
-                     <div className="border-t border-white/20 pt-3">
-                       <div className="flex items-center space-x-3">
-                         <img 
-                           src={testimonial.image} 
-                           alt={testimonial.author}
-                           className="w-10 h-10 rounded-full object-cover border-2 border-white/30 shadow-lg"
-                         />
-                         <div>
-                           <div className="font-semibold text-sm">{testimonial.author}</div>
-                           <div className="text-xs text-white/80">{testimonial.context}</div>
-                         </div>
-                       </div>
-                     </div>
-                   </div>
-                 </div>
+                {/* Sticky Note Card */}
+                <div className={`sticky-note relative bg-gradient-to-br ${testimonial.color} rounded-lg shadow-xl transform rotate-1 hover:rotate-0 hover:scale-105 transition-all duration-300 cursor-pointer`}>
+                  {/* Folded Corner */}
+                  <div className="absolute top-0 right-0 w-0 h-0 border-l-[25px] border-l-transparent border-t-[25px] border-t-current rounded-bl-lg" style={{ borderTopColor: testimonial.foldColor.includes('emerald') ? '#059669' : testimonial.foldColor.includes('yellow') ? '#d97706' : '#2563eb' }}></div>
+                  
+                  {/* Content */}
+                  <div className="p-6 text-white">
+                    <blockquote className="text-sm leading-relaxed mb-4 font-medium">
+                      "{testimonial.quote}"
+                    </blockquote>
+                    <div className="border-t border-white/20 pt-3">
+                      <div className="flex items-center space-x-3">
+                        <img 
+                          src={testimonial.image} 
+                          alt={testimonial.author}
+                          className="w-10 h-10 rounded-full object-cover border-2 border-white/30 shadow-lg"
+                        />
+                        <div>
+                          <div className="font-semibold text-sm">{testimonial.author}</div>
+                          <div className="text-xs text-white/80">{testimonial.context}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-                                 {/* Shadow */}
-                 <div className="sticky-note-shadow"></div>
+                {/* Shadow */}
+                <div className="sticky-note-shadow"></div>
               </div>
             ))}
           </div>
@@ -138,4 +141,4 @@ const Testimonials = () => {
   );
 };
 
-export default Testimonials;
+export default StickyNoteTestimonials;

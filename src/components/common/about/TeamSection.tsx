@@ -8,7 +8,7 @@ const TeamSection = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Meet Our Team
+            Meet <span className="text-blue-600">Our Team</span>
           </h2>
           <p className="text-lg text-gray-600">
             The talented people behind SkillLogic's success
