@@ -13,6 +13,7 @@ const About = () => {
       <main>
         {/* Section 1: Banner (two lines overview of services) */}
         <Hero
+          page="SkillLogic Technologies | About Us"
           title="About SkillLogic Technologies"
           description="At SkillLogic, we craft reliable web, app, and SEO solutions. Our mission is simple — to help businesses scale faster with technology that actually works."
         />

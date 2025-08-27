@@ -1,0 +1,41 @@
+import React from 'react';
+import { Navbar } from "@/components/common/navigations/navigations";
+import { ProjectShowcase } from "@/components/home/projectShowcase";
+import { Footer } from "@/components/common/footer/footer";
+import { Hero } from "@/components/common/hero/hero";
+import { Timeline } from "@/components/home/timeline";
+import { Team } from "@/components/home/team";
+import { Pricing } from "@/components/home/pricing";
+import { TechShowcase } from "@/components/home/techShowcase";
+import { Testimonial } from "@/components/home/testimonials";
+import { GetStarted } from "@/components/common/services/get_started";
+import { Services } from "@/components/home/services";
+import "@/components/common/common.css";
+
+const Home = () => {
+    return (
+        <div className="min-h-screen bg-white service-bg">
+            <Navbar />
+            <main>
+                {/* Section 2: Banner */}
+                <Hero
+                    page="Skilllogic Technologies"
+                    title="Its time to make your software in weeks"
+                    description={`Ready to build your next Website, Mobile App, CRM, or ERP ? \n We empower startups and businesses to scale and grow—fast. \n Get started today and launch in weeks!`}
+                />
+                {/* Section 3: Timeline */}
+                <Services />
+                <ProjectShowcase />
+                <Timeline />
+                <Team />
+                <Pricing />
+                <TechShowcase />
+                <Testimonial />
+                 <GetStarted />
+            </main>
+            <Footer />
+        </div>
+    );
+};
+
+export { Home };
