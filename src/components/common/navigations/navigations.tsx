@@ -104,9 +104,11 @@ function Navbar() {
           {/* Theme Toggle */}
 
         <div className="flex justify-end w-full gap-4">
-            <Button variant="ghost" className="hidden md:inline">
-                About
-            </Button>
+            <Link to="/about">
+                <Button variant="ghost" className="hidden md:inline">
+                    About
+                </Button>
+            </Link>
             <div className="border-r hidden md:inline"></div>
             <Link to="/contact">
                 <Button variant="outline">Contact Us</Button>
