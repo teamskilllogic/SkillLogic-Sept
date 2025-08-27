@@ -3,6 +3,16 @@ import { Navbar } from "@/components/common/navigations/navigations";
 import { Footer } from "@/components/common/footer/footer";
 import { Hero } from "@/components/common/hero/hero";
 import { Timeline } from "@/components/home/timeline";
+import { ProjectShowcase } from "@/components/home/projectShowcase";
+import { Footer } from "@/components/common/footer/footer";
+import { Hero } from "@/components/common/hero/hero";
+import { Timeline } from "@/components/home/timeline";
+import { Team } from "@/components/home/team";
+import { Pricing } from "@/components/home/pricing";
+import { TechShowcase } from "@/components/home/techShowcase";
+import { Testimonial } from "@/components/home/testimonials";
+import { GetStarted } from "@/components/common/services/get_started";
+import { Services } from "@/components/home/services";
 import "@/components/common/common.css";
 
 const Home = () => {
@@ -18,6 +28,14 @@ const Home = () => {
                 />
                 {/* Section 3: Timeline */}
                 <Timeline />
+                <Services />
+                <ProjectShowcase />
+                <Timeline />
+                <Team />
+                <Pricing />
+                <TechShowcase />
+                <Testimonial />
+                 <GetStarted />
             </main>
             <Footer />
         </div>
