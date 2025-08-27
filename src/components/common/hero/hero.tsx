@@ -29,7 +29,7 @@ export function Hero({
             <div className="relative mx-auto max-w-[1280px] flex flex-col gap-12 lg:gap-24">
                 <div className="relative z-10 flex flex-col items-center gap-6 pt-4 md:pt-8 text-center">
                     {/* page */}
-                    <span className="inline-flex items-center px-4 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium border border-gray-200">
+                    <span className="inline-flex items-center px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200">
                         {page}
                     </span>
                     {/* Heading */}

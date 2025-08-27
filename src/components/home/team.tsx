@@ -61,17 +61,18 @@ const Team: React.FC = () => {
     }, [currentIndex]);
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen relative overflow-hidden mt-16">
+        <div className="flex flex-col items-center justify-center min-h-screen relative overflow-hidden mt-16 text-center">
+
             {/* Title */}
-            <span className="inline-flex items-center px-4 py-1 rounded-full bg-white text-gray-700 text-sm font-medium border border-gray-200" style={{ zIndex: 2, position: 'relative' }}>
+            <span className="inline-flex items-center px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200 mb-4">
                 Our Team
             </span>
 
             {/* Heading */}
-            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-center">
+            <h2 className="text-3xl md:text-6xl lg:text-6xl xl:text-[58px] leading-[38px] md:leading-[60px] lg:leading-[60px] xl:leading-[70px] font-extrabold text-zinc-900 text-center w-[70%] md:w-full lg:w-full xl:w-full mx-auto mb-5 md:mb-[30px] tracking-tight">
                 Meet Our Talented Team
             </h2>
-            <p className="text-gray-500 mt-4 text-center max-w-xl">
+            <p className="text-zinc-600 text-base md:text-base xl:text-lg font-medium tracking-normal leading-6 md:leading-[30px] w-[94%] md:w-[90%] lg:w-[80%] xl:w-[56%] mx-auto">
                 Empowering innovation through collaboration—our diverse team brings expertise, creativity, and passion to every project we build together.
             </p>
 

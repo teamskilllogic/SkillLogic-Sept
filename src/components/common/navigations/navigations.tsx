@@ -57,9 +57,9 @@ function Navbar() {
                 <NavigationMenuItem key={item.title}>
                   {item.href ? (
                     <Link to={item.href}>
-                      <NavigationMenuLink>
+                      <span>
                         <Button variant="ghost">{item.title}</Button>
-                      </NavigationMenuLink>
+                      </span>
                     </Link>
                   ) : (
                     <>
@@ -77,17 +77,7 @@ function Navbar() {
                             </Button>
                           </div>
                           <div className="flex flex-col text-sm h-full justify-end">
-                            {item.items?.map((subItem) => (
-                              <NavigationMenuLink
-                                href={subItem.href}
-                                key={subItem.title}
-                                className="flex flex-row justify-between items-center hover:bg-muted py-2 px-4 rounded"
-                              >
-                                <span>{subItem.title}</span>
-                                {/* You may need to import MoveRight from lucide-react */}
-                                <MoveRight className="w-4 h-4 text-muted-foreground" />
-                              </NavigationMenuLink>
-                            ))}
+                            {/* Removed item.items mapping as it does not exist */}
                           </div>
                         </div>
                       </NavigationMenuContent>

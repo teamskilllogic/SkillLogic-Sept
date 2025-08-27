@@ -3,20 +3,6 @@ import { Settings, PenTool, Code2, BarChart3 } from "lucide-react";
 
 const services = [
     {
-        icon: <Settings className="h-6 w-6 text-black" />,
-        title: "Product Strategy",
-        description:
-            "From market research to user personas, we help you build products that matter.",
-        items: ["Market Research", "User Personas"],
-    },
-    {
-        icon: <PenTool className="h-6 w-6 text-black" />,
-        title: "Design",
-        description:
-            "Beautiful, functional designs that create memorable user experiences.",
-        items: ["UI/UX Design", "Prototyping", "Interaction Design"],
-    },
-    {
         icon: <Code2 className="h-6 w-6 text-black" />,
         title: "Web Development",
         description:
@@ -24,8 +10,22 @@ const services = [
         items: ["Frontend Dev", "Backend Dev"],
     },
     {
+        icon: <Settings className="h-6 w-6 text-black" />,
+        title: "App Development",
+        description:
+            "From market research to user personas, we help you build products that matter.",
+        items: ["Market Research", "User Personas"],
+    },
+    {
+        icon: <PenTool className="h-6 w-6 text-black" />,
+        title: "ERP Development",
+        description:
+            "Beautiful, functional designs that create memorable user experiences.",
+        items: ["UI/UX Design", "Prototyping", "Interaction Design"],
+    },
+    {
         icon: <BarChart3 className="h-6 w-6 text-black" />,
-        title: "Marketing",
+        title: "Others",
         description:
             "Strategic growth initiatives to scale your product and maximize impact.",
         items: ["SEO Strategy", "Analytics & Data", "A/B Testing"],
@@ -34,20 +34,20 @@ const services = [
 
 const Services: React.FC = () => {
     return (
-        <section className="w-full py-20 bg-white">
+        <section className="w-full py-20">
             <div className="max-w-7xl mx-auto px-6 text-center">
 
                 {/* Section Label */}
-                <span className="inline-flex items-center px-4 py-1 rounded-full bg-white text-gray-700 text-sm font-medium border border-gray-200" style={{ zIndex: 2, position: 'relative' }}>
+                <span className="inline-flex items-center px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200">
                     Services
                 </span>
-
                 {/* Heading */}
-                <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-center mt-4">
+                <h2 className="text-3xl md:text-6xl lg:text-6xl xl:text-[58px] leading-[38px] md:leading-[60px] lg:leading-[60px] xl:leading-[70px] font-extrabold text-zinc-900 text-center w-[70%] md:w-full lg:w-full xl:w-full mx-auto mb-5 md:mb-[30px] tracking-tight">
                     Build, Launch, and Gro All in One Place
                 </h2>
-                <p className="mt-4 text-gray-500 max-w-xl mx-auto">
-                    From product strategy to marketing, our integrated services help you turn ideas into scalable digital products—fast.
+                {/* Description */}
+                <p className="text-zinc-600 text-base md:text-base xl:text-lg font-medium tracking-normal leading-6 md:leading-[30px] w-[94%] md:w-[90%] lg:w-[80%] xl:w-[56%] mx-auto">
+                    Comprehensive digital solutions to transform your business and drive innovation, From product strategy to marketing, our integrated services help you turn ideas into scalable digital products—fast.
                 </p>
 
                 {/* Service Grid */}
