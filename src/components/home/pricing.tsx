@@ -6,39 +6,48 @@ import { Check } from "lucide-react";
 const plans = [
     {
         name: "Startup",
-        description:
-            "Our goal is to streamline SMB trade, making it easier and faster than ever for everyone and everywhere.",
-        price: "$40",
+        description: "Essential web presence for new businesses",
+        price: "₹9,999",
         features: [
-            "Fast and reliable",
-            "Fast and reliable",
-            "Fast and reliable",
+            "5-Page Responsive Website",
+            "SEO Basic Setup",
+            "Contact Form",
+            "Mobile Optimization",
+            "1 Month Free Support",
         ],
-        button: { text: "Sign up today", variant: "outline" },
+        button: { text: "Choose Plan", variant: "outline" },
     },
     {
-        name: "Growth",
-        description:
-            "Our goal is to streamline SMB trade, making it easier and faster than ever for everyone and everywhere.",
-        price: "$40",
+        name: "Business",
+        description: "Comprehensive solution for growing businesses",
+        price: "₹15,999",
         features: [
-            "Fast and reliable",
-            "Fast and reliable",
-            "Fast and reliable",
+            "10-Page Responsive Website",
+            "SEO Advanced Setup",
+            "Contact & Booking Forms",
+            "Mobile Optimization",
+            "Blog Setup",
+            "Social Media Integration",
+            "3 Months Free Support",
         ],
-        button: { text: "Sign up today", variant: "default" },
+        button: { text: "Choose Plan", variant: "default" },
+        popular: true,
     },
     {
-        name: "Enterprise",
-        description:
-            "Our goal is to streamline SMB trade, making it easier and faster than ever for everyone and everywhere.",
-        price: "$40",
+        name: "Premium",
+        description: "Advanced web presence for established businesses",
+        price: "₹29,999",
         features: [
-            "Fast and reliable",
-            "Fast and reliable",
-            "Fast and reliable",
+            "15+ Page Responsive Website",
+            "SEO Full Package",
+            "Advanced Forms & Integrations",
+            "Mobile Optimization",
+            "Blog & Newsletter",
+            "Social Media Integration",
+            "E-commerce Setup (Basic)",
+            "6 Months Free Support",
         ],
-        button: { text: "Book a meeting", variant: "outline" },
+        button: { text: "Choose Plan", variant: "outline" },
     },
 ];
 
@@ -47,7 +56,7 @@ const Pricing: React.FC = () => {
         <section className="w-full py-20 flex flex-col items-center mt-16 text-center">
 
             {/* Section Label */}
-            <span className="inline-flex items-center px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200 mb-4">
+            <span className="relative z-[100] inline-flex items-center px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200 mb-4">
                 Pricing
             </span>
             {/* Heading */}
@@ -58,7 +67,6 @@ const Pricing: React.FC = () => {
             <p className="text-zinc-600 text-base md:text-base xl:text-lg font-medium tracking-normal leading-6 md:leading-[30px] w-[94%] md:w-[90%] lg:w-[80%] xl:w-[56%] mx-auto">
                 Managing a small business today is already tough.
             </p>
-
             {/* Pricing Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 max-w-6xl w-full bg-white" style={{ zIndex: 1, position: 'relative' }}>
                 {plans.map((plan, idx) => (
@@ -85,10 +93,11 @@ const Pricing: React.FC = () => {
                                     </li>
                                 ))}
                             </ul>
+                            <div className="flex-1" />
                             <div className="mt-6">
                                 <Button
                                     variant={plan.button.variant as "default" | "outline"}
-                                    className={`w-full${plan.name === 'Growth' && plan.button.variant === 'default' ? ' bg-black text-white hover:bg-gray-900' : ''}`}
+                                    className={`w-full${plan.name === 'Business' && plan.button.variant === 'default' ? ' bg-black !text-white !bg-black !hover:bg-gray-900' : ''}`}
                                 >
                                     {plan.button.text}
                                 </Button>
@@ -99,19 +108,21 @@ const Pricing: React.FC = () => {
             </div>
 
             {/* Custom Plan Card */}
-            <Card className="mt-12 max-w-6xl w-full bg-white" style={{ zIndex: 1, position: 'relative' }}>
+             <Card className="mt-12 max-w-6xl w-full bg-white" style={{ zIndex: 1, position: 'relative' }}>
                 <CardContent className="flex flex-col md:flex-row justify-between gap-8 p-8">
-                    {/* Left side */}
+                     {/* Left side */}
                     <div className="flex-1">
-                        <h3 className="text-2xl font-semibold">Platform</h3>
-                        <p className="text-gray-500 mt-2">
-                            Observee is the unified platform for everything you need to ship integrations
+                        <h3 className="text-2xl font-semibold text-left">Custom Solutions</h3>
+                        <p className="text-gray-500 mt-2 text-left">
+                            Bespoke digital products for unique business needs. Get a fully personalized website, app, or platform built to your exact requirements—no limits.
                         </p>
-                        <div className="mt-6">
-                            <p className="text-4xl font-bold">Custom</p>
-                            <p className="text-gray-500 mt-1">contact for pricing</p>
+                        <div className="mt-6 text-left">
+                            <p className="text-4xl font-bold">Tailored Pricing</p>
+                            <p className="text-gray-500 mt-1">Let's discuss your goals and create a custom quote.</p>
                         </div>
-                        <Button className="mt-6 w-full md:w-auto bg-black text-white hover:bg-gray-900">Get Started</Button>
+                        <div className="mt-6 flex justify-start">
+                            <Button className="md:w-auto bg-black text-white hover:bg-gray-900">Get Started</Button>
+                        </div>
                     </div>
 
                     {/* Right side */}
@@ -121,11 +132,13 @@ const Pricing: React.FC = () => {
                             <h4 className="font-semibold mb-4">Core Features:</h4>
                             <ul className="space-y-3">
                                 {[
-                                    "Unlimited Integrations & Custom Connectors",
-                                    "Fully Managed Authentication",
-                                    "Event Logs",
-                                    "Vision Based Browser Automation",
-                                    "Built in Observability & Monitoring",
+                                    "Custom Pages & Features",
+                                "Enterprise SEO Solutions",
+                                "Custom Integrations",
+                                "E-commerce (Advanced)",
+                                "Custom Web Applications",
+                                "Priority Support",
+                                "Dedicated Project Manager",
                                 ].map((feature, i) => (
                                     <li key={i} className="flex items-start gap-2 text-sm">
                                         <Check className="w-5 h-5 text-black shrink-0" />
@@ -140,11 +153,12 @@ const Pricing: React.FC = () => {
                             <h4 className="font-semibold mb-4">Enterprise Features:</h4>
                             <ul className="space-y-3">
                                 {[
-                                    "Self-host / Forward-deploy",
-                                    "Priority Support & SLAs",
-                                    "Professional Services",
-                                    "Dynamic Field Mapping",
-                                    "SAML-based SSO",
+                                     "API Development & Integrations",
+                                "Performance Optimization",
+                                "Security & Compliance Consulting",
+                                "Migration & Modernization Services",
+                                "Ongoing Maintenance & Upgrades",
+                                "Advanced Analytics & Reporting",
                                 ].map((feature, i) => (
                                     <li key={i} className="flex items-start gap-2 text-sm">
                                         <Check className="w-5 h-5 text-black shrink-0" />

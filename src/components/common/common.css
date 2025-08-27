@@ -1,268 +1,307 @@
 /* Body Background */
 .body-bg {
-  position: relative;
-  z-index: 0;
+    position: relative;
+    z-index: 0;
 }
 
 .body-bg::before {
-  --size: 45px;
-  --line: color-mix(in hsl, canvasText, transparent 80%);
-  content: "";
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  background:
-    linear-gradient(90deg, var(--line) 1px, transparent 1px var(--size))
-    calc(var(--size) * 0.36) 50% / var(--size) var(--size),
-    linear-gradient(var(--line) 1px, transparent 1px var(--size))
-    0% calc(var(--size) * 0.32) / var(--size) var(--size);
-  -webkit-mask: linear-gradient(-20deg, transparent 50%, white);
-  mask: linear-gradient(-20deg, transparent 50%, white);
-  top: 0;
-  left: 0;
-  transform-style: flat;
-  pointer-events: none;
-  z-index: -1;
+    --size: 45px;
+    --line: color-mix(in hsl, canvasText, transparent 75%);
+    content: "";
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    background:
+        linear-gradient(90deg, var(--line) 1px,
+            transparent 1px var(--size)) calc(var(--size) * 0.36) 50% / var(--size) var(--size),
+        linear-gradient(var(--line) 1px, transparent 1px var(--size)) 0% calc(var(--size) * 0.32) / var(--size) var(--size);
+    -webkit-mask: linear-gradient(-20deg, transparent 50%, white);
+    mask: linear-gradient(-20deg, transparent 50%, white);
+    top: 0;
+    left: 0;
+    transform-style: flat;
+    pointer-events: none;
+    z-index: -1;
 }
 
 /* Service Background */
 .service-bg {
-  position: relative;
-  z-index: 0;
+    position: relative;
+    z-index: 0;
 }
 
 .service-bg::before {
-  --size: 45px;
-  --line: color-mix(in hsl, canvasText, transparent 80%);
-  content: "";
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  background:
-    linear-gradient(90deg, var(--line) 1px, transparent 1px var(--size))
-    calc(var(--size) * 0.36) 50% / var(--size) var(--size),
-    linear-gradient(var(--line) 1px, transparent 1px var(--size))
-    0% calc(var(--size) * 0.32) / var(--size) var(--size);
-  -webkit-mask: linear-gradient(-20deg, transparent 50%, white);
-  mask: linear-gradient(-20deg, transparent 50%, white);
-  top: 0;
-  left: 0;
-  transform-style: flat;
-  pointer-events: none;
-  z-index: -1;
+    --size: 45px;
+    --line: color-mix(in hsl, canvasText, transparent 80%);
+    content: "";
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    background:
+        linear-gradient(90deg, var(--line) 1px, transparent 1px var(--size)) calc(var(--size) * 0.36) 50% / var(--size) var(--size),
+        linear-gradient(var(--line) 1px, transparent 1px var(--size)) 0% calc(var(--size) * 0.32) / var(--size) var(--size);
+    -webkit-mask: linear-gradient(-20deg, transparent 50%, white);
+    mask: linear-gradient(-20deg, transparent 50%, white);
+    top: 0;
+    left: 0;
+    transform-style: flat;
+    pointer-events: none;
+    z-index: -1;
 }
 
 .service-bg {
-  position: relative;
-  z-index: 0;
+    position: relative;
+    z-index: 0;
 }
 
 .service-bg::before {
-  --size: 45px;
-  --line: color-mix(in hsl, canvasText, transparent 80%);
-  content: "";
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  background: linear-gradient(
-        90deg,
-        var(--line) 1px,
-        transparent 1px var(--size)
-      )
-      calc(var(--size) * 0.36) 50% / var(--size) var(--size),
-    linear-gradient(var(--line) 1px, transparent 1px var(--size)) 0%
-      calc(var(--size) * 0.32) / var(--size) var(--size);
-  -webkit-mask: linear-gradient(-20deg, transparent 50%, white);
-  mask: linear-gradient(-20deg, transparent 50%, white);
-  top: 0;
-  left: 0;
-  transform-style: flat;
-  pointer-events: none;
-  z-index: -1;
+    --size: 45px;
+    --line: color-mix(in hsl, canvasText, transparent 80%);
+    content: "";
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    background: linear-gradient(90deg,
+            var(--line) 1px,
+            transparent 1px var(--size)) calc(var(--size) * 0.36) 50% / var(--size) var(--size),
+        linear-gradient(var(--line) 1px, transparent 1px var(--size)) 0% calc(var(--size) * 0.32) / var(--size) var(--size);
+    -webkit-mask: linear-gradient(-20deg, transparent 50%, white);
+    mask: linear-gradient(-20deg, transparent 50%, white);
+    top: 0;
+    left: 0;
+    transform-style: flat;
+    pointer-events: none;
+    z-index: -1;
 }
 
 /* Testimonials Page Styles */
 .testimonials-bg {
-  position: relative;
-  z-index: 0;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
-  background-size: 200% 200%;
-  animation: gradientShift 20s ease infinite;
+    position: relative;
+    z-index: 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 20s ease infinite;
 }
 
 .testimonials-bg::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background:
-    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.1) 0%, transparent 50%);
-  pointer-events: none;
-  z-index: -1;
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(
-      circle at 20% 80%,
-      rgba(120, 119, 198, 0.1) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 80% 20%,
-      rgba(255, 119, 198, 0.1) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 40% 40%,
-      rgba(120, 219, 255, 0.1) 0%,
-      transparent 50%
-    );
-  pointer-events: none;
-  z-index: -1;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 80%,
+            rgba(120, 119, 198, 0.1) 0%,
+            transparent 50%),
+        radial-gradient(circle at 80% 20%,
+            rgba(255, 119, 198, 0.1) 0%,
+            transparent 50%),
+        radial-gradient(circle at 40% 40%,
+            rgba(120, 219, 255, 0.1) 0%,
+            transparent 50%);
+    pointer-events: none;
+    z-index: -1;
 }
 
 /* Ensure scroll container has non-static position */
 .scroll-container {
-  position: relative;
+    position: relative;
 }
 
 /* Animations */
 @keyframes gradientShift {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
 }
 
 @keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 0.8;
-  }
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
 }
 
 @keyframes slideInUp {
-  from {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 @keyframes slideInLeft {
-  from {
-    transform: translateX(-30px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
+    from {
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 @keyframes slideInRight {
-  from {
-    transform: translateX(30px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
+    from {
+        transform: translateX(30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 /* Floating elements animation */
 .floating-element {
-  animation: float 6s ease-in-out infinite;
+    animation: float 6s ease-in-out infinite;
 }
 
 .floating-element:nth-child(2) {
-  animation-delay: -2s;
+    animation-delay: -2s;
 }
 
 .floating-element:nth-child(3) {
-  animation-delay: -4s;
+    animation-delay: -4s;
 }
 
 /* Sticky Note Testimonial Styles */
 .sticky-note {
-  position: relative;
-  transition: all 0.3s ease;
+    position: relative;
+    transition: all 0.3s ease;
 }
 
 .sticky-note:hover {
-  transform: rotate(0deg) scale(1.05);
-  z-index: 10;
+    transform: rotate(0deg) scale(1.05);
+    z-index: 10;
 }
 
 .sticky-note::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 25px 25px 0;
-  border-color: transparent;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 25px 25px 0;
+    border-color: transparent;
 }
 
 /* Sticky note fold corner colors */
 .sticky-note.emerald::before {
-  border-right-color: #059669;
+    border-right-color: #059669;
 }
 
 .sticky-note.yellow::before {
-  border-right-color: #d97706;
+    border-right-color: #d97706;
 }
 
 .sticky-note.blue::before {
-  border-right-color: #2563eb;
+    border-right-color: #2563eb;
 }
 
 /* Sticky note shadows */
 .sticky-note-shadow {
-  position: absolute;
-  bottom: -8px;
-  left: 4px;
-  right: 4px;
-  height: 8px;
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-  filter: blur(4px);
-  transform: rotate(1deg);
+    position: absolute;
+    bottom: -8px;
+    left: 4px;
+    right: 4px;
+    height: 8px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    filter: blur(4px);
+    transform: rotate(1deg);
 }
 
 /* globals.css */
 .perspective {
-  perspective: 1000px;
+    perspective: 1000px;
 }
 
 .preserve-3d {
-  transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+@media screen and (min-width: 1600px) {
+    .css-1we0dey {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .css-1we0dey {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .css-1we0dey {
+        padding-top: 100px;
+        padding-bottom: 80px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .css-1we0dey {
+        padding-top: 80px;
+        padding-bottom: 40px;
+        border-radius: 50px;
+    }
+}
+
+.css-1we0dey {
+    display: flex;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    width: 96vw;
+    background-image: url(/public/images/bg_image.png);
+    background-size: cover;
+    background-position: center top;
+    border-radius: 90px;
 }

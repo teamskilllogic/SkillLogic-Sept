@@ -61,83 +61,90 @@ const Team: React.FC = () => {
     }, [currentIndex]);
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen relative overflow-hidden mt-16 text-center">
+        <section className="w-full py-20 flex justify-center items-center mt-16">
+            <div className="max-w-6xl w-full mx-auto px-6 flex flex-col items-center justify-center text-center ">
+                <div className="flex flex-col items-center justify-center min-h-screen relative overflow-hidden text-center ">
 
-            {/* Title */}
-            <span className="inline-flex items-center px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200 mb-4">
-                Our Team
-            </span>
+                    {/* Title */}
+                    <span className="relative z-[100] inline-flex items-center px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200 mb-4">
+                        Our Team
+                    </span>
+                    {/* Heading */}
+                    <h2 className="text-3xl md:text-6xl lg:text-6xl xl:text-[58px] leading-[38px] md:leading-[60px] lg:leading-[60px] xl:leading-[70px] font-extrabold text-zinc-900 text-center w-[70%] md:w-full lg:w-full xl:w-full mx-auto mb-5 md:mb-[30px] tracking-tight">
+                        Meet Our Talented Team
+                    </h2>
+                    <p className="text-zinc-600 text-base md:text-base xl:text-lg font-medium tracking-normal leading-6 md:leading-[30px] w-[94%] md:w-[90%] lg:w-[80%] xl:w-[56%] mx-auto">
+                        Empowering innovation through collaboration—our diverse team brings expertise, creativity, and passion to every project we build together.
+                    </p>
+                    {/* Carousel */}
+                    <div className="relative w-full max-w-6xl h-[450px] mt-6 perspective">
+                        {/* Cards */}
+                        <div className="w-full h-full relative flex items-center justify-center preserve-3d transition-transform duration-700">
+                            {teamMembers.map((member, i) => {
+                                const offset = (i - currentIndex + teamMembers.length) % teamMembers.length;
 
-            {/* Heading */}
-            <h2 className="text-3xl md:text-6xl lg:text-6xl xl:text-[58px] leading-[38px] md:leading-[60px] lg:leading-[60px] xl:leading-[70px] font-extrabold text-zinc-900 text-center w-[70%] md:w-full lg:w-full xl:w-full mx-auto mb-5 md:mb-[30px] tracking-tight">
-                Meet Our Talented Team
-            </h2>
-            <p className="text-zinc-600 text-base md:text-base xl:text-lg font-medium tracking-normal leading-6 md:leading-[30px] w-[94%] md:w-[90%] lg:w-[80%] xl:w-[56%] mx-auto">
-                Empowering innovation through collaboration—our diverse team brings expertise, creativity, and passion to every project we build together.
-            </p>
+                                let className = "absolute w-72 h-96 rounded-2xl overflow-hidden shadow-2xl transition-all duration-700 cursor-pointer";
+                                if (offset === 0) className += " scale-110 z-20";
+                                else if (offset === 1) className += " translate-x-52 scale-90 opacity-90 z-10 grayscale";
+                                else if (offset === 2) className += " translate-x-[400px] scale-80 opacity-70 grayscale";
+                                else if (offset === teamMembers.length - 1) className += " -translate-x-52 scale-90 opacity-90 z-10 grayscale";
+                                else if (offset === teamMembers.length - 2) className += " -translate-x-[400px] scale-80 opacity-70 grayscale";
+                                else className += " opacity-0 pointer-events-none";
 
-            {/* Carousel */}
-            <div className="relative w-full max-w-6xl h-[450px] mt-6 perspective">
-                {/* Cards */}
-                <div className="w-full h-full relative flex items-center justify-center preserve-3d transition-transform duration-700">
-                    {teamMembers.map((member, i) => {
-                        const offset = (i - currentIndex + teamMembers.length) % teamMembers.length;
+                                return (
+                                    <div key={i} className={className} onClick={() => updateCarousel(i)}>
+                                        <img src={member.img} alt={member.name} className="w-full h-full object-cover" />
+                                    </div>
+                                );
+                            })}
+                        </div>
 
-                        let className = "absolute w-72 h-96 rounded-2xl overflow-hidden shadow-2xl transition-all duration-700 cursor-pointer";
-                        if (offset === 0) className += " scale-110 z-20";
-                        else if (offset === 1) className += " translate-x-52 scale-90 opacity-90 z-10 grayscale";
-                        else if (offset === 2) className += " translate-x-[400px] scale-80 opacity-70 grayscale";
-                        else if (offset === teamMembers.length - 1) className += " -translate-x-52 scale-90 opacity-90 z-10 grayscale";
-                        else if (offset === teamMembers.length - 2) className += " -translate-x-[400px] scale-80 opacity-70 grayscale";
-                        else className += " opacity-0 pointer-events-none";
+                        {/* Arrows */}
+                        <button
+                            className="absolute left-5 top-1/2 -translate-y-1/2 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl hover:scale-110 transition"
+                            style={{ backgroundColor: 'black' }}
+                            onClick={() => updateCarousel(currentIndex - 1)}
+                        >
+                            ‹
+                        </button>
+                        <button
+                            className="absolute right-5 top-1/2 -translate-y-1/2 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl hover:scale-110 transition"
+                            style={{ backgroundColor: 'black' }}
+                            onClick={() => updateCarousel(currentIndex + 1)}
+                        >
+                            ›
+                        </button>
+                    </div>
 
-                        return (
-                            <div key={i} className={className} onClick={() => updateCarousel(i)}>
-                                <img src={member.img} alt={member.name} className="w-full h-full object-cover" />
-                            </div>
-                        );
-                    })}
+                    {/* Member Info */}
+                    <div className="text-center mt-12 transition-all duration-500">
+                        <h2 className="text-3xl font-bold relative inline-block" style={{ color: 'black' }}>
+                            {teamMembers[currentIndex].name}
+                        </h2>
+                        <p className="text-lg uppercase tracking-wide text-gray-500 mt-2">
+                            {teamMembers[currentIndex].role}
+                        </p>
+                    </div>
+
+                    {/* Dots */}
+                    {/* <div className="flex gap-3 mt-12">
+                        {teamMembers.map((_, i) => (
+                            <div
+                                key={i}
+                                className={`w-3 h-3 rounded-full cursor-pointer transition ${i === currentIndex ? "scale-125" : ""}`}
+                                style={{ backgroundColor: i === currentIndex ? '#6b7280' : '#d1d5db' }}
+                                onClick={() => updateCarousel(i)}
+                            />
+                        ))}
+                    </div> */}
+
+                    <h3 className="text-lg font-bold text-blue-500 mt-16">
+                        <span className="block text-blue-500 font-bold">Collaboration powers innovation.</span>
+                        <span className="text-gray-500 font-normal">Our team’s diverse skills and shared passion drive every project’s success. Together, we turn ideas into reality and help your business grow.</span>
+                    </h3>
                 </div>
-
-                {/* Arrows */}
-                <button
-                    className="absolute left-5 top-1/2 -translate-y-1/2 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl hover:scale-110 transition"
-                    style={{ backgroundColor: 'black' }}
-                    onClick={() => updateCarousel(currentIndex - 1)}
-                >
-                    ‹
-                </button>
-                <button
-                    className="absolute right-5 top-1/2 -translate-y-1/2 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl hover:scale-110 transition"
-                    style={{ backgroundColor: 'black' }}
-                    onClick={() => updateCarousel(currentIndex + 1)}
-                >
-                    ›
-                </button>
             </div>
-
-            {/* Member Info */}
-            <div className="text-center mt-12 transition-all duration-500">
-                <h2 className="text-3xl font-bold relative inline-block" style={{ color: 'black' }}>
-                    {teamMembers[currentIndex].name}
-                </h2>
-                <p className="text-lg uppercase tracking-wide text-gray-500 mt-2">
-                    {teamMembers[currentIndex].role}
-                </p>
-            </div>
-
-            {/* Dots */}
-            <div className="flex gap-3 mt-12">
-                {teamMembers.map((_, i) => (
-                    <div
-                        key={i}
-                        className={`w-3 h-3 rounded-full cursor-pointer transition ${i === currentIndex ? "scale-125" : ""}`}
-                        style={{ backgroundColor: i === currentIndex ? '#6b7280' : '#d1d5db' }}
-                        onClick={() => updateCarousel(i)}
-                    />
-                ))}
-            </div>
-        </div>
+        </section>
     );
 };
 

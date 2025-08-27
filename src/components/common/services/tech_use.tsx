@@ -50,7 +50,6 @@ const techWeUse = [
         name: "Figma",
         logo: "https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg", // ✅ Wikimedia always works
     }
-    ,
 ];
 
 

@@ -36,10 +36,9 @@ const ProjectShowcase = () => {
     return (
         <div className="relative mt-16">
             <ContainerStagger className="relative z-[9999] -mb-12 place-self-center px-6 pt-12 text-center">
-
                 {/* Background Half Circle */}
-                <div className="relative h-80 w-full overflow-hidden [mask-image:radial-gradient(50%_50%,white,transparent)] mb-[-40px]">
-                    <div className="absolute inset-0 before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_bottom_center,#8350e8,transparent_70%)] before:opacity-40" />
+                <div className="relative h-80 w-full overflow-hidden [mask-image:radial-gradient(50%_50%,white,transparent)] mb-[-80px]">
+                    <div className="absolute inset-0 before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_bottom_center,#60a5fa,transparent_70%)] before:opacity-40" />
                     <div className="absolute -left-1/2 top-1/2 aspect-[1/0.7] z-10 w-[200%] rounded-[100%] border-t border-zinc-900/20 dark:border-white/20 bg-white dark:bg-zinc-900" />
                     <Sparkles
                         density={1200}
@@ -47,10 +46,8 @@ const ProjectShowcase = () => {
                         color={theme === "dark" ? "#ffffff" : "#000000"}
                     />
                 </div>
-
-
                 {/* Section Label */}
-                <span className="inline-flex items-center px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200 mt-[-10px]">
+                <span className="relative z-[100] inline-flex items-center px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200 mt-[-10px]">
                     Projects
                 </span>
                 {/* Heading */}
@@ -61,16 +58,18 @@ const ProjectShowcase = () => {
                     Explore a selection of our completed projects—each crafted to solve real business challenges and deliver measurable results.
                 </p>
             </ContainerStagger>
+
             <div className="pointer-events-none absolute z-10 h-[70vh] w-full "
                 style={{
-                    background: "linear-gradient(to right, gray, rebeccapurple, blue)",
-                    filter: "blur(84px)",
+                    background: "linear-gradient(to right, gray, #3b82f6, #3b82f6)",
+                    filter: "blur(75px)",
                     mixBlendMode: "screen",
                 }}
             />
-            <ContainerScroll className="relative h-[350vh]">
+
+            <ContainerScroll className="relative h-[400vh]">
                 <ContainerSticky className="h-svh">
-                    <GalleryContainer className="">
+                    <GalleryContainer className="max-w-7xl mx-auto w-full">
                         <GalleryCol yRange={["-10%", "2%"]} className="-mt-2">
                             {IMAGES_1.map((imageUrl, index) => (
                                 // eslint-disable-next-line @next/next/no-img-element

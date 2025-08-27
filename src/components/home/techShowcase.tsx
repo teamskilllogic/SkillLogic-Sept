@@ -2,53 +2,53 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 
 const logos = [
-    { name: "Google", src: "/logos/google.svg" },
-    { name: "LinkedIn", src: "/logos/linkedin.svg" },
-    { name: "Slack", src: "/logos/slack.svg" },
-    { name: "Spotify", src: "/logos/spotify.svg" },
-    { name: "Facebook", src: "/logos/facebook.svg" },
-    { name: "TypeScript", src: "/logos/typescript.svg" },
-    { name: "Instagram", src: "/logos/instagram.svg" },
-    { name: "Gmail", src: "/logos/gmail.svg" },
-    { name: "VS Code", src: "/logos/vscode.svg" },
-    { name: "Snowflake", src: "/logos/snowflake.svg" },
-    { name: "Netflix", src: "/logos/netflix.svg" },
-    { name: "Figma", src: "/logos/figma.svg" },
-    { name: "Airtable", src: "/logos/airtable.svg" },
-    { name: "Sketch", src: "/logos/sketch.svg" },
-    { name: "Photoshop", src: "/logos/photoshop.svg" },
-    { name: "YouTube", src: "/logos/youtube.svg" },
-    { name: "Medium", src: "/logos/medium.svg" },
-    { name: "Discord", src: "/logos/discord.svg" },
+    { name: "NextJS", src: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg" },
+    { name: "TypeScript", src: "https://cdn.worldvectorlogo.com/logos/typescript.svg" },
+    { name: "ReactJS", src: "https://cdn.worldvectorlogo.com/logos/react-2.svg" },
+    { name: "Node.js", src: "https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg" },
+    { name: "Express.js", src: "https://cdn.worldvectorlogo.com/logos/express-109.svg" },
+    { name: "Javascript", src: "https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg" },
+    { name: "Tailwind CSS", src: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" },
+    { name: "Bootstrap", src: "https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg" },
+    { name: "MySQL", src: "https://www.mysql.com/common/logos/logo-mysql-170x115.png" },
+    { name: "PostgreSQL", src: "https://cdn.worldvectorlogo.com/logos/postgresql.svg" },
+    { name: "MongoDB", src: "https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg" },
+    { name: "Firebase", src: "https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" },
+    { name: "Flutter", src: "https://cdn.worldvectorlogo.com/logos/flutter.svg" },
+    { name: "Laravel", src: "https://cdn.worldvectorlogo.com/logos/laravel-2.svg" },
+    { name: "Python", src: "https://cdn.worldvectorlogo.com/logos/python-5.svg" },
+    { name: "AWS", src: "https://cdn.worldvectorlogo.com/logos/aws-2.svg" },
+    { name: "Docker", src: "https://cdn.worldvectorlogo.com/logos/docker.svg" },
+    { name: "Git", src: "https://cdn.worldvectorlogo.com/logos/git-icon.svg" },
+    { name: "Figma", src: "https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" },
+    { name: "Razorpay", src: "https://cdn.worldvectorlogo.com/logos/razorpay.svg" },
 ];
 
 const TechShowcase: React.FC = () => {
     return (
-        <section className="w-full py-20 mt-16">
+        <section className="w-full py-20 mt-8">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 rounded-3xl border p-10 bg-white shadow-sm" style={{ zIndex: 1, position: 'relative' }}>
-
                 {/* Left Content */}
                 <div className="flex-1">
-                    <p className="text-xs font-semibold tracking-wide text-gray-500 uppercase">
-                        Components
+                    <p className="text-xs font-semibold tracking-wide text-black-500 uppercase">
+                        Our Expertise
                     </p>
                     <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight mt-3">
-                        Supercharge your workflow
+                        Modern Web, App & Cloud Solutions
                     </h2>
                     <p className="text-gray-500 mt-4 max-w-lg">
-                        Build sleek, responsive interfaces in record time with our carefully crafted
-                        React and Tailwind CSS components.
+                        We help startups and businesses launch secure, scalable, and beautiful digital products. Our team specializes in custom web apps, mobile solutions, cloud infrastructure, and UI/UX design—using the latest technologies to turn your vision into reality.
                     </p>
 
                     <div className="mt-6 flex flex-wrap gap-4">
                         <Button className="bg-black text-white px-6 py-2 rounded-xl">
-                            Browse Components
+                            See Technologies
                         </Button>
                         <Button
                             variant="outline"
                             className="px-6 py-2 rounded-xl border border-gray-300"
                         >
-                            View Documentation →
+                            Why Choose Us?
                         </Button>
                     </div>
                 </div>

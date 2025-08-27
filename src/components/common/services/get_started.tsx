@@ -35,7 +35,7 @@ const services = [
 
 const GetStarted = () => {
     return (
-        <section className="w-full max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <section className="w-full max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center ">
             {/* Left Content */}
             <div>
                 <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">

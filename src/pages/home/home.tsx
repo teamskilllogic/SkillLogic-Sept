@@ -8,8 +8,9 @@ import { Team } from "@/components/home/team";
 import { Pricing } from "@/components/home/pricing";
 import { TechShowcase } from "@/components/home/techShowcase";
 import { Testimonial } from "@/components/home/testimonials";
-import { GetStarted } from "@/components/common/services/get_started";
+import { GetStarted } from "@/components/common/getstarted/getstarted";
 import { Services } from "@/components/home/services";
+import { FAQ } from "@/components/home/faqs";
 import "@/components/common/common.css";
 
 const Home = () => {
@@ -26,12 +27,13 @@ const Home = () => {
                 {/* Section 3: Timeline */}
                 <Services />
                 <ProjectShowcase />
-                <Timeline />
-                <Team />
-                <Pricing />
                 <TechShowcase />
+                <Timeline />
+                <Pricing />
                 <Testimonial />
-                 <GetStarted />
+                <Team />
+                <FAQ />
+                <GetStarted />
             </main>
             <Footer />
         </div>

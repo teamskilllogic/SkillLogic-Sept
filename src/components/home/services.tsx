@@ -36,9 +36,8 @@ const Services: React.FC = () => {
     return (
         <section className="w-full py-20">
             <div className="max-w-7xl mx-auto px-6 text-center">
-
                 {/* Section Label */}
-                <span className="inline-flex items-center px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200">
+                <span className="relative z-[100] inline-flex items-center px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200">
                     Services
                 </span>
                 {/* Heading */}
@@ -49,7 +48,6 @@ const Services: React.FC = () => {
                 <p className="text-zinc-600 text-base md:text-base xl:text-lg font-medium tracking-normal leading-6 md:leading-[30px] w-[94%] md:w-[90%] lg:w-[80%] xl:w-[56%] mx-auto">
                     Comprehensive digital solutions to transform your business and drive innovation, From product strategy to marketing, our integrated services help you turn ideas into scalable digital products—fast.
                 </p>
-
                 {/* Service Grid */}
                 <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
                     {services.map((service, idx) => (
@@ -73,6 +71,11 @@ const Services: React.FC = () => {
                         </div>
                     ))}
                 </div>
+
+                <h3 className="text-lg font-bold text-blue-500 mt-16">
+                    <span className="block text-blue-500 font-bold">Expert solutions, delivered fast.</span>
+                    <span className="text-gray-500 font-normal">From web and app development to ERP and growth strategy, Skill Logic Technologies is your partner for reliable, scalable digital services.</span>
+                </h3>
             </div>
         </section>
     );

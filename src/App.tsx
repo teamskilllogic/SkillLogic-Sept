@@ -5,7 +5,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import { Home } from "./pages/home/home";
-import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Service from "./pages/Service";
@@ -13,7 +12,8 @@ import Services from "./pages/services/services";
 import TestimonialsPage from "./pages/Testimonials/testimonials";
 import About from "./pages/about/about";
 import Contact from "./pages/contact/Contact";
-
+import WhatsAppFloat from "@/components/common/float/floatcontactbtn";
+import ScrollToTop from "@/components/common/float/scrolltotop";
 const queryClient = new QueryClient();
 
 const App = () => {
@@ -46,6 +46,7 @@ const App = () => {
               <Route path="*" element={<NotFound />} />
             </Routes>
             <WhatsAppFloat phoneNumbers={phoneNumbers} />
+            <ScrollToTop />
           </BrowserRouter>
         </TooltipProvider>
       </ThemeProvider>
