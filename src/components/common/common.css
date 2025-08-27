@@ -17,7 +17,7 @@
         calc(var(--size) * 0.36) 50% / var(--size) var(--size),
         linear-gradient(var(--line) 1px, transparent 1px var(--size)) 0%
         calc(var(--size) * 0.32) / var(--size) var(--size);
-    -webkit-mask: linear-gradient(-20deg, transparent 50%, white);
+    -webkit-mask: linear-gradient(-20deg, transparent 100%, white);
     mask: linear-gradient(-20deg, transparent 50%, white);
     top: 0;
     left: 0;
@@ -188,4 +188,12 @@
     border-radius: 50%;
     filter: blur(4px);
     transform: rotate(1deg);
+}
+
+/* globals.css */
+.perspective {
+  perspective: 1000px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
 }

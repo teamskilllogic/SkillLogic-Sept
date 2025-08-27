@@ -1,0 +1,143 @@
+import React, { useState, useEffect } from "react";
+import "@/components/common/common.css";
+
+const teamMembers = [
+    {
+        name: "Emily Kim",
+        role: "Founder",
+        img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=3687&auto=format&fit=crop",
+    },
+    {
+        name: "Michael Steward",
+        role: "Creative Director",
+        img: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=3870&auto=format&fit=crop",
+    },
+    {
+        name: "Emma Rodriguez",
+        role: "Lead Developer",
+        img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=900&auto=format&fit=crop&q=60",
+    },
+    {
+        name: "Julia Gimmel",
+        role: "UX Designer",
+        img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=900&auto=format&fit=crop&q=60",
+    },
+    {
+        name: "Lisa Anderson",
+        role: "Marketing Manager",
+        img: "https://images.unsplash.com/photo-1655249481446-25d575f1c054?w=900&auto=format&fit=crop&q=60",
+    },
+    {
+        name: "James Wilson",
+        role: "Product Manager",
+        img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=3687&auto=format&fit=crop",
+    },
+];
+
+const Team: React.FC = () => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [animating, setAnimating] = useState(false);
+
+    const updateCarousel = (newIndex: number) => {
+        if (animating) return;
+        setAnimating(true);
+
+        setCurrentIndex((prev) => {
+            const len = teamMembers.length;
+            return (newIndex + len) % len;
+        });
+
+        setTimeout(() => setAnimating(false), 800); // match transition duration
+    };
+
+    // Keyboard navigation
+    useEffect(() => {
+        const handleKey = (e: KeyboardEvent) => {
+            if (e.key === "ArrowLeft") updateCarousel(currentIndex - 1);
+            if (e.key === "ArrowRight") updateCarousel(currentIndex + 1);
+        };
+        window.addEventListener("keydown", handleKey);
+        return () => window.removeEventListener("keydown", handleKey);
+    }, [currentIndex]);
+
+    return (
+        <div className="flex flex-col items-center justify-center min-h-screen relative overflow-hidden mt-16">
+            {/* Title */}
+            <span className="inline-flex items-center px-4 py-1 rounded-full bg-white text-gray-700 text-sm font-medium border border-gray-200" style={{ zIndex: 2, position: 'relative' }}>
+                Our Team
+            </span>
+
+            {/* Heading */}
+            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-center">
+                Meet Our Talented Team
+            </h2>
+            <p className="text-gray-500 mt-4 text-center max-w-xl">
+                Empowering innovation through collaboration—our diverse team brings expertise, creativity, and passion to every project we build together.
+            </p>
+
+            {/* Carousel */}
+            <div className="relative w-full max-w-6xl h-[450px] mt-6 perspective">
+                {/* Cards */}
+                <div className="w-full h-full relative flex items-center justify-center preserve-3d transition-transform duration-700">
+                    {teamMembers.map((member, i) => {
+                        const offset = (i - currentIndex + teamMembers.length) % teamMembers.length;
+
+                        let className = "absolute w-72 h-96 rounded-2xl overflow-hidden shadow-2xl transition-all duration-700 cursor-pointer";
+                        if (offset === 0) className += " scale-110 z-20";
+                        else if (offset === 1) className += " translate-x-52 scale-90 opacity-90 z-10 grayscale";
+                        else if (offset === 2) className += " translate-x-[400px] scale-80 opacity-70 grayscale";
+                        else if (offset === teamMembers.length - 1) className += " -translate-x-52 scale-90 opacity-90 z-10 grayscale";
+                        else if (offset === teamMembers.length - 2) className += " -translate-x-[400px] scale-80 opacity-70 grayscale";
+                        else className += " opacity-0 pointer-events-none";
+
+                        return (
+                            <div key={i} className={className} onClick={() => updateCarousel(i)}>
+                                <img src={member.img} alt={member.name} className="w-full h-full object-cover" />
+                            </div>
+                        );
+                    })}
+                </div>
+
+                {/* Arrows */}
+                <button
+                    className="absolute left-5 top-1/2 -translate-y-1/2 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl hover:scale-110 transition"
+                    style={{ backgroundColor: 'black' }}
+                    onClick={() => updateCarousel(currentIndex - 1)}
+                >
+                    ‹
+                </button>
+                <button
+                    className="absolute right-5 top-1/2 -translate-y-1/2 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl hover:scale-110 transition"
+                    style={{ backgroundColor: 'black' }}
+                    onClick={() => updateCarousel(currentIndex + 1)}
+                >
+                    ›
+                </button>
+            </div>
+
+            {/* Member Info */}
+            <div className="text-center mt-12 transition-all duration-500">
+                <h2 className="text-3xl font-bold relative inline-block" style={{ color: 'black' }}>
+                    {teamMembers[currentIndex].name}
+                </h2>
+                <p className="text-lg uppercase tracking-wide text-gray-500 mt-2">
+                    {teamMembers[currentIndex].role}
+                </p>
+            </div>
+
+            {/* Dots */}
+            <div className="flex gap-3 mt-12">
+                {teamMembers.map((_, i) => (
+                    <div
+                        key={i}
+                        className={`w-3 h-3 rounded-full cursor-pointer transition ${i === currentIndex ? "scale-125" : ""}`}
+                        style={{ backgroundColor: i === currentIndex ? '#6b7280' : '#d1d5db' }}
+                        onClick={() => updateCarousel(i)}
+                    />
+                ))}
+            </div>
+        </div>
+    );
+};
+
+export { Team };
