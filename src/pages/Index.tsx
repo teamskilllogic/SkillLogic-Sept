@@ -13,6 +13,7 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
 
+
 const Index = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(

@@ -82,6 +82,14 @@ const Navbar = () => {
               >
                 {item.name}
               </Link>
+                ) : item.name === 'Portfolio' ? (
+              <Link
+                key={item.name}
+                to="/portfolio"
+                className="text-sm font-medium transition-colors hover:text-secondary dark:text-white dark:hover:text-secondary"
+              >
+                {item.name}
+              </Link>
             ) : (
               <a
                 key={item.name}

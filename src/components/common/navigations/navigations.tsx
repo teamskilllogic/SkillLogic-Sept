@@ -57,9 +57,12 @@ function Navbar() {
                 <NavigationMenuItem key={item.title}>
                   {item.href ? (
                     <>
-                      <NavigationMenuLink>
-                        <Button variant="ghost">{item.title}</Button>
+                      <NavigationMenuLink asChild>
+                        <Link to={item.href}>
+                          <Button variant="ghost">{item.title}</Button>
+                        </Link>
                       </NavigationMenuLink>
+
                     </>
                   ) : (
                     <>
@@ -103,14 +106,14 @@ function Navbar() {
         <div className="flex items-center gap-4">
           {/* Theme Toggle */}
 
-        <div className="flex justify-end w-full gap-4">
+          <div className="flex justify-end w-full gap-4">
             <Button variant="ghost" className="hidden md:inline">
-                About
+              About
             </Button>
             <div className="border-r hidden md:inline"></div>
             <Button variant="outline">Contact Us</Button>
             <Button>Get a Quote</Button>
-        </div>
+          </div>
 
           {/* Mobile Menu Toggle */}
           <Button
