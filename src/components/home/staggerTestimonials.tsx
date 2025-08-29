@@ -150,8 +150,8 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
             className={cn(
                 "absolute left-1/2 top-1/2 cursor-pointer border-2 p-8 transition-all duration-500 ease-in-out",
                 isCenter
-                    ? "z-10 bg-blue-500 text-primary-foreground border-blue-500"
-                    : "z-0 bg-card text-card-foreground border-border hover:border-blue-500/50"
+                    ? "z-10 bg-black text-primary-foreground border-black"
+                    : "z-0 bg-card text-card-foreground border-border hover:border-black"
             )}
             style={{
                 width: cardSize,

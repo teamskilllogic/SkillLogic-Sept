@@ -60,7 +60,8 @@ const Timeline: React.FC = () => {
                             {steps.map((step, index) => (
                                 <div
                                     key={index}
-                                    className="bg-white shadow-md rounded-xl border border-gray-200 px-6 py-4 w-56 text-center"
+                                    className="bg-white rounded-xl border border-gray-200 px-6 py-4 w-56 text-center"
+                                    style={{ boxShadow: '0 10px 32px rgb(34 42 53 / 0.12), 0 1px 1px rgb(0 0 0 / 0.05), 0 0 0 1px rgb(34 42 53 / 0.05), 0 4px 6px rgb(34 42 53 / 0.08), 0 24px 108px rgb(47 48 55 / 0.10)' }}
                                 >
                                     <p className="text-blue-500 font-semibold">{step.time}</p>
                                     <p className="text-black mt-1">{step.text}</p>

@@ -11,30 +11,50 @@ import { Button } from "@/components/ui/button"
 import { VideoIcon } from "lucide-react"
 import { useTheme } from "@/providers/ThemeProvider";
 
-const IMAGES_1 = [
-    "/images/adada.png",
-    "/images/asconstructs.png",
-    "/images/sknph.jpg",
-    "/images/famzoa.jpg",
-]
-const IMAGES_2 = [
-    "/images/Vardan.jpg",
-    "/images/ishwar.jpg",
-    "/images/smilecare.jpeg",
-    "/images/famzoa.jpg",
-]
-const IMAGES_3 = [
-    "/images/famzoa.jpg",
-    "/images/Brantashop.jpg",
-    "/images/Vardan.jpg",
-    "/images/ishwar.jpg",
+import { ScrollVelocity } from "@/components/home/scroll-velocity"
+
+
+const images = [
+    {
+        title: "adada",
+        thumbnail: "/images/adada.png",
+    },
+    {
+        title: "asconstructs",
+        thumbnail: "/images/asconstructs.png",
+    },
+    {
+        title: "sknph",
+        thumbnail: "/images/sknph.jpg",
+    },
+    {
+        title: "famzoa",
+        thumbnail: "/images/famzoa.jpg",
+    },
+    {
+        title: "ishwar",
+        thumbnail: "/images/ishwar.jpg",
+    },
+    {
+        title: "vardan",
+        thumbnail: "/images/Vardan.jpg",
+    },
+    {
+        title: "smilecare",
+        thumbnail: "/images/smilecare.jpeg",
+    },
+    {
+        title: "brantashop",
+        thumbnail: "/images/Brantashop.jpg",
+    },
 ]
 
+const velocity = [3, -3]
 const ProjectShowcase = () => {
     const { theme } = useTheme();
 
     return (
-        <div className="relative mt-16">
+        <div className="w-full relative mt-16 text-center">
             <ContainerStagger className="relative z-[9999] -mb-12 place-self-center px-6 pt-12 text-center">
                 {/* Background Half Circle */}
                 <div className="relative h-80 w-full overflow-hidden [mask-image:radial-gradient(50%_50%,white,transparent)] mb-[-80px]">
@@ -54,58 +74,32 @@ const ProjectShowcase = () => {
                 <h2 className="text-3xl md:text-6xl lg:text-6xl xl:text-[58px] leading-[38px] md:leading-[60px] lg:leading-[60px] xl:leading-[70px] font-extrabold text-zinc-900 text-center w-[70%] md:w-full lg:w-full xl:w-full mx-auto mb-5 md:mb-[30px] tracking-tight">
                     Showcasing Our Impactful Work
                 </h2>
+                {/* Description */}
                 <p className="text-zinc-600 text-base md:text-base xl:text-lg font-medium tracking-normal leading-6 md:leading-[30px] w-[94%] md:w-[90%] lg:w-[80%] xl:w-[56%] mx-auto">
                     Explore a selection of our completed projects—each crafted to solve real business challenges and deliver measurable results.
                 </p>
             </ContainerStagger>
 
-            <div className="pointer-events-none absolute z-10 h-[70vh] w-full "
-                style={{
-                    background: "linear-gradient(to right, gray, #3b82f6, #3b82f6)",
-                    filter: "blur(75px)",
-                    mixBlendMode: "screen",
-                }}
-            />
-
-            <ContainerScroll className="relative h-[400vh]">
-                <ContainerSticky className="h-svh">
-                    <GalleryContainer className="max-w-7xl mx-auto w-full">
-                        <GalleryCol yRange={["-10%", "2%"]} className="-mt-2">
-                            {IMAGES_1.map((imageUrl, index) => (
-                                // eslint-disable-next-line @next/next/no-img-element
-                                <img
-                                    key={index}
-                                    className="aspect-video block h-auto max-h-full w-full  rounded-md  object-cover shadow"
-                                    src={imageUrl}
-                                    alt="gallery item"
-                                />
+            <div className="w-full mt-16">
+                <div className="flex flex-col space-y-5 py-10">
+                    {velocity.map((v, index) => (
+                        <ScrollVelocity key={index} velocity={v}>
+                            {images.map(({ title, thumbnail }) => (
+                                <div
+                                    key={title}
+                                    className="relative h-[12rem] w-[18rem] md:h-[14rem] md:w-[22rem] xl:h-[18rem] xl:w-[28rem]"
+                                >
+                                    <img
+                                        src={thumbnail}
+                                        alt={title}
+                                        className="h-full w-full object-cover object-center rounded-xl shadow-lg"
+                                    />
+                                </div>
                             ))}
-                        </GalleryCol>
-                        <GalleryCol className="mt-[-50%]" yRange={["15%", "5%"]}>
-                            {IMAGES_2.map((imageUrl, index) => (
-                                // eslint-disable-next-line @next/next/no-img-element
-                                <img
-                                    key={index}
-                                    className="aspect-video block h-auto max-h-full w-full  rounded-md  object-cover shadow"
-                                    src={imageUrl}
-                                    alt="gallery item"
-                                />
-                            ))}
-                        </GalleryCol>
-                        <GalleryCol yRange={["-10%", "2%"]} className="-mt-2">
-                            {IMAGES_3.map((imageUrl, index) => (
-                                // eslint-disable-next-line @next/next/no-img-element
-                                <img
-                                    key={index}
-                                    className="aspect-video block h-auto max-h-full w-full  rounded-md  object-cover shadow"
-                                    src={imageUrl}
-                                    alt="gallery item"
-                                />
-                            ))}
-                        </GalleryCol>
-                    </GalleryContainer>
-                </ContainerSticky>
-            </ContainerScroll>
+                        </ScrollVelocity>
+                    ))}
+                </div>
+            </div>
         </div>
     )
 };

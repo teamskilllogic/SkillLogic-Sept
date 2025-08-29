@@ -15,7 +15,7 @@ import "@/components/common/common.css";
 
 const Home = () => {
     return (
-        <div className="min-h-screen bg-white service-bg">
+        <div className="min-h-screen body-bg">
             <Navbar />
             <main>
                 {/* Section 2: Banner */}

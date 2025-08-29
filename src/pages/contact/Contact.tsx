@@ -9,7 +9,7 @@ import "@/components/common/common.css";
 
 const Contact = () => {
     return (
-        <div className="min-h-screen bg-white service-bg">
+        <div className="min-h-screen bg-white body-bg">
             <Navbar />
             <main>
                 {/* Hero Section */}

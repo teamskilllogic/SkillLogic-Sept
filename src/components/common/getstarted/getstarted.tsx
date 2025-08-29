@@ -6,7 +6,7 @@ import { MdSupportAgent, MdAccessTime, MdOutlineFlashOn } from "react-icons/md";
 
 const GetStarted: React.FC = () => {
     return (
-        <section className="w-full py-20">
+        <section className="w-full py-20 text-center">
             <div className="max-w-7xl mx-auto px-6 text-center">
                 {/* Section Label */}
                 <span className="relative z-[100] inline-flex items-center px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200">
@@ -63,11 +63,10 @@ const GetStarted: React.FC = () => {
                 </div>
             </div>
 
-
             {/* Extra Info Section */}
             <div className="max-w-6xl mx-auto mt-16 px-6 grid gap-8 md:grid-cols-3">
                 {/* Free Consultation */}
-                <div className="text-center p-6 border rounded-2xl hover:shadow-lg transition">
+                <div className="text-center p-6 border rounded-2xl transition bg-white" style={{ zIndex: 2, position: 'relative', boxShadow: '0 10px 32px rgb(34 42 53 / 0.12), 0 1px 1px rgb(0 0 0 / 0.05), 0 0 0 1px rgb(34 42 53 / 0.05), 0 4px 6px rgb(34 42 53 / 0.08), 0 24px 108px rgb(47 48 55 / 0.10)' }}>
                     <MdSupportAgent className="w-10 h-10 mx-auto text-black mb-4" />
                     <h4 className="text-lg font-semibold text-gray-900">Free Consultation</h4>
                     <p className="mt-2 text-gray-600">
@@ -76,7 +75,7 @@ const GetStarted: React.FC = () => {
                 </div>
 
                 {/* Quick Response */}
-                <div className="text-center p-6 border rounded-2xl hover:shadow-lg transition">
+                <div className="text-center p-6 border rounded-2xl transition bg-white" style={{ zIndex: 2, position: 'relative', boxShadow: '0 10px 32px rgb(34 42 53 / 0.12), 0 1px 1px rgb(0 0 0 / 0.05), 0 0 0 1px rgb(34 42 53 / 0.05), 0 4px 6px rgb(34 42 53 / 0.08), 0 24px 108px rgb(47 48 55 / 0.10)' }}>
                     <MdOutlineFlashOn className="w-10 h-10 mx-auto text-black mb-4" />
                     <h4 className="text-lg font-semibold text-gray-900">Quick Response</h4>
                     <p className="mt-2 text-gray-600">
@@ -85,7 +84,7 @@ const GetStarted: React.FC = () => {
                 </div>
 
                 {/* Support Hours */}
-                <div className="text-center p-6 border rounded-2xl hover:shadow-lg transition">
+                <div className="text-center p-6 border rounded-2xl transition bg-white" style={{ zIndex: 2, position: 'relative', boxShadow: '0 10px 32px rgb(34 42 53 / 0.12), 0 1px 1px rgb(0 0 0 / 0.05), 0 0 0 1px rgb(34 42 53 / 0.05), 0 4px 6px rgb(34 42 53 / 0.08), 0 24px 108px rgb(47 48 55 / 0.10)' }}>
                     <MdAccessTime className="w-10 h-10 mx-auto text-black mb-4" />
                     <h4 className="text-lg font-semibold text-gray-900">Support Hours</h4>
                     <p className="mt-2 text-gray-600">
@@ -93,6 +92,13 @@ const GetStarted: React.FC = () => {
                     </p>
                 </div>
             </div>
+
+            <h3 className="text-lg font-bold text-blue-500 mt-16">
+                <span className="block text-blue-500 font-bold">Ready to get started?</span>
+                <span className="text-gray-500 font-normal">
+                    Take the first step towards transforming your business. Reach out to our team and let’s turn your ideas into reality!
+                </span>
+            </h3>
         </section>
     );
 };

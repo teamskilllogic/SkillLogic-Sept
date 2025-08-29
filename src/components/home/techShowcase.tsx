@@ -26,28 +26,25 @@ const logos = [
 
 const TechShowcase: React.FC = () => {
     return (
-        <section className="w-full py-20 mt-8">
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 rounded-3xl border p-10 bg-white shadow-sm" style={{ zIndex: 1, position: 'relative' }}>
+        <section className="w-full py-20 ">
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 rounded-3xl border p-10 bg-black shadow-sm" style={{ zIndex: 1, position: 'relative' }}>
                 {/* Left Content */}
                 <div className="flex-1">
-                    <p className="text-xs font-semibold tracking-wide text-black-500 uppercase">
+                    <p className="text-xs font-semibold tracking-wide text-white uppercase">
                         Our Expertise
                     </p>
-                    <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight mt-3">
+                    <h2 className="text-4xl sm:text-5xl font-extrabold leading-tight mt-3 text-white">
                         Modern Web, App & Cloud Solutions
                     </h2>
-                    <p className="text-gray-500 mt-4 max-w-lg">
+                    <p className="text-gray-500 mt-4 max-w-lg text-white">
                         We help startups and businesses launch secure, scalable, and beautiful digital products. Our team specializes in custom web apps, mobile solutions, cloud infrastructure, and UI/UX design—using the latest technologies to turn your vision into reality.
                     </p>
 
                     <div className="mt-6 flex flex-wrap gap-4">
-                        <Button className="bg-black text-white px-6 py-2 rounded-xl">
+                        <Button className="bg-white text-black px-6 py-2 rounded-xl hover:bg-white hover:text-black hover:border-black border border-white">
                             See Technologies
                         </Button>
-                        <Button
-                            variant="outline"
-                            className="px-6 py-2 rounded-xl border border-gray-300"
-                        >
+                        <Button variant="outline" className="px-6 py-2 rounded-xl border border-white bg-black text-white">
                             Why Choose Us?
                         </Button>
                     </div>
@@ -69,6 +66,13 @@ const TechShowcase: React.FC = () => {
                     ))}
                 </div>
             </div>
+
+            <h3 className="text-lg font-bold text-blue-500 mt-16 text-center">
+                <span className="block text-blue-500 font-bold">Inspired by our work?</span>
+                <span className="text-gray-500 font-normal">
+                    Let’s create something amazing together. Share your vision with us and become our next success story—reach out to start your project today!
+                </span>
+            </h3>
         </section>
     );
 };

@@ -34,8 +34,8 @@ const services = [
 
 const Services: React.FC = () => {
     return (
-        <section className="w-full py-20">
-            <div className="max-w-7xl mx-auto px-6 text-center">
+        <section className="w-full py-20 flex justify-center items-center">
+            <div className="max-w-7xl  w-full mx-auto px-6 flex flex-col items-center justify-center text-center">
                 {/* Section Label */}
                 <span className="relative z-[100] inline-flex items-center px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200">
                     Services
