@@ -128,25 +128,34 @@ const services = [
 
 const Services = () => {
     return (
-        <div className="min-h-screen bg-white body-bg">
-            <section className="w-full max-w-7xl mx-auto px-6 py-20">
+        // w-full py-20 flex justify-center items-center
+        // max-w-7xl  w-full mx-auto px-6 flex flex-col items-center justify-center text-center
+        <div className="w-full flex justify-center items-center body-bg">
+            <section className="w-full max-w-7xl mx-auto px-6 py-20 ">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <span className="inline-block px-3 py-1 text-sm rounded-full bg-gray-100 text-gray-600 mb-4">
+                    {/* Section Label */}
+                    <span className="relative z-[100] inline-flex items-center px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200">
                         Our Services
                     </span>
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                        Comprehensive digital solutions to transform your business and drive innovation
+                    {/* Heading */}
+                    <h2 className="text-3xl md:text-6xl lg:text-6xl xl:text-[58px] leading-[38px] md:leading-[60px] lg:leading-[60px] xl:leading-[70px] font-extrabold text-zinc-900 text-center w-[70%] md:w-full lg:w-full xl:w-full mx-auto mb-5 md:mb-[30px] tracking-tight">
+                        Build, Launch, and Gro All in One Place
                     </h2>
+                    {/* Description */}
+                    <p className="text-zinc-600 text-base md:text-base xl:text-lg font-medium tracking-normal leading-6 md:leading-[30px] w-[94%] md:w-[90%] lg:w-[80%] xl:w-[56%] mx-auto">
+                        Comprehensive digital solutions to transform your business and drive innovation, From product strategy to marketing, our integrated services help you turn ideas into scalable digital products—fast.
+                    </p>
                 </div>
+
                 {/* Service Cards */}
-                <div className="space-y-8">
+                <div className="space-y-8 mt-4">
                     {services.map((service, idx) => {
                         const isEven = idx % 2 === 0;
                         return (
                             <div
                                 key={idx}
-                                className={`flex flex-col md:flex-row border rounded-lg bg-white shadow-sm hover:shadow-md transition overflow-hidden ${!isEven ? 'md:flex-row-reverse' : ''}`}
+                                className={`flex flex-col md:flex-row border rounded-lg bg-white shadow-sm hover:shadow-md transition overflow-hidden ${!isEven ? 'md:flex-row-reverse' : ''}`} style={{ boxShadow: '0 10px 32px rgb(34 42 53 / 0.12), 0 1px 1px rgb(0 0 0 / 0.05), 0 0 0 1px rgb(34 42 53 / 0.05), 0 4px 6px rgb(34 42 53 / 0.08), 0 24px 108px rgb(47 48 55 / 0.10)' }}
                             >
                                 {/* Content */}
                                 <div className="w-full md:w-1/2 p-8 flex flex-col">
@@ -191,11 +200,11 @@ const Services = () => {
 
                                 {/* Image */}
                                 <div className="w-full md:w-1/2 p-6 flex items-center justify-center">
-                                    <div className="w-full h-64 md:h-full rounded-lg overflow-hidden shadow-sm flex items-center justify-center">
+                                    <div className="w-full h-64 md:h-full overflow-hidden flex items-center justify-center">
                                         <img
                                             src={service.image}
                                             alt={service.title}
-                                            className="object-cover max-w-[390px] w-auto h-auto"
+                                            className="object-cover max-w-[400px] w-auto h-auto"
                                         />
                                     </div>
                                 </div>
@@ -203,6 +212,13 @@ const Services = () => {
                         );
                     })}
                 </div>
+
+                <h3 className="text-lg font-bold text-blue-500 mt-16 text-center">
+                    <span className="block text-blue-500 font-bold">Expert solutions, delivered fast.</span>
+                    <span className="text-gray-500 font-normal">
+                        From web and app development to ERP and growth strategy, Skill Logic Technologies is your partner for reliable, scalable digital services.
+                    </span>
+                </h3>
             </section>
         </div>
     );

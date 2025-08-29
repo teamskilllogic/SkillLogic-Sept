@@ -9,7 +9,7 @@ import "@/components/common/common.css";
 
 const Service = () => {
     return (
-        <div className="min-h-screen bg-white body-bg">
+        <div className="min-h-screen body-bg">
             <Navbar />
             <main>
                 {/* Section 2: Banner (two lines overview of services) */}
