@@ -20,7 +20,7 @@ export function Hero({
     return (
         <section
             className={cn(
-                "relative bg-background text-foreground",
+                "relative bg-background text-foreground body-bg",
                 "py-12 px-4 md:py-24 lg:py-32",
                 "overflow-hidden",
                 className,

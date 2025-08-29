@@ -14,6 +14,7 @@ import About from "./pages/about/about";
 import Contact from "./pages/contact/Contact";
 import WhatsAppFloat from "@/components/common/float/floatcontactbtn";
 import ScrollToTop from "@/components/common/float/scrolltotop";
+import Portfolio from "./pages/portfolio/portfolio";
 const queryClient = new QueryClient();
 
 const App = () => {
@@ -43,6 +44,8 @@ const App = () => {
               <Route path="/home" element={<Home />} />
               <Route path="/testimonials" element={<TestimonialsPage />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/portfolio" element={<Portfolio/>}/>
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
             <WhatsAppFloat phoneNumbers={phoneNumbers} />
