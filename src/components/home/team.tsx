@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "@/components/common/common.css";
+import { Rocket, Users } from "lucide-react";
 
 const teamMembers = [
     {
@@ -64,10 +65,13 @@ const Team: React.FC = () => {
         <section className="w-full py-20 flex justify-center items-center mt-16">
             <div className="max-w-6xl w-full mx-auto px-6 flex flex-col items-center justify-center text-center ">
                 <div className="flex flex-col items-center justify-center min-h-screen relative overflow-hidden text-center ">
-
-                    {/* Title */}
-                    <span className="relative z-[100] inline-flex items-center px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200 mb-4">
-                        Our Team
+                    {/* Section Label */}
+                    <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200 mb-4"
+                        style={{ boxShadow: '0px 15px 25px rgba(0,0,0,0.15), 0px 5px 10px rgba(0,0,0,0.05)' }}>
+                        {/* Icon */}
+                        <Users className="w-4 h-4 text-black-500" />
+                        {/* {page} text */}
+                        Services
                     </span>
                     {/* Heading */}
                     <h2 className="text-3xl md:text-6xl lg:text-6xl xl:text-[58px] leading-[38px] md:leading-[60px] lg:leading-[60px] xl:leading-[70px] font-extrabold text-zinc-900 text-center w-[70%] md:w-full lg:w-full xl:w-full mx-auto mb-5 md:mb-[30px] tracking-tight">
@@ -117,7 +121,7 @@ const Team: React.FC = () => {
                     </div>
 
                     {/* Member Info */}
-                    <div className="text-center mt-12 transition-all duration-500">
+                    <div className="text-center mt-12 transition-all duration-500 mb-5 md:mb-[30px] tracking-tight">
                         <h2 className="text-3xl font-bold relative inline-block" style={{ color: 'black' }}>
                             {teamMembers[currentIndex].name}
                         </h2>
@@ -138,7 +142,16 @@ const Team: React.FC = () => {
                         ))}
                     </div> */}
 
-                    <h3 className="text-lg font-bold text-blue-500 mt-16">
+                    {/* Buttons */}
+                    <div className="flex items-center gap-4 mt-4">
+                        <button className="flex items-center gap-2 bg-black text-white px-3 py-2 rounded-xl font-medium hover:bg-gray-800 transition">
+                            <Rocket size={18} />
+                            Lets Get Started
+                        </button>
+                    </div>
+
+
+                    <h3 className="text-lg font-bold text-blue-500 mt-8">
                         <span className="block text-blue-500 font-bold">Collaboration powers innovation.</span>
                         <span className="text-gray-500 font-normal">Our team’s diverse skills and shared passion drive every project’s success. Together, we turn ideas into reality and help your business grow.</span>
                     </h3>

@@ -135,7 +135,8 @@ const Services = () => {
                 {/* Header */}
                 <div className="text-center mb-16">
                     {/* Section Label */}
-                    <span className="relative z-[100] inline-flex items-center px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200">
+                    <span className="relative z-[100] inline-flex items-center px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200"
+                        style={{ boxShadow: '0px 15px 25px rgba(0,0,0,0.15), 0px 5px 10px rgba(0,0,0,0.05)' }}>
                         Our Services
                     </span>
                     {/* Heading */}

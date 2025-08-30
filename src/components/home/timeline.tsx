@@ -1,5 +1,7 @@
 import React from "react";
 import "@/components/common/common.css";
+import { Rocket } from "lucide-react";
+import { Clock } from "lucide-react";
 
 type Step = {
     time: string;
@@ -19,8 +21,12 @@ const Timeline: React.FC = () => {
         <section className="w-full py-20 flex justify-center items-center">
             <div className="max-w-6xl w-full mx-auto px-6 flex flex-col items-center justify-center text-center">
                 <div className="flex flex-col items-center justify-center min-h-screen relative overflow-hidden mt-16 text-center css-1we0dey">
-                    {/* Title */}
-                    <span className="relative z-[100] inline-flex items-center px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200">
+                    {/* Section Label */}
+                    <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200 mb-4"
+                        style={{ boxShadow: '0px 15px 25px rgba(0,0,0,0.15), 0px 5px 10px rgba(0,0,0,0.05)' }}>
+                        {/* Icon */}
+                        <Clock className="w-4 h-4 text-black-500" />
+                        {/* {page} text */}
                         Timeline
                     </span>
                     {/* Heading */}
@@ -32,7 +38,7 @@ const Timeline: React.FC = () => {
                         From strategy to launch, our expert team delivers websites, apps, ERPs, and CRMs that save you hundreds of hours and drive real business results. We combine deep technical know-how with a startup mindset to help you innovate, scale, and succeed faster.
                     </p>
 
-                    <div className="relative w-full flex justify-center body-bg mt-16">
+                    <div className="relative w-full flex justify-center body-bg mt-16 mb-5 md:mb-[30px] tracking-tight">
                         {/* Blue dashed connector (SVG curve) */}
                         <svg
                             className="absolute top-1/2 -translate-y-1/2 w-full h-32 pointer-events-none"
@@ -70,8 +76,16 @@ const Timeline: React.FC = () => {
                         </div>
                     </div>
 
+                    {/* Buttons */}
+                    <div className="flex items-center gap-4 mt-4">
+                        <button className="flex items-center gap-2 bg-black text-white px-3 py-2 rounded-xl font-medium hover:bg-gray-800 transition">
+                            <Rocket size={18} />
+                            Have Any Questions? Contact Us
+                        </button>
+                    </div>
 
-                    <h3 className="text-lg font-bold text-blue-500 mt-16">
+
+                    <h3 className="text-lg font-bold text-blue-500 mt-8">
                         <span className="block text-blue-500 font-bold">Founders reclaim their time.</span>
                         <span className="text-gray-500 font-normal">Skill Logic Technologies turns months of work into weeks—so you can focus on growth, not gruntwork.</span>
                         <a className="text-blue-600 underline ml-2" href="#pricing">

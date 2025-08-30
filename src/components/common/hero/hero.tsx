@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button"
 import { Glow } from "@/components/ui/glow"
 import { FaGithub } from "react-icons/fa";
 import { Rocket, Phone } from "lucide-react"; // icons
+import { Star } from "lucide-react"; // example icon
+
 
 interface Hero {
     page: string
@@ -18,18 +20,18 @@ export function Hero({
     className,
 }: Hero) {
     return (
-        <section
-            className={cn(
-                "relative bg-background text-foreground body-bg",
-                "py-12 px-4 md:py-24 lg:py-32",
-                "overflow-hidden",
-                className,
-            )}
-        >
+        <section className={cn("relative bg-background text-foreground body-bg", "py-12 px-4 md:py-24 lg:py-32", "overflow-hidden", className,)}  >
             <div className="relative mx-auto max-w-[1280px] flex flex-col gap-12 lg:gap-24">
                 <div className="relative z-10 flex flex-col items-center gap-6 pt-4 md:pt-8 text-center">
                     {/* page */}
-                    <span className="inline-flex items-center px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200">
+                    <span
+                        className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200"
+                        style={{ boxShadow: "0px 15px 25px rgba(0,0,0,0.15), 0px 5px 10px rgba(0,0,0,0.05)", }}
+                    >
+                        <img src="/images/logo.png" alt="icon" className="w-5 h-5"/>
+                        {/* Icon on the left */}
+                        {/* <Star className="w-4 h-4 text-black-500" /> */}
+                        {/* {page} text */}
                         {page}
                     </span>
                     {/* Heading */}
@@ -70,6 +72,7 @@ export function Hero({
                 </div>
             </div>
             {/* Background Glow */}
+            {/* -------------------------------------  */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <Glow
                     variant="above"

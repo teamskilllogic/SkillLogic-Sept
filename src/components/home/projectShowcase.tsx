@@ -1,4 +1,5 @@
 import { Sparkles } from "@/components/home/sparkles"
+import { SquareChartGantt } from "lucide-react";
 import {
     ContainerAnimated,
     ContainerScroll,
@@ -67,7 +68,11 @@ const ProjectShowcase = () => {
                     />
                 </div>
                 {/* Section Label */}
-                <span className="relative z-[100] inline-flex items-center px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200 mt-[-10px]">
+                <span className="relative z-[100] inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200 mb-4"
+                        style={{ boxShadow: '0px 15px 25px rgba(0,0,0,0.15), 0px 5px 10px rgba(0,0,0,0.05)' }}>
+                {/* Icon */}
+                <SquareChartGantt className="w-4 h-4 text-black-500" />
+                {/* {page} text */}
                     Projects
                 </span>
                 {/* Heading */}

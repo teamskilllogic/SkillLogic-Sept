@@ -1,3 +1,4 @@
+import { ShieldAlert, Rocket } from "lucide-react";
 import React, { useState } from "react";
 
 type FAQItem = {
@@ -39,8 +40,12 @@ const FAQ: React.FC = () => {
         <section className="w-full py-20 flex justify-center items-center">
             <div className="max-w-6xl w-full mx-auto px-6 flex flex-col items-center justify-center text-center">
                 <div className="flex flex-col items-center justify-center min-h-screen relative overflow-hidden mt-16 text-center">
-                    {/* Title */}
-                    <span className="relative z-[100] inline-flex items-center px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200">
+                    {/* Section Label */}
+                    <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200 mb-4"
+                        style={{ boxShadow: '0px 15px 25px rgba(0,0,0,0.15), 0px 5px 10px rgba(0,0,0,0.05)' }}>
+                        {/* Icon */}
+                        <ShieldAlert className="w-4 h-4 text-black-500" />
+                        {/* {page} text */}
                         FAQs
                     </span>
                     {/* Heading */}
@@ -53,7 +58,7 @@ const FAQ: React.FC = () => {
                     </p>
 
 
-                    <div className="max-w-6xl mx-auto px-6 text-center mt-16">
+                    <div className="max-w-6xl mx-auto px-6 text-center mt-16 mb-5 md:mb-[30px] tracking-tight">
                         {/* FAQ List */}
                         <div className="space-y-6">
                             {faqs.map((faq, index) => (
@@ -85,8 +90,16 @@ const FAQ: React.FC = () => {
                         </div>
                     </div>
 
+                    {/* Buttons */}
+                    <div className="flex items-center gap-4 mt-4">
+                        <button className="flex items-center gap-2 bg-black text-white px-3 py-2 rounded-xl font-medium hover:bg-gray-800 transition">
+                            <Rocket size={18} />
+                            Have Any Questions? Let's Chat
+                        </button>
+                    </div>
 
-                    <h3 className="text-lg font-bold text-blue-500 mt-16">
+
+                    <h3 className="text-lg font-bold text-blue-500 mt-8">
                         <span className="block text-blue-500 font-bold">Still have questions?</span>
                         <span className="text-gray-500 font-normal">If you can't find the answer you're looking for, our team is just a message away. We're here to help you make the best decision for your business.</span>
                     </h3>
