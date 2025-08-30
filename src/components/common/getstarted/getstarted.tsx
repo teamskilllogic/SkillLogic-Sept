@@ -3,6 +3,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { LightningBoltIcon } from "@radix-ui/react-icons";
 import { MdSupportAgent, MdAccessTime, MdOutlineFlashOn } from "react-icons/md";
 import { Rocket, ChartNoAxesCombined } from "lucide-react";
+import { Connectivity } from "@/components/common/connectivity/connectivity";
 
 
 const GetStarted: React.FC = () => {
@@ -40,8 +41,11 @@ const GetStarted: React.FC = () => {
                 </div>
             </div>
 
+            {/* Connectivity Section */}
+            <Connectivity />
+
             {/* WhatsApp Section */}
-            <div className="max-w-6xl mx-auto mt-20 px-6">
+            <div className="max-w-6xl mx-auto px-6">
                 <div className="text-white rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between" style={{ background: '#131316' }}>
                     {/* Left Content */}
                     <div className="flex items-center space-x-4">
