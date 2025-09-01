@@ -25,7 +25,7 @@ const Navbar = () => {
     };
   }, []);
 
-  const navItems = [
+  const Items = [
     { name: 'Home', href: '/home' },
     { name: 'Services', href: '/services' },
     { name: 'Portfolio', href: '/portfolio' },
@@ -43,12 +43,13 @@ const Navbar = () => {
   };
 
   return (
-    <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${scrolled
-          ? 'bg-white/90 dark:bg-primary/90 backdrop-blur-md shadow-md py-3'
-          : 'bg-transparent py-5'
-        }`}
-    >
+    <header
+    className={`fixed w-full z-50 transition-all duration-300 ${
+      scrolled
+        ? 'bg-white/90 dark:bg-primary/90 backdrop-blur-md shadow-md py-3'
+        : 'bg-transparent py-5'
+    }`}
+  >
       <div className="container-section flex justify-between items-center">
         {/* Logo & SkillLogic Text */}
         <Link to="/" className="flex items-center space-x-3 z-50">
@@ -62,9 +63,9 @@ const Navbar = () => {
           </span>
         </Link>
 
-        {/* Desktop Navigation */}
+        {/* Desktop igation */}
         <div className="hidden md:flex items-center space-x-8">
-          {navItems.map((item) => (
+          {Items.map((item) => (
             item.name === 'Services' ? (
               <Link
                 key={item.name}
@@ -122,7 +123,7 @@ const Navbar = () => {
           </Button>
         </div>
 
-        {/* Mobile Navigation Toggle */}
+        {/* Mobile igation Toggle */}
         <div className="md:hidden flex items-center space-x-4 z-50">
           {/* Theme Toggle for Mobile */}
           <Toggle
@@ -145,12 +146,12 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation Menu */}
+        {/* Mobile igation Menu */}
         <div
           className={`fixed inset-0 bg-primary/95 dark:bg-gray-900/95 flex flex-col items-center justify-center space-y-8 ${isOpen ? 'translate-x-0' : 'translate-x-full'
             } transition-transform duration-300 ease-in-out md:hidden`}
         >
-          {navItems.map((item) => (
+          {Items.map((item) => (
             item.name === 'Services' ? (
               <Link
                 key={item.name}
@@ -200,7 +201,7 @@ const Navbar = () => {
           </Button>
         </div>
       </div>
-    </nav>
+    </header>
   );
 };
 

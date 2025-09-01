@@ -7,8 +7,7 @@ const WhyChooseUs = () => {
       <div className="max-w-6xl mx-auto px-6 text-center">
         {/* Title */}
         <h2 className="text-4xl font-extrabold text-black mb-4 tracking-tight">
-          Why <span className="text-blue-600">Choose Us</span>
-        </h2>
+          Why Choose Us</h2>
         <p className="text-gray-600 max-w-2xl mx-auto mb-14">
           We’re not just developers — we’re partners in your journey. Our blend
           of experience, creativity, and dedication ensures that your project

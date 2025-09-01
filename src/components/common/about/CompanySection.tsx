@@ -6,8 +6,7 @@ const CompanySection = () => {
     <section className="py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8">
-          About <span className="text-blue-600">Us</span>
-        </h2>
+          About Us</h2>
         <div className="max-w-4xl mx-auto">
           <p className="text-lg text-gray-600 leading-relaxed mb-8">
             SkillLogic is a trusted technology partner delivering innovative

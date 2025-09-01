@@ -34,8 +34,7 @@ const ProcessSection = () => {
         {/* Title */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-extrabold text-gray-900 mb-4">
-            Our <span className="text-blue-600">Process</span>
-          </h2>
+            Our Process</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             A clear step-by-step roadmap to delivering high-quality, reliable,
             and client-focused web solutions.
