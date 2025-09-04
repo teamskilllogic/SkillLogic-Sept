@@ -150,47 +150,75 @@ const Services = () => {
                 </div>
 
                 {/* Service Cards */}
-                <div className="space-y-8 mt-4">
+                <div className="grid gap-10">
                     {services.map((service, idx) => {
                         const isEven = idx % 2 === 0;
                         return (
                             <div
                                 key={idx}
-                                className={`flex flex-col md:flex-row border rounded-lg bg-white shadow-sm hover:shadow-md transition overflow-hidden ${!isEven ? 'md:flex-row-reverse' : ''}`} style={{ boxShadow: '0 10px 32px rgb(34 42 53 / 0.12), 0 1px 1px rgb(0 0 0 / 0.05), 0 0 0 1px rgb(34 42 53 / 0.05), 0 4px 6px rgb(34 42 53 / 0.08), 0 24px 108px rgb(47 48 55 / 0.10)' }}
+                                className={`group relative bg-white rounded-3xl border border-gray-100 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2 ${!isEven ? 'lg:flex-row-reverse' : ''} flex flex-col lg:flex-row`}
+                                style={{
+                                    boxShadow: '0 4px 24px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.1)'
+                                }}
                             >
+                                {/* Subtle gradient overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
                                 {/* Content */}
-                                <div className="w-full md:w-1/2 p-8 flex flex-col">
-                                    {/* Header */}
-                                    <div className="flex items-center space-x-3 mb-2">
-                                        <div className="p-2 bg-gray-100 rounded-full">{service.icon}</div>
-                                        <h3 className="text-lg font-semibold">{service.title}</h3>
+                                <div className="relative flex-1 p-10 lg:p-14 flex flex-col">
+                                    {/* Header with enhanced styling */}
+                                    <div className="flex items-start space-x-5 mb-6">
+                                        <div className="relative">
+                                            <div className="p-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl group-hover:from-blue-100 group-hover:to-blue-200 transition-all duration-300 shadow-sm">
+                                                {React.cloneElement(service.icon as React.ReactElement, {
+                                                    className: "h-7 w-7 text-blue-600"
+                                                })}
+                                            </div>
+                                            {/* Subtle ring on hover */}
+                                            <div className="absolute inset-0 rounded-2xl ring-2 ring-blue-200 ring-opacity-0 group-hover:ring-opacity-50 transition-all duration-300" />
+                                        </div>
+                                        <div className="flex-1">
+                                            <h3 className="text-2xl lg:text-3xl font-bold text-black mb-2 group-hover:text-blue-900 transition-colors duration-300">
+                                                {service.title}
+                                            </h3>
+                                            <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-50 border border-blue-100">
+                                                <div className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></div>
+                                                <span className="text-sm text-blue-700 font-medium">{service.duration}</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <p className="text-xs text-gray-500 mb-2">{service.duration}</p>
 
-                                    {/* Description */}
-                                    <p className="text-gray-600 mb-6">{service.description}</p>
+                                    {/* Enhanced description */}
+                                    <p className="text-gray-700 text-lg leading-relaxed mb-10 font-medium">
+                                        {service.description}
+                                    </p>
 
-                                    {/* Included */}
-                                    <div className="mb-4">
-                                        <p className="font-medium text-gray-900 mb-2">What’s included:</p>
-                                        <ul className="space-y-2">
+                                    {/* What's included with better styling */}
+                                    <div className="mb-10">
+                                        <h4 className="font-bold text-black mb-5 text-lg">What's included:</h4>
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                             {service.included.map((item, i) => (
-                                                <li key={i} className="flex items-start space-x-2">
-                                                    <CheckCircle className="h-5 w-5 text-blue-500 flex-shrink-0" />
-                                                    <span className="text-gray-700">{item}</span>
-                                                </li>
+                                                <div key={i} className="flex items-center space-x-3 group/item">
+                                                    <div className="relative">
+                                                        <div className="w-3 h-3 bg-blue-600 rounded-full flex-shrink-0 group-hover/item:scale-110 transition-transform duration-200"></div>
+                                                        <div className="absolute inset-0 w-3 h-3 bg-blue-400 rounded-full animate-ping opacity-20"></div>
+                                                    </div>
+                                                    <span className="text-gray-700 font-medium group-hover/item:text-gray-900 transition-colors duration-200">
+                                                        {item}
+                                                    </span>
+                                                </div>
                                             ))}
-                                        </ul>
+                                        </div>
                                     </div>
 
-                                    {/* Deliverables */}
+                                    {/* Enhanced deliverables */}
                                     <div className="mt-auto">
-                                        <p className="font-medium text-gray-900 mb-2">Deliverables:</p>
-                                        <div className="flex flex-wrap gap-2">
+                                        <h4 className="font-bold text-black mb-5 text-lg">Deliverables:</h4>
+                                        <div className="flex flex-wrap gap-3">
                                             {service.deliverables.map((d, i) => (
                                                 <span
                                                     key={i}
-                                                    className="px-3 py-1 text-sm rounded-md bg-gray-100 text-gray-700"
+                                                    className="px-5 py-2.5 text-sm font-semibold rounded-full bg-white text-gray-700 border-2 border-gray-200 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 transition-all duration-200 cursor-default shadow-sm"
                                                 >
                                                     {d}
                                                 </span>
@@ -200,12 +228,12 @@ const Services = () => {
                                 </div>
 
                                 {/* Image */}
-                                <div className="w-full md:w-1/2 p-6 flex items-center justify-center">
-                                    <div className="w-full h-64 md:h-full overflow-hidden flex items-center justify-center">
+                                <div className="flex-1 p-8 lg:p-12 flex items-center justify-center bg-gray-50">
+                                    <div className="w-full max-w-md">
                                         <img
                                             src={service.image}
                                             alt={service.title}
-                                            className="object-cover max-w-[400px] w-auto h-auto"
+                                            className="w-full h-auto object-contain rounded-xl"
                                         />
                                     </div>
                                 </div>
@@ -214,6 +242,7 @@ const Services = () => {
                     })}
                 </div>
 
+                {/* Bottom CTA */}
                 <h3 className="text-lg font-bold text-blue-500 mt-16 text-center">
                     <span className="block text-blue-500 font-bold">Expert solutions, delivered fast.</span>
                     <span className="text-gray-500 font-normal">

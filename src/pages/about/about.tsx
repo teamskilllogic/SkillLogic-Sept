@@ -7,7 +7,7 @@ import { Team } from "@/components/home/team";
 import { Testimonial } from "@/components/home/testimonials";
 import "@/components/common/common.css";
 import CompanySection from "@/components/common/about/CompanySection";
-import OurStory from "@/components/common/about/OurStory";
+import {OurStory} from "@/components/common/about/OurStory";
 import ProcessSection from "@/components/common/about/ProcessSection";
 import { FAQ } from "@/components/home/faqs";
 

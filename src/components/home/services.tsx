@@ -57,31 +57,33 @@ const Services: React.FC = () => {
                 {/* Service Grid */}
                 <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-5 md:mb-[30px] tracking-tight">
                     {services.map((service, idx) => (
-                        <div key={idx} className="flex flex-col items-center text-center">
-                            {/* Icon Circle */}
-                            <div className="flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-5">
-                                {React.cloneElement(service.icon, { className: "h-8 w-8 text-black" })}
+                        <div key={idx} className="flex flex-col items-center text-center group hover:transform hover:scale-105 transition-all duration-300">
+                            {/* Enhanced Icon Circle */}
+                            <div className="flex items-center justify-center w-16 h-16 rounded-2xl bg-blue-50 mb-5 group-hover:bg-blue-100 transition-colors duration-300 shadow-sm">
+                                {React.cloneElement(service.icon, { className: "h-8 w-8 text-blue-600" })}
                             </div>
                             {/* Title */}
-                            <h3 className="text-xl font-bold text-black mb-1">{service.title}</h3>
+                            <h3 className="text-xl font-bold text-black mb-3 group-hover:text-blue-600 transition-colors duration-300">{service.title}</h3>
                             {/* Description */}
-                            <p className="text-gray-500 text-base mt-1 mb-1">
+                            <p className="text-gray-500 text-base mb-4">
                                 {service.description}
                             </p>
-                            {/* Sub Items */}
-                            <ul className="mt-3 space-y-1 text-base text-gray-700">
+                            {/* Sub Items with clean styling */}
+                            <div className="flex flex-wrap gap-2 justify-center">
                                 {service.items.map((item, i) => (
-                                    <li key={i}>{item}</li>
+                                    <span key={i} className="text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded-full">
+                                        {item}
+                                    </span>
                                 ))}
-                            </ul>
+                            </div>
                         </div>
                     ))}
                 </div>
 
-                {/* Buttons */}
-                <div className="flex items-center gap-4 mt-4">
-                    <button className="flex items-center gap-2 bg-black text-white px-3 py-2 rounded-xl font-medium hover:bg-gray-800 transition">
-                        <Rocket size={18} />
+                {/* Enhanced Button */}
+                <div className="flex items-center gap-4 mt-8">
+                    <button className="flex items-center gap-2 bg-black text-white px-5 py-3 rounded-xl font-medium hover:bg-gray-800 transition-all duration-300 shadow-md hover:shadow-lg">
+                        <Rocket size={20} />
                         Explore All Services
                     </button>
                 </div>
