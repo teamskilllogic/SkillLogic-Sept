@@ -1,38 +1,42 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 const testimonials = [
   {
-    quote: "SkillLogic completely transformed our online presence. Their team not only designed a beautiful website but also helped us implement strategies that significantly increased our conversion rates. The ROI has been incredible!",
+    quote:
+      "SkillLogic completely transformed our online presence. Their team not only designed a beautiful website but also helped us implement strategies that significantly increased our conversion rates. The ROI has been incredible!",
     author: "Nitesh Srivastava",
     context: "on website development & SEO",
     color: "from-blue-400 to-indigo-500",
     foldColor: "from-blue-600 to-indigo-700",
-    image: "/images/Nitesh.jpg"
+    image: "/images/Nitesh.jpg",
   },
   {
-    quote: "Their SEO expertise boosted our rankings in weeks. The team's knowledge and dedication to our success exceeded all expectations. Highly recommend SkillLogic for any digital marketing needs!",
+    quote:
+      "Their SEO expertise boosted our rankings in weeks. The team's knowledge and dedication to our success exceeded all expectations. Highly recommend SkillLogic for any digital marketing needs!",
     author: "Sanket Mishra",
     context: "on SEO & digital marketing",
     color: "from-blue-400 to-indigo-500",
     foldColor: "from-blue-600 to-indigo-700",
-    image: "/images/sanket.jpeg"
+    image: "/images/sanket.jpeg",
   },
   {
-    quote: "Working with SkillLogic was the best decision we made for our app development. The team delivered a flawless UI that our users absolutely love. Their attention to detail is unmatched.",
+    quote:
+      "Working with SkillLogic was the best decision we made for our app development. The team delivered a flawless UI that our users absolutely love. Their attention to detail is unmatched.",
     author: "Sunny Kumar",
     context: "on mobile app development",
     color: "from-blue-400 to-indigo-500",
     foldColor: "from-blue-600 to-indigo-700",
-    image: "/images/Sunny.jpeg"
+    image: "/images/Sunny.jpeg",
   },
   {
-    quote: "Working with SkillLogic was the best decision we made for our website redesign.",
+    quote:
+      "Working with SkillLogic was the best decision we made for our website redesign.",
     author: "Puja Patel",
-    context : "Marketing Head",
+    context: "Marketing Head",
     color: "from-blue-400 to-indigo-500",
     foldColor: "from-blue-600 to-indigo-700",
     image: "/images/puja.jpg",
-  }
+  },
 ];
 
 const StickyNoteTestimonials = () => {
@@ -54,7 +58,7 @@ const StickyNoteTestimonials = () => {
             OUR CUSTOMERS
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Hear from <span className="text-blue-600">SkillLogic</span> clients
+            Hear from SkillLogic clients
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Real stories of what it means to work with SkillLogic
@@ -68,20 +72,31 @@ const StickyNoteTestimonials = () => {
               <div
                 key={index}
                 className={`relative w-full max-w-sm lg:max-w-xs transform transition-all duration-700 ease-out ${
-                  isVisible 
-                    ? 'translate-y-0 opacity-100' 
-                    : 'translate-y-20 opacity-0'
+                  isVisible
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-20 opacity-0"
                 }`}
-                style={{ 
+                style={{
                   animationDelay: `${index * 200}ms`,
-                  zIndex: testimonials.length - index 
+                  zIndex: testimonials.length - index,
                 }}
               >
                 {/* Sticky Note Card */}
-                <div className={`sticky-note relative bg-gradient-to-br ${testimonial.color} rounded-lg shadow-xl transform rotate-1 hover:rotate-0 hover:scale-105 transition-all duration-300 cursor-pointer`}>
+                <div
+                  className={`sticky-note relative bg-gradient-to-br ${testimonial.color} rounded-lg shadow-xl transform rotate-1 hover:rotate-0 hover:scale-105 transition-all duration-300 cursor-pointer`}
+                >
                   {/* Folded Corner */}
-                  <div className="absolute top-0 right-0 w-0 h-0 border-l-[25px] border-l-transparent border-t-[25px] border-t-current rounded-bl-lg" style={{ borderTopColor: testimonial.foldColor.includes('emerald') ? '#059669' : testimonial.foldColor.includes('yellow') ? '#d97706' : '#2563eb' }}></div>
-                  
+                  <div
+                    className="absolute top-0 right-0 w-0 h-0 border-l-[25px] border-l-transparent border-t-[25px] border-t-current rounded-bl-lg"
+                    style={{
+                      borderTopColor: testimonial.foldColor.includes("emerald")
+                        ? "#059669"
+                        : testimonial.foldColor.includes("yellow")
+                        ? "#d97706"
+                        : "#2563eb",
+                    }}
+                  ></div>
+
                   {/* Content */}
                   <div className="p-6 text-white">
                     <blockquote className="text-sm leading-relaxed mb-4 font-medium">
@@ -89,14 +104,18 @@ const StickyNoteTestimonials = () => {
                     </blockquote>
                     <div className="border-t border-white/20 pt-3">
                       <div className="flex items-center space-x-3">
-                        <img 
-                          src={testimonial.image} 
+                        <img
+                          src={testimonial.image}
                           alt={testimonial.author}
                           className="w-10 h-10 rounded-full object-cover border-2 border-white/30 shadow-lg"
                         />
                         <div>
-                          <div className="font-semibold text-sm">{testimonial.author}</div>
-                          <div className="text-xs text-white/80">{testimonial.context}</div>
+                          <div className="font-semibold text-sm">
+                            {testimonial.author}
+                          </div>
+                          <div className="text-xs text-white/80">
+                            {testimonial.context}
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -118,12 +137,18 @@ const StickyNoteTestimonials = () => {
               </div>
               <div className="w-px h-4 bg-gray-300"></div>
               <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                <div
+                  className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"
+                  style={{ animationDelay: "0.5s" }}
+                ></div>
                 <span>5-Star Rating</span>
               </div>
               <div className="w-px h-4 bg-gray-300"></div>
               <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+                <div
+                  className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"
+                  style={{ animationDelay: "1s" }}
+                ></div>
                 <span>24/7 Support</span>
               </div>
             </div>
