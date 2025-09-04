@@ -6,7 +6,7 @@
 
 .body-bg::before {
     --size: 45px;
-    --line: color-mix(in hsl, canvasText, transparent 85%);
+    --line: color-mix(in hsl, #131316, transparent 90%);
     content: "";
     height: 100vh;
     width: 100vw;
@@ -15,8 +15,8 @@
         linear-gradient(90deg, var(--line) 1px,
             transparent 1px var(--size)) calc(var(--size) * 0.36) 50% / var(--size) var(--size),
         linear-gradient(var(--line) 1px, transparent 1px var(--size)) 0% calc(var(--size) * 0.32) / var(--size) var(--size);
-    -webkit-mask: linear-gradient(-20deg, transparent 50%, white);
-    mask: linear-gradient(-20deg, transparent 50%, white);
+    -webkit-mask: linear-gradient(-20deg, transparent 50%,  #F4F4F4);
+    mask: linear-gradient(-20deg, transparent 50%,  #F4F4F4);
     top: 0;
     left: 0;
     transform-style: flat;

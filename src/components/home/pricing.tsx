@@ -1,7 +1,8 @@
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Check } from "lucide-react";
+import { Check, Rocket } from "lucide-react";
+import { IndianRupee } from "lucide-react";
 
 const plans = [
     {
@@ -55,8 +56,12 @@ const Pricing: React.FC = () => {
     return (
         <section className="w-full py-20 flex flex-col items-center text-center items-center">
             <div className="max-w-7xl  w-full mx-auto px-6 flex flex-col items-center justify-center text-center">
-                {/* Section Label */}
-                <span className="relative z-[100] inline-flex items-center px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200 mb-4">
+                 {/* Section Label */}
+                <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200 mb-4"
+                        style={{ boxShadow: '0px 15px 25px rgba(0,0,0,0.15), 0px 5px 10px rgba(0,0,0,0.05)' }}>
+                {/* Icon */}
+                <IndianRupee className="w-4 h-4 text-black-500" />
+                {/* {page} text */}
                     Pricing
                 </span>
                 {/* Heading */}
@@ -67,10 +72,11 @@ const Pricing: React.FC = () => {
                 <p className="text-zinc-600 text-base md:text-base xl:text-lg font-medium tracking-normal leading-6 md:leading-[30px] w-[94%] md:w-[90%] lg:w-[80%] xl:w-[56%] mx-auto">
                     Managing a small business today is already tough.
                 </p>
+
                 {/* Pricing Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 max-w-6xl w-full" style={{ zIndex: 1, position: 'relative' }}>
                     {plans.map((plan, idx) => (
-                        <Card key={idx} className="flex flex-col justify-between bg-black text-white border border-gray-800">
+                        <Card key={idx} className="flex flex-col justify-between text-white border border-gray-800  rounded-3xl "  style={{ background: '#131316' }}>
                             <CardHeader>
                                 <CardTitle className="text-xl text-white">{plan.name}</CardTitle>
                                 <p className="text-gray-300 mt-2">{plan.description}</p>
@@ -110,7 +116,7 @@ const Pricing: React.FC = () => {
                 </div>
 
                 {/* Custom Plan Card */}
-                <Card className="mt-12 max-w-6xl w-full bg-black text-white border border-gray-800" style={{ zIndex: 1, position: 'relative' }}>
+                <Card className="mt-12 max-w-6xl w-full text-white border border-gray-800  rounded-3xl  mb-5 md:mb-[30px] tracking-tight" style={{ zIndex: 1, position: 'relative', background: '#131316'}}>
                     <CardContent className="flex flex-col md:flex-row justify-between gap-8 p-8">
                         {/* Left side */}
                         <div className="flex-1">
@@ -173,7 +179,15 @@ const Pricing: React.FC = () => {
                     </CardContent>
                 </Card>
 
-                <h3 className="text-lg font-bold text-blue-500 mt-16">
+                {/* Buttons */}
+                <div className="flex items-center gap-4 mt-4">
+                    <button className="flex items-center gap-2 bg-black text-white px-3 py-2 rounded-xl font-medium hover:bg-gray-800 transition">
+                        <Rocket size={18} />
+                        Have Any Questions? Contact Us
+                    </button>
+                </div>
+
+                <h3 className="text-lg font-bold text-blue-500 mt-8">
                     <span className="block text-blue-500 font-bold">Found the right plan for you?</span>
                     <span className="text-gray-500 font-normal">
                         Secure your spot and let us help you grow. If you need a custom solution or have questions, our team is ready to guide you every step of the way.

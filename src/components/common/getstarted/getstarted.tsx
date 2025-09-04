@@ -2,15 +2,21 @@ import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { LightningBoltIcon } from "@radix-ui/react-icons";
 import { MdSupportAgent, MdAccessTime, MdOutlineFlashOn } from "react-icons/md";
+import { Rocket, ChartNoAxesCombined } from "lucide-react";
+import { Connectivity } from "@/components/common/connectivity/connectivity";
 
 
 const GetStarted: React.FC = () => {
     return (
-        <section className="w-full py-20 text-center">
+        <section className="w-full py-20">
             <div className="max-w-7xl mx-auto px-6 text-center">
                 {/* Section Label */}
-                <span className="relative z-[100] inline-flex items-center px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200">
-                    Get Started Today
+                <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200 mb-4"
+                    style={{ boxShadow: '0px 15px 25px rgba(0,0,0,0.15), 0px 5px 10px rgba(0,0,0,0.05)' }}>
+                    {/* Icon */}
+                    <ChartNoAxesCombined className="w-4 h-4 text-black-500" />
+                    {/* {page} text */}
+                    Get Started
                 </span>
                 {/* Heading */}
                 <h2 className="text-3xl md:text-6xl lg:text-6xl xl:text-[58px] leading-[38px] md:leading-[60px] lg:leading-[60px] xl:leading-[70px] font-extrabold text-zinc-900 text-center w-[70%] md:w-full lg:w-full xl:w-full mx-auto mb-5 md:mb-[30px] tracking-tight">
@@ -27,7 +33,7 @@ const GetStarted: React.FC = () => {
                 <div className="mt-8">
                     <a
                         href="#"
-                        className="inline-flex items-center px-8 py-4 rounded-full bg-black text-white font-medium text-lg hover:bg-gray-800 transition"
+                        className="inline-flex items-center px-8 py-4 rounded-full text-white font-medium text-lg hover:bg-gray-800 transition" style={{ background: '#131316' }}
                     >
                         <LightningBoltIcon className="w-5 h-5 mr-2" />
                         Get Ideas Come to Life
@@ -35,9 +41,12 @@ const GetStarted: React.FC = () => {
                 </div>
             </div>
 
+            {/* Connectivity Section */}
+            <Connectivity />
+
             {/* WhatsApp Section */}
-            <div className="max-w-6xl mx-auto mt-20 px-6">
-                <div className="bg-black text-white rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between">
+            <div className="max-w-6xl mx-auto px-6">
+                <div className="text-white rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between" style={{ background: '#131316' }}>
                     {/* Left Content */}
                     <div className="flex items-center space-x-4">
                         <FaWhatsapp className="w-12 h-12 text-green-500" />
@@ -64,7 +73,7 @@ const GetStarted: React.FC = () => {
             </div>
 
             {/* Extra Info Section */}
-            <div className="max-w-6xl mx-auto mt-16 px-6 grid gap-8 md:grid-cols-3">
+            <div className="max-w-6xl mx-auto mt-16 px-6 grid gap-8 md:grid-cols-3  mb-5 md:mb-[30px] tracking-tight">
                 {/* Free Consultation */}
                 <div className="text-center p-6 border rounded-2xl transition bg-white" style={{ zIndex: 2, position: 'relative', boxShadow: '0 10px 32px rgb(34 42 53 / 0.12), 0 1px 1px rgb(0 0 0 / 0.05), 0 0 0 1px rgb(34 42 53 / 0.05), 0 4px 6px rgb(34 42 53 / 0.08), 0 24px 108px rgb(47 48 55 / 0.10)' }}>
                     <MdSupportAgent className="w-10 h-10 mx-auto text-black mb-4" />
@@ -93,7 +102,15 @@ const GetStarted: React.FC = () => {
                 </div>
             </div>
 
-            <h3 className="text-lg font-bold text-blue-500 mt-16">
+            {/* Buttons */}
+            <div className="flex items-center gap-4 mt-16 text-center justify-center">
+                <button className="flex items-center gap-2 bg-black text-white px-3 py-2 rounded-xl font-medium hover:bg-gray-800 transition">
+                    <Rocket size={18} />
+                    You Still Waiting?
+                </button>
+            </div>
+
+            <h3 className="text-lg font-bold text-blue-500 mt-8 text-center">
                 <span className="block text-blue-500 font-bold">Ready to get started?</span>
                 <span className="text-gray-500 font-normal">
                     Take the first step towards transforming your business. Reach out to our team and let’s turn your ideas into reality!

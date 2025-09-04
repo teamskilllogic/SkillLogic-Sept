@@ -1,34 +1,105 @@
 import React from "react";
 import { data } from "./data";
+import { HandPlatter, Rocket } from "lucide-react";
 
 const CompanySection = () => {
   return (
-    <section className="py-20 sm:py-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8">
-          About Us</h2>
-        <div className="max-w-4xl mx-auto">
-          <p className="text-lg text-gray-600 leading-relaxed mb-8">
-            SkillLogic is a trusted technology partner delivering innovative
-            web, mobile, and cloud solutions. We focus on creating measurable
-            business impact through clean engineering, modern design, and
-            scalable architectures that grow with your business.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            {data.values.map((value) => (
-              <div key={value.title} className="text-center">
-                <div className="text-4xl mb-4 flex justify-center">
-                  {React.createElement(value.icon, {
-                    className: "w-10 h-10 text-blue-500",
-                  })}
+    <section className="w-full py-20 flex justify-center items-center body-bg">
+      <div className="max-w-7xl w-full mx-auto px-6 flex flex-col items-center justify-center text-center">
+        {/* Section Label (same as Services) */}
+        <span
+          className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200 mb-4"
+          style={{
+            boxShadow:
+              "0px 15px 25px rgba(0,0,0,0.15), 0px 5px 10px rgba(0,0,0,0.05)",
+          }}
+        >
+          <HandPlatter className="w-4 h-4 text-black-500" />
+          About
+        </span>
+
+        {/* Heading (mirrors Services typography) */}
+        <h2 className="text-3xl md:text-6xl lg:text-6xl xl:text-[58px] leading-[38px] md:leading-[60px] lg:leading-[60px] xl:leading-[70px] font-extrabold text-zinc-900 text-center w-[70%] md:w-full mx-auto mb-5 md:mb-[30px] tracking-tight">
+          About Us
+        </h2>
+
+        {/* Description (same width + rhythm as Services) */}
+        <p className="text-zinc-600 text-base md:text-base xl:text-lg font-medium tracking-normal leading-6 md:leading-[30px] w-[94%] md:w-[90%] lg:w-[80%] xl:w-[56%] mx-auto mb-5 md:mb-[30px]">
+          SkillLogic is a trusted technology partner delivering innovative web, mobile, and cloud solutions.
+          We focus on creating measurable business impact through clean engineering, modern design, and
+          scalable architectures that grow with your business.
+        </p>
+
+        {/* Values Grid (kept from your design, just sits inside the unified section shell) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 w-full mt-12">
+          {data.values.map((value, index) => (
+            <div
+              key={value.title}
+              className="group relative bg-white border border-gray-100 rounded-2xl p-8 hover:shadow-2xl hover:shadow-gray-200/50 transition-all duration-500 hover:-translate-y-2 cursor-pointer overflow-hidden"
+              style={{
+                animationDelay: `${index * 150}ms`,
+                animation: "fadeInUp 0.8s ease-out forwards",
+                opacity: 0,
+                transform: "translateY(30px)",
+              }}
+            >
+              {/* Hover background sheen */}
+              <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+              <div className="relative z-10">
+                {/* Icon block (kept) */}
+                <div className="mb-6 flex justify-center">
+                  <div className="w-16 h-16 bg-black rounded-xl flex items-center justify-center group-hover:bg-gray-800 transition-colors duration-300 group-hover:scale-110 transform">
+                    {React.createElement(value.icon, {
+                      className: "w-8 h-8 text-white",
+                    })}
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{value.title}</h3>
-                <p className="text-gray-600">{value.desc}</p>
+
+                {/* Title */}
+                <h3 className="text-center text-xl sm:text-2xl font-bold text-black mb-4 group-hover:text-gray-800 transition-colors duration-300">
+                  {value.title}
+                </h3>
+
+                {/* Desc */}
+                <p className="text-center text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                  {value.desc}
+                </p>
               </div>
-            ))}
-          </div>
+
+              {/* Hover border */}
+              <div className="absolute inset-0 border-2 border-transparent group-hover:border-black/10 rounded-2xl transition-all duration-300" />
+            </div>
+          ))}
         </div>
+
+        {/* CTA (same as Services) */}
+        <div className="flex items-center gap-4 mt-8">
+          <button className="flex items-center gap-2 bg-black text-white px-3 py-2 rounded-xl font-medium hover:bg-gray-800 transition">
+            <Rocket size={18} />
+            Explore All Services
+          </button>
+        </div>
+
+        {/* Bottom tagline (same pattern as Services) */}
+        <h3 className="text-lg font-bold text-blue-500 mt-8">
+          <span className="block text-blue-500 font-bold">Expert solutions, delivered fast.</span>
+          <span className="text-gray-500 font-normal">
+            From web and app development to ERP and growth strategy, Skill Logic Technologies is your partner
+            for reliable, scalable digital services.
+          </span>
+        </h3>
       </div>
+
+      {/* Animations (kept from your original) */}
+      <style>{`
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(30px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .group:hover { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15); }
+        @media (max-width: 768px) { .group { padding: 1.5rem; } }
+      `}</style>
     </section>
   );
 };

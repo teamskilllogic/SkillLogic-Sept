@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
+import { Rocket } from "lucide-react";
 
 const logos = [
     { name: "NextJS", src: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg" },
@@ -27,7 +28,7 @@ const logos = [
 const TechShowcase: React.FC = () => {
     return (
         <section className="w-full py-20 ">
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 rounded-3xl border p-10 bg-black shadow-sm" style={{ zIndex: 1, position: 'relative' }}>
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 rounded-3xl border p-10 shadow-sm mb-5 md:mb-[30px] tracking-tight" style={{ zIndex: 1, position: 'relative', background: '#131316' }}>
                 {/* Left Content */}
                 <div className="flex-1">
                     <p className="text-xs font-semibold tracking-wide text-white uppercase">
@@ -67,7 +68,16 @@ const TechShowcase: React.FC = () => {
                 </div>
             </div>
 
-            <h3 className="text-lg font-bold text-blue-500 mt-16 text-center">
+            {/* Buttons */}
+            <div className="flex items-center gap-4 mt-4 text-center justify-center">
+                <button className="flex items-center gap-2 bg-black text-white px-3 py-2 rounded-xl font-medium hover:bg-gray-800 transition">
+                    <Rocket size={18} />
+                    View All Projects
+                </button>
+            </div>
+
+
+            <h3 className="text-lg font-bold text-blue-500 mt-8 text-center">
                 <span className="block text-blue-500 font-bold">Inspired by our work?</span>
                 <span className="text-gray-500 font-normal">
                     Let’s create something amazing together. Share your vision with us and become our next success story—reach out to start your project today!

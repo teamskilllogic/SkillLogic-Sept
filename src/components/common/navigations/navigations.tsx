@@ -7,8 +7,6 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuContent,
 } from "@/components/ui/navigation-menu";
 import { Menu, X } from "lucide-react";
 
@@ -25,6 +23,8 @@ function Navbar() {
     localStorage.getItem("theme") === "dark" ? "dark" : "light"
   );
 
+  const [scrolled, setScrolled] = useState(false);
+
   useEffect(() => {
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
@@ -33,11 +33,26 @@ function Navbar() {
     }
   }, [theme]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <header
-      className="w-full z-40 fixed top-0 left-0 
-      bg-white/30 dark:bg-black/30 
-      backdrop-blur-md shadow-sm border-b border-white/20 dark:border-gray-800"
+      className={`w-full z-40 fixed top-0 left-0 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/30 dark:bg-black/30 backdrop-blur-md shadow-sm border-b border-white/20 dark:border-gray-800"
+          : "bg-transparent"
+      }`}
     >
       <div className="container mx-auto flex min-h-20 items-center justify-between px-4 lg:px-8">
         {/* Logo */}

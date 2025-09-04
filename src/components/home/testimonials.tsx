@@ -1,11 +1,17 @@
 import { StaggerTestimonials } from "@/components/home/staggerTestimonials";
+import { Rocket } from "lucide-react";
+import { Star } from "lucide-react";
 
 const Testimonial = () => {
     return (
 
         <section className="w-full py-20 flex flex-col items-center mt-16 text-center">
             {/* Section Label */}
-            <span className="relative z-[100] inline-flex items-center px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200 mb-4">
+            <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200 mb-4"
+                style={{ boxShadow: '0px 15px 25px rgba(0,0,0,0.15), 0px 5px 10px rgba(0,0,0,0.05)' }}>
+                {/* Icon */}
+                <Star className="w-4 h-4 text-black-500" />
+                {/* {page} text */}
                 Reviews
             </span>
             {/* Heading */}
@@ -18,12 +24,22 @@ const Testimonial = () => {
                 Our clients value our speed, reliability, and partnership—from first idea to final launch.<br />
                 Read their stories and see why we’re the go-to team for digital execution and ongoing support.
             </p>
+
+            {/* Testimonials Grid */}
             <div className="flex w-full h-screen justify-center items-center">
                 <StaggerTestimonials />
             </div>
 
+            {/* Buttons */}
+            <div className="flex items-center gap-4">
+                <button className="flex items-center gap-2 bg-black text-white px-3 py-2 rounded-xl font-medium hover:bg-gray-800 transition">
+                    <Rocket size={18} />
+                    Have a project? Let's talk
+                </button>
+            </div>
 
-            <h3 className="text-lg font-bold text-blue-500">
+
+            <h3 className="text-lg font-bold text-blue-500 mt-8">
                 <span className="block text-blue-500 font-bold">Real stories, real results.</span>
                 <span className="text-gray-500 font-normal">Our clients consistently rate us for reliability, speed, and support. Your success is our greatest review.</span>
             </h3>
