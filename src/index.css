@@ -93,6 +93,40 @@
   }
 }
 
+@tailwind components;
+
+@layer components {
+  /* Typography utilities for consistent text on Testimonials page (and reusable elsewhere) */
+  .tl-heading {
+    @apply text-3xl md:text-4xl font-bold tracking-tight;
+  }
+  .tl-subheading {
+    @apply text-xl md:text-2xl font-semibold;
+  }
+  .tl-paragraph {
+    @apply text-base md:text-lg font-normal leading-relaxed text-muted-foreground;
+  }
+
+  /* Scoped automatic typography for Testimonials page */
+  .typography-testimonials h1,
+  .typography-testimonials h2 {
+    @apply tl-heading;
+  }
+  .typography-testimonials h3,
+  .typography-testimonials h4,
+  .typography-testimonials h5,
+  .typography-testimonials h6 {
+    @apply tl-subheading;
+  }
+  .typography-testimonials p,
+  .typography-testimonials li,
+  .typography-testimonials span,
+  .typography-testimonials div[class*="desc"],
+  .typography-testimonials div[class*="paragraph"] {
+    @apply tl-paragraph;
+  }
+}
+
 .section-padding {
   @apply py-16 md:py-24;
 }
