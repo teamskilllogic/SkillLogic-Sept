@@ -55,11 +55,16 @@ const techWeUse = [
 
 const TechWeUse = () => (
     <section className="w-full max-w-7xl mx-auto px-6 py-20 mt-16">
-        <h2 className="text-2xl md:text-3xl font-bold text-black mb-12 text-center">
-
+        <div className="text-center mb-12">
             {/* Section Label */}
-            <span className="relative z-[100] inline-flex items-center px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200">
-                Technologies We Use
+            <span 
+                className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200 mb-4"
+                style={{ boxShadow: '0px 15px 25px rgba(0,0,0,0.15), 0px 5px 10px rgba(0,0,0,0.05)' }}
+            >
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
+                </svg>
+                Technologies
             </span>
             {/* Heading */}
             <h2 className="text-3xl md:text-6xl lg:text-6xl xl:text-[58px] leading-[38px] md:leading-[60px] lg:leading-[60px] xl:leading-[70px] font-extrabold text-zinc-900 text-center w-[70%] md:w-full lg:w-full xl:w-full mx-auto mb-5 md:mb-[30px] tracking-tight">
@@ -69,8 +74,7 @@ const TechWeUse = () => (
             <p className="text-zinc-600 text-base md:text-base xl:text-lg font-medium tracking-normal leading-6 md:leading-[30px] w-[94%] md:w-[90%] lg:w-[80%] xl:w-[56%] mx-auto">
                 We help startups and businesses launch secure, scalable, and beautiful digital products. Our team specializes in custom web apps, mobile solutions, cloud infrastructure, and UI/UX design—using the latest technologies to turn your vision into reality.
             </p>
-
-        </h2>
+        </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
             {techWeUse.map((tech, idx) => (
