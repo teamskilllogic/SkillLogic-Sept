@@ -31,10 +31,10 @@ const ContactForm = () => {
     return (
         <Card className="w-full h-full shadow-lg border-0 bg-white/80 backdrop-blur-sm">
             <CardHeader className="text-center pb-6">
-                <CardTitle className="text-2xl font-bold text-black">
+                <CardTitle className="text-2xl md:text-3xl font-bold text-black">
                     Get In Touch
                 </CardTitle>
-                <p className="text-gray-600">
+                <p className="text-gray-600 text-base md:text-base xl:text-lg font-medium tracking-normal leading-6 md:leading-[30px]">
                     We'd love to hear from you. Send us a message and we'll respond as soon as possible.
                 </p>
             </CardHeader>
@@ -42,7 +42,7 @@ const ContactForm = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="space-y-2">
-                            <Label htmlFor="name" className="text-sm font-medium text-gray-700">
+                            <Label htmlFor="name" className="text-sm font-semibold text-gray-700">
                                 Full Name *
                             </Label>
                             <div className="relative">
@@ -61,7 +61,7 @@ const ContactForm = () => {
                         </div>
                         
                         <div className="space-y-2">
-                            <Label htmlFor="email" className="text-sm font-medium text-gray-700">
+                            <Label htmlFor="email" className="text-sm font-semibold text-gray-700">
                                 Email Address *
                             </Label>
                             <div className="relative">
@@ -82,7 +82,7 @@ const ContactForm = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="space-y-2">
-                            <Label htmlFor="phone" className="text-sm font-medium text-gray-700">
+                            <Label htmlFor="phone" className="text-sm font-semibold text-gray-700">
                                 Phone Number
                             </Label>
                             <div className="relative">
@@ -100,7 +100,7 @@ const ContactForm = () => {
                         </div>
                         
                         <div className="space-y-2">
-                            <Label htmlFor="subject" className="text-sm font-medium text-gray-700">
+                            <Label htmlFor="subject" className="text-sm font-semibold text-gray-700">
                                 Subject *
                             </Label>
                                                             <Input
@@ -117,7 +117,7 @@ const ContactForm = () => {
                     </div>
 
                     <div className="space-y-2">
-                        <Label htmlFor="message" className="text-sm font-medium text-gray-700">
+                        <Label htmlFor="message" className="text-sm font-semibold text-gray-700">
                             Message *
                         </Label>
                         <div className="relative">
