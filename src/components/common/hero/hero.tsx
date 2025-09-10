@@ -4,88 +4,96 @@ import { Glow } from "@/components/ui/glow";
 import { FaGithub } from "react-icons/fa";
 import { Rocket, Phone } from "lucide-react"; // icons
 import { Star } from "lucide-react"; // example icon
+import HeroCanvas from '@/components/home/HeroCanvas';
 
 interface Hero {
-  page: string;
-  title: string;
-  description: string;
-  className?: string;
+    page: string;
+    title: string;
+    description: string;
+    className?: string;
 }
 
 export function Hero({ page, title, description, className }: Hero) {
-  return (
-    <section
-      className={cn(
-        "relative bg-background text-foreground body-bg",
-        "py-12 px-4 md:py-24 lg:py-32",
-        "overflow-hidden",
-        className
-      )}
-    >
-      <div className="relative mx-auto max-w-[1280px] flex flex-col gap-12 lg:gap-24">
-        <div
-          className="relative z-10 flex flex-col items-center gap-6 text-center
-                       pt-12 sm:pt-8 md:pt-8"
+    return (
+        <section
+            className={cn(
+                "relative bg-background text-foreground body-bg",
+                "py-12 px-4 md:py-24 lg:py-32",
+                "overflow-hidden",
+                className
+            )}
         >
-          {/* page */}
-          <span
-            className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200"
-            style={{
-              boxShadow:
-                "0px 15px 25px rgba(0,0,0,0.15), 0px 5px 10px rgba(0,0,0,0.05)",
-            }}
-          >
-            <img src="/images/logo.png" alt="icon" className="w-5 h-5" />
-            {/* Icon on the left */}
-            {/* <Star className="w-4 h-4 text-black-500" /> */}
-            {/* {page} text */}
-            {page}
-          </span>
-          {/* Heading */}
-          <h1
-            className={cn(
-              "inline-block animate-appear",
-              "bg-gradient-to-b from-foreground via-foreground/90 to-muted-foreground",
-              "bg-clip-text text-transparent",
-              "text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl",
-              "leading-[1.1] sm:leading-[1.1]",
-              "drop-shadow-sm dark:drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]"
-            )}
-          >
-            {title}
-          </h1>
-          {/* Description */}
-          <p
-            className={cn(
-              "max-w-[700px] animate-appear opacity-0 [animation-delay:150ms]",
-              "text-base sm:text-lg md:text-xl",
-              "text-muted-foreground",
-              "font-medium"
-            )}
-          >
-            {description}
-          </p>
-          {/* Buttons */}
-          <div className="flex items-center gap-4">
-            <button className="flex items-center gap-2 bg-black text-white px-5 py-3 rounded-lg font-medium hover:bg-gray-800 transition">
-              <Rocket size={18} />
-              Get Started
-            </button>
-            <button className="flex items-center gap-2 border border-gray-300 bg-white px-5 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-50 transition">
-              <Phone size={18} />
-              Book a Call
-            </button>
-          </div>
-        </div>
-      </div>
-      {/* Background Glow */}
-      {/* -------------------------------------  */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <Glow
-          variant="above"
-          className="animate-appear-zoom opacity-0 [animation-delay:1000ms]"
-        />
-      </div>
-    </section>
-  );
+            <div className="relative mx-auto max-w-[1280px] flex flex-col lg:flex-row lg:items-center gap-12 lg:gap-8">
+                {/* Text Content - 75% on desktop */}
+                <div className="relative z-10 flex flex-col items-center lg:items-start gap-6 text-center lg:text-left lg:w-[75%]
+                       pt-12 sm:pt-8 md:pt-8" >
+                    {/* page */}
+                    <span
+                        className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200"
+                        style={{
+                            boxShadow:
+                                "0px 15px 25px rgba(0,0,0,0.15), 0px 5px 10px rgba(0,0,0,0.05)",
+                        }}
+                    >
+                        <img src="/images/logo.png" alt="icon" className="w-5 h-5" />
+                        {/* Icon on the left */}
+                        {/* <Star className="w-4 h-4 text-black-500" /> */}
+                        {/* {page} text */}
+                        {page}
+                    </span>
+                    {/* Heading */}
+                    <h1
+                        className={cn(
+                            "inline-block animate-appear",
+                            "bg-gradient-to-b from-foreground via-foreground/90 to-muted-foreground",
+                            "bg-clip-text text-transparent",
+                            "text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl",
+                            "leading-[1.1] sm:leading-[1.1]",
+                            "drop-shadow-sm dark:drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]"
+                        )}
+                    >
+                        {title}
+                    </h1>
+                    {/* Description */}
+                    <p
+                        className={cn(
+                            "max-w-[700px] animate-appear opacity-0 [animation-delay:150ms]",
+                            "text-base sm:text-lg md:text-xl",
+                            "text-muted-foreground",
+                            "font-medium"
+                        )}
+                    >
+                        {description}
+                    </p>
+                    {/* Buttons */}
+                    <div className="flex items-center gap-4">
+                        <button className="flex items-center gap-2 bg-black text-white px-5 py-3 rounded-lg font-medium hover:bg-gray-800 transition">
+                            <Rocket size={18} />
+                            Get Started
+                        </button>
+                        <button className="flex items-center gap-2 border border-gray-300 bg-white px-5 py-3 rounded-lg font-medium text-gray-700 hover:bg-gray-50 transition">
+                            <Phone size={18} />
+                            Book a Call
+                        </button>
+                    </div>
+                </div>
+
+                {/* HeroCanvas - 25% on desktop, hidden on mobile/tablet */}
+                <div className="hidden lg:flex lg:w-[25%] lg:justify-center lg:items-center">
+                    <div className="relative h-[350px] w-[350px] xl:h-[400px] xl:w-[400px]">
+                        <HeroCanvas />
+                    </div>
+                </div>
+            </div>
+
+            {/* Background Glow */}
+            {/* -------------------------------------  */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <Glow
+                    variant="above"
+                    className="animate-appear-zoom opacity-0 [animation-delay:1000ms]"
+                />
+            </div>
+        </section>
+    );
 }

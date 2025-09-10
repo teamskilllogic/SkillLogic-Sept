@@ -12,15 +12,15 @@ const Globe = () => {
   const { theme } = useTheme();
   const [hovered, setHovered] = useState(false);
   const [scale, setScale] = useState(1);
-  
+
   useFrame((state) => {
     if (meshRef.current) {
       meshRef.current.rotation.y += 0.003;
-      
+
       // Subtle breathing effect
       const pulseFactor = Math.sin(state.clock.getElapsedTime()) * 0.03;
       setScale(1 + pulseFactor);
-      
+
       // Slight tilt
       meshRef.current.rotation.x = Math.sin(state.clock.getElapsedTime() * 0.3) * 0.1;
     }
@@ -32,17 +32,17 @@ const Globe = () => {
   }, [hovered]);
 
   return (
-    <mesh 
-      ref={meshRef} 
+    <mesh
+      ref={meshRef}
       position={[0, 0, 0]}
       scale={[scale, scale, scale]}
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
     >
       <sphereGeometry args={[2, 64, 64]} />
-      <meshStandardMaterial 
-        color={theme === 'dark' ? '#1E3A8A' : '#1E3A8A'} 
-        wireframe={true} 
+      <meshStandardMaterial
+        color={theme === 'dark' ? '#1E3A8A' : '#1E3A8A'}
+        wireframe={true}
         emissive={theme === 'dark' ? '#F97316' : '#F97316'}
         emissiveIntensity={hovered ? 0.4 : 0.2}
         roughness={0.7}
@@ -57,21 +57,21 @@ const Particles = () => {
   const particlesRef = useRef<THREE.Points>(null);
   const { theme } = useTheme();
   const count = 150; // Reduced particle count for better performance
-  
+
   // Create particles
   const positions = new Float32Array(count * 3);
   const colors = new Float32Array(count * 3);
-  
+
   for (let i = 0; i < count; i++) {
     // Position within a sphere
     const radius = 3 + Math.random() * 2;
     const theta = Math.random() * 2 * Math.PI;
     const phi = Math.acos(2 * Math.random() - 1);
-    
+
     positions[i * 3] = radius * Math.sin(phi) * Math.cos(theta);
     positions[i * 3 + 1] = radius * Math.sin(phi) * Math.sin(theta);
     positions[i * 3 + 2] = radius * Math.cos(phi);
-    
+
     // Colors - mix of primary and secondary
     colors[i * 3] = theme === 'dark' ? 0.97 : 0.4; // R
     colors[i * 3 + 1] = theme === 'dark' ? 0.45 : 0.2; // G
@@ -115,7 +115,7 @@ const Particles = () => {
 const Scene = () => {
   const isMobile = useIsMobile();
   const { theme } = useTheme();
-  
+
   return (
     <>
       <ambientLight intensity={0.6} />
@@ -123,9 +123,9 @@ const Scene = () => {
       <directionalLight position={[-10, -10, -5]} intensity={0.5} color="#F97316" />
       <Globe />
       <Particles />
-      <OrbitControls 
-        enableZoom={false} 
-        enablePan={false} 
+      <OrbitControls
+        enableZoom={false}
+        enablePan={false}
         enableRotate={!isMobile}
         autoRotate
         autoRotateSpeed={0.5}
@@ -140,20 +140,20 @@ const Scene = () => {
 const HeroCanvas = () => {
   const isMobile = useIsMobile();
   const [mounted, setMounted] = useState(false);
-  
+
   useEffect(() => {
     setMounted(true);
   }, []);
 
   if (!mounted) return null; // Prevent SSR issues
-  
+
   return (
     <div className="w-full h-full absolute inset-0">
       <Canvas
         camera={{ position: [0, 0, 8], fov: isMobile ? 75 : 60, near: 0.1, far: 1000 }}
         dpr={[1, 2]}
         className="w-full h-full"
-        style={{ 
+        style={{
           background: 'transparent',
           width: '100%',
           height: '100%'
