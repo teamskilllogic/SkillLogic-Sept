@@ -29,24 +29,24 @@ const ContactForm = () => {
     };
 
     return (
-        <Card className="w-full h-full shadow-lg border-0 bg-white/80 backdrop-blur-sm">
-            <CardHeader className="text-center pb-6">
-                <CardTitle className="text-2xl md:text-3xl font-bold text-black">
+        <Card className="w-full h-full shadow-xl border border-gray-100 bg-white z-10 relative">
+            <CardHeader className="text-center pb-8 bg-white border-b border-gray-100">
+                <CardTitle className="text-2xl md:text-3xl font-bold text-black mb-3">
                     Get In Touch
                 </CardTitle>
-                <p className="text-gray-600 text-base md:text-base xl:text-lg font-medium tracking-normal leading-6 md:leading-[30px]">
+                <p className="text-gray-700 text-base md:text-base xl:text-lg font-medium tracking-normal leading-6 md:leading-[30px]">
                     We'd love to hear from you. Send us a message and we'll respond as soon as possible.
                 </p>
             </CardHeader>
-            <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="space-y-2">
-                            <Label htmlFor="name" className="text-sm font-semibold text-gray-700">
+            <CardContent className="p-8 bg-white">
+                <form onSubmit={handleSubmit} className="space-y-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="space-y-3">
+                            <Label htmlFor="name" className="text-sm font-semibold text-black">
                                 Full Name *
                             </Label>
-                            <div className="relative">
-                                <User className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                            <div className="relative group">
+                                <User className="absolute left-4 top-4 h-4 w-4 text-gray-400 group-focus-within:text-black transition-colors" />
                                 <Input
                                     id="name"
                                     name="name"
@@ -54,18 +54,18 @@ const ContactForm = () => {
                                     required
                                     value={formData.name}
                                     onChange={handleChange}
-                                    className="pl-10 h-12 border-gray-300 focus:border-black focus:ring-black"
+                                    className="pl-12 h-14 border-2 border-gray-200 focus:border-black focus:ring-2 focus:ring-black/10 bg-gray-50 focus:bg-white transition-all duration-200 rounded-lg"
                                     placeholder="Enter your full name"
                                 />
                             </div>
                         </div>
-                        
-                        <div className="space-y-2">
-                            <Label htmlFor="email" className="text-sm font-semibold text-gray-700">
+
+                        <div className="space-y-3">
+                            <Label htmlFor="email" className="text-sm font-semibold text-black">
                                 Email Address *
                             </Label>
-                            <div className="relative">
-                                <Mail className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                            <div className="relative group">
+                                <Mail className="absolute left-4 top-4 h-4 w-4 text-gray-400 group-focus-within:text-black transition-colors" />
                                 <Input
                                     id="email"
                                     name="email"
@@ -73,34 +73,34 @@ const ContactForm = () => {
                                     required
                                     value={formData.email}
                                     onChange={handleChange}
-                                    className="pl-10 h-12 border-gray-300 focus:border-black focus:ring-black"
+                                    className="pl-12 h-14 border-2 border-gray-200 focus:border-black focus:ring-2 focus:ring-black/10 bg-gray-50 focus:bg-white transition-all duration-200 rounded-lg"
                                     placeholder="Enter your email"
                                 />
                             </div>
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="space-y-2">
-                            <Label htmlFor="phone" className="text-sm font-semibold text-gray-700">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="space-y-3">
+                            <Label htmlFor="phone" className="text-sm font-semibold text-black">
                                 Phone Number
                             </Label>
-                            <div className="relative">
-                                <Phone className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                            <div className="relative group">
+                                <Phone className="absolute left-4 top-4 h-4 w-4 text-gray-400 group-focus-within:text-black transition-colors" />
                                 <Input
                                     id="phone"
                                     name="phone"
                                     type="tel"
                                     value={formData.phone}
                                     onChange={handleChange}
-                                    className="pl-10 h-12 border-gray-300 focus:border-black focus:ring-black"
+                                    className="pl-12 h-14 border-2 border-gray-200 focus:border-black focus:ring-2 focus:ring-black/10 bg-gray-50 focus:bg-white transition-all duration-200 rounded-lg"
                                     placeholder="Enter your phone number"
                                 />
                             </div>
                         </div>
-                        
-                        <div className="space-y-2">
-                            <Label htmlFor="subject" className="text-sm font-semibold text-gray-700">
+
+                        <div className="space-y-3">
+                            <Label htmlFor="subject" className="text-sm font-semibold text-black">
                                 Subject *
                             </Label>
                                                             <Input
@@ -110,38 +110,40 @@ const ContactForm = () => {
                                     required
                                     value={formData.subject}
                                     onChange={handleChange}
-                                    className="h-12 border-gray-300 focus:border-black focus:ring-black"
+                                    className="h-14 border-2 border-gray-200 focus:border-black focus:ring-2 focus:ring-black/10 bg-gray-50 focus:bg-white transition-all duration-200 rounded-lg"
                                     placeholder="What's this about?"
                                 />
                         </div>
                     </div>
 
-                    <div className="space-y-2">
-                        <Label htmlFor="message" className="text-sm font-semibold text-gray-700">
+                    <div className="space-y-3">
+                        <Label htmlFor="message" className="text-sm font-semibold text-black">
                             Message *
                         </Label>
-                        <div className="relative">
-                            <MessageSquare className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                        <div className="relative group">
+                            <MessageSquare className="absolute left-4 top-4 h-4 w-4 text-gray-400 group-focus-within:text-black transition-colors" />
                                                             <Textarea
                                     id="message"
                                     name="message"
                                     required
                                     value={formData.message}
                                     onChange={handleChange}
-                                    rows={5}
-                                    className="pl-10 border-gray-300 focus:border-black focus:ring-black resize-none"
+                                    rows={6}
+                                    className="pl-12 pt-4 border-2 border-gray-200 focus:border-black focus:ring-2 focus:ring-black/10 bg-gray-50 focus:bg-white transition-all duration-200 resize-none rounded-lg"
                                     placeholder="Tell us more about your project or inquiry..."
                                 />
                         </div>
                     </div>
 
-                    <Button 
-                        type="submit" 
-                        className="w-full h-12 bg-black hover:bg-gray-800 text-white font-medium"
-                    >
-                        <Send className="mr-2 h-4 w-4" />
-                        Send Message
-                    </Button>
+                    <div className="pt-4">
+                        <Button
+                            type="submit"
+                            className="w-full h-14 bg-black hover:bg-gray-800 text-white font-semibold text-base rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-[1.02]"
+                        >
+                            <Send className="mr-3 h-5 w-5" />
+                            Send Message
+                        </Button>
+                    </div>
                 </form>
             </CardContent>
         </Card>
@@ -149,5 +151,3 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
-
-

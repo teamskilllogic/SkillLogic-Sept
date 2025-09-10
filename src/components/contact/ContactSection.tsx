@@ -1,12 +1,15 @@
 import React from "react";
 import ContactForm from "./ContactForm";
 import ContactMap from "./ContactMap";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { MapPin } from "lucide-react";
+import { mapConfig, generateMapEmbedUrl, generateMapSearchUrl } from "@/config/mapConfig";
 
 const ContactSection = () => {
     return (
         <section className="w-full max-w-7xl mx-auto px-6 py-20">
             <div className="text-center mb-8 mt-9">
-                <span 
+                <span
                     className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200 mb-4"
                     style={{ boxShadow: '0px 15px 25px rgba(0,0,0,0.15), 0px 5px 10px rgba(0,0,0,0.05)' }}
                 >
@@ -35,31 +38,111 @@ const ContactSection = () => {
                 </div>
             </div>
 
+            {/* Enhanced Map Section */}
+            <div className="mt-16 z-10">
+                <Card className="shadow-xl border border-gray-100 bg-white rounded-2xl overflow-hidden  z-10">
+                    <CardHeader className="pb-6 bg-white border-b border-gray-100">
+                        <CardTitle className="text-2xl md:text-3xl font-bold text-black flex items-center justify-center gap-3">
+                            Find Us on Google Maps
+                        </CardTitle>
+                        <p className="text-center text-gray-600 text-base mt-3">
+                            Visit our office or get directions to reach us easily
+                        </p>
+                    </CardHeader>
 
-            <div className="mt-20 text-center">
-                <div className="bg-gray-100 rounded-2xl p-8 max-w-4xl mx-auto">
-                    <h3 className="text-2xl md:text-3xl font-bold text-black mb-4">
+                    <CardContent className="p-0">
+                        <div className="relative h-[450px]">
+                            {/* Google Maps Embed */}
+                            <iframe
+                                src={generateMapEmbedUrl(mapConfig)}
+                                width="100%"
+                                height="100%"
+                                style={{ border: 0 }}
+                                allowFullScreen
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                                className="w-full h-full"
+                                title="SkillLogic Technologies Location"
+                            />
+
+                            {/* Overlay */}
+                            <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md rounded-2xl p-6 shadow-lg">
+                                <div className="flex items-center gap-3 mb-4">
+                                    <div className="p-2 bg-black rounded-lg">
+                                        <MapPin className="h-5 w-5 text-white" />
+                                    </div>
+                                    <span className="font-semibold text-lg text-black">Our Office Location</span>
+                                </div>
+
+                                <div className="space-y-1 mb-5">
+                                    <p className="text-base font-medium text-gray-800">{mapConfig.address.company}</p>
+                                    <p className="text-sm text-gray-600">{mapConfig.address.street}</p>
+                                    <p className="text-sm text-gray-600">
+                                        {mapConfig.address.city}, {mapConfig.address.state} {mapConfig.address.pincode}
+                                    </p>
+                                </div>
+
+                                <a
+                                    href={generateMapSearchUrl(mapConfig)}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 bg-gradient-to-r from-black to-gray-800 hover:from-gray-700 hover:to-black text-white font-semibold text-sm px-5 py-3 rounded-lg transition-all duration-300 shadow-md hover:shadow-xl hover:scale-105"
+                                >
+                                    <MapPin className="h-4 w-4" />
+                                    Get Directions
+                                </a>
+                            </div>
+                        </div>
+                    </CardContent>
+                </Card>
+            </div>
+
+
+
+            {/* Why Choose Us Section */}
+            {/* <div className="mt-24">
+                <div className="text-center mb-16">
+                    <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-6">
                         Why Choose SkillLogic?
                     </h3>
-                    <p className="text-gray-600 text-base md:text-base xl:text-lg font-medium tracking-normal leading-6 md:leading-[30px] mb-6">
-                        We're committed to providing exceptional service and support to all our clients.
+                    <p className="text-gray-600 text-lg md:text-xl font-medium max-w-3xl mx-auto leading-relaxed">
+                        We're committed to providing exceptional service and support to all our clients with unmatched dedication.
                     </p>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                        <div>
-                            <div className="text-2xl font-bold text-black mb-2">24/7</div>
-                            <p className="text-gray-600 text-base font-medium">Support Available</p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+                    <div className="group text-center p-8 bg-white rounded-2xl border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                        <div className="w-16 h-16 bg-gradient-to-br from-black to-gray-800 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
                         </div>
-                        <div>
-                            <div className="text-2xl font-bold text-black mb-2">100%</div>
-                            <p className="text-gray-600 text-base font-medium">Client Satisfaction</p>
+                        <div className="text-4xl md:text-5xl font-bold text-black mb-3">24/7</div>
+                        <h4 className="text-xl font-semibold text-black mb-2">Support Available</h4>
+                        <p className="text-gray-600 text-base leading-relaxed">Round-the-clock assistance whenever you need us most</p>
+                    </div>
+                    <div className="group text-center p-8 bg-white rounded-2xl border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                        <div className="w-16 h-16 bg-gradient-to-br from-black to-gray-800 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
                         </div>
-                        <div>
-                            <div className="text-2xl font-bold text-black mb-2">Fast</div>
-                            <p className="text-gray-600 text-base font-medium">Response Time</p>
+                        <div className="text-4xl md:text-5xl font-bold text-black mb-3">100%</div>
+                        <h4 className="text-xl font-semibold text-black mb-2">Client Satisfaction</h4>
+                        <p className="text-gray-600 text-base leading-relaxed">Guaranteed quality and results that exceed expectations</p>
+                    </div>
+                    <div className="group text-center p-8 bg-white rounded-2xl border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                        <div className="w-16 h-16 bg-gradient-to-br from-black to-gray-800 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
                         </div>
+                        <div className="text-4xl md:text-5xl font-bold text-black mb-3">Fast</div>
+                        <h4 className="text-xl font-semibold text-black mb-2">Response Time</h4>
+                        <p className="text-gray-600 text-base leading-relaxed">Quick turnaround times without compromising on quality</p>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </section>
     );
 };

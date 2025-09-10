@@ -20,10 +20,6 @@ const Contact = () => {
                 />
                 {/* Contact Section */}
                 <ContactSection />
-                {/* Need Help Section */}
-                <NeedHelp />
-                {/* Get Started Section */}
-                <GetStarted />
             </main>
             <Footer />
         </div>
