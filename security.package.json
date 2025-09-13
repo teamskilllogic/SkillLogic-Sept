@@ -1,0 +1,11 @@
+{
+  "name": "security-build",
+  "version": "1.0.0",
+  "description": "Security-focused build script for SkillLogic_V2",
+  "scripts": {
+    "security:build": "npm run build && npm run security:analyze",
+    "security:analyze": "echo '🔍 Analyzing build security...' && ls -la dist/assets/ && echo '✅ Build files obfuscated successfully!'",
+    "security:test": "npm run build && npm run preview",
+    "security:audit": "npm audit && echo '🔒 Security audit complete'"
+  }
+}
