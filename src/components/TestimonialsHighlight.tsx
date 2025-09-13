@@ -106,13 +106,13 @@ const TestimonialsHighlight = () => {
 	] as unknown as Metric[];
 
 	return (
-		<section ref={sectionRef} className="relative bg-transparent">
+		<section ref={sectionRef} className="relative bg-transparent scroll-container">
 			<div className="pointer-events-none absolute inset-0 overflow-hidden">
 				<div className="absolute -top-24 -right-16 h-56 w-56 rounded-full bg-emerald-200/50 blur-3xl" style={{ transform: "translateY(var(--parallax, 0px))" }} />
 				<div className="absolute -bottom-24 -left-16 h-56 w-56 rounded-full bg-blue-200/50 blur-3xl" style={{ transform: "translateY(calc(var(--parallax, 0px) * -1))" }} />
 			</div>
-			<div className="w-full max-w-7xl mx-auto px-6 py-16">
-				<div ref={containerRef} className="transition-all duration-700 ease-out">
+			<div className="w-full max-w-7xl mx-auto px-6 py-16 scroll-container">
+				<div ref={containerRef} className="transition-all duration-700 ease-out scroll-container">
 					<div className="relative rounded-3xl border border-gray-200/60 bg-white/60 backdrop-blur supports-[backdrop-filter]:bg-white/40 p-8 md:p-12 overflow-hidden">
 						<div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 							<div>
@@ -139,5 +139,3 @@ const TestimonialsHighlight = () => {
 };
 
 export default TestimonialsHighlight;
-
-
