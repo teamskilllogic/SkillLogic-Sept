@@ -80,7 +80,7 @@ export function Hero({ page, title, description, className }: Hero) {
 
                 {/* HeroCanvas - 25% on desktop, hidden on mobile/tablet */}
                 <div className="hidden lg:flex lg:w-[25%] lg:justify-center lg:items-center">
-                    <div className="relative h-[350px] w-[350px] xl:h-[400px] xl:w-[400px]">
+                    <div className="relative h-[380px] w-[380px] xl:h-[450px] xl:w-[450px]">
                         <HeroCanvas />
                     </div>
                 </div>
