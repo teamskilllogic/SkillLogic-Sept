@@ -1,10 +1,10 @@
 import { StaggerTestimonials } from "@/components/home/staggerTestimonials";
 import { Rocket } from "lucide-react";
 import { Star } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Testimonial = () => {
     return (
-
         <section className="w-full py-20 flex flex-col items-center mt-16 text-center">
             {/* Section Label */}
             <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200 mb-4"
@@ -32,10 +32,10 @@ const Testimonial = () => {
 
             {/* Buttons */}
             <div className="flex items-center gap-4">
-                <button className="flex items-center gap-2 bg-black text-white px-3 py-2 rounded-xl font-medium hover:bg-gray-800 transition">
+                <Link to="/testimonials" onClick={() => window.scrollTo(0, 0)} className="flex items-center gap-2 bg-black text-white px-3 py-2 rounded-xl font-medium hover:bg-gray-800 transition">
                     <Rocket size={18} />
-                    Have a project? Let's talk
-                </button>
+                    Explore More Testimonials
+                </Link>
             </div>
 
 

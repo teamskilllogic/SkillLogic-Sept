@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import type { Project } from "@/data/project";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
@@ -43,8 +43,40 @@ export default function PortfolioMain({ items }: Props) {
     const visibleItems = filteredItems.slice(0, visibleCount);
     const { theme } = useTheme();
 
+    // Handle scroll to section when component mounts with hash
+    useEffect(() => {
+        const handleHashScroll = () => {
+            const hash = window.location.hash;
+            if (hash) {
+                // Remove the # from hash
+                const id = hash.substring(1);
+                const element = document.getElementById(id);
+                if (element) {
+                    // Add a small delay to ensure the component has rendered
+                    setTimeout(() => {
+                        element.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }, 100);
+                }
+            }
+        };
+
+        // Handle initial load
+        handleHashScroll();
+
+        // Handle hash changes (if user clicks another link while on the page)
+        window.addEventListener('hashchange', handleHashScroll);
+
+        // Cleanup
+        return () => {
+            window.removeEventListener('hashchange', handleHashScroll);
+        };
+    }, []);
+
     return (
-        <section className="body-bg py-16 px-6">
+        <section id="portfolio-section" className="body-bg py-16 px-6">
             {/* Section Intro */}
             <ContainerStagger className="relative z-[10] place-self-center px-6 text-center mb-12">
                 {/* Background Half Circle */}
@@ -92,8 +124,8 @@ export default function PortfolioMain({ items }: Props) {
                             setVisibleCount(3);
                         }}
                         className={`rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 border-2 ${activeFilter === category
-                                ? "bg-blue-600 text-white border-blue-600 shadow-lg shadow-blue-500/25 scale-105"
-                                : "bg-white text-gray-700 border-gray-200 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 shadow-sm"
+                            ? "bg-blue-600 text-white border-blue-600 shadow-lg shadow-blue-500/25 scale-105"
+                            : "bg-white text-gray-700 border-gray-200 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 shadow-sm"
                             }`}
                     >
                         {category}

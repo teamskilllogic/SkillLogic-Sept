@@ -18,10 +18,8 @@ const PortfolioPage: React.FC = () => {
                     title="Work Portfolio"
                     description="Explore our recent projects that have helped businesses achieve their digital goals."
                 />
-
                 {/* Portfolio main component (pass projects array) */}
                 <PortfolioMain items={projects} />
-
                 <GetStarted />
             </main>
 

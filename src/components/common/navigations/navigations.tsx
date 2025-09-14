@@ -43,7 +43,7 @@ function Navbar() {
         // Use the most direct scroll listener
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
-    }, []);    return (
+    }, []); return (
         <>
             <style>{`
                 .navbar-header {
@@ -65,104 +65,104 @@ function Navbar() {
                 data-navbar
                 className="w-full z-40 fixed top-0 left-0 navbar-header"
             >
-            <div className="container mx-auto flex min-h-20 items-center justify-between px-4 lg:px-8">
-                {/* Logo */}
-                <Link to="/" className="flex items-center space-x-2" onClick={() => window.scrollTo(0, 0)}>
-                    <img
-                        src="/images/logo.png"
-                        alt="SkillLogic Logo"
-                        className="h-9 w-auto md:h-10"
-                    />
-                    <span className="font-semibold text-black dark:text-white">
-                        SkillLogic
-                    </span>
-                </Link>
+                <div className="container mx-auto flex min-h-20 items-center justify-between px-4 lg:px-8">
+                    {/* Logo */}
+                    <Link to="/" className="flex items-center space-x-2" onClick={() => window.scrollTo(0, 0)}>
+                        <img
+                            src="/images/logo.png"
+                            alt="SkillLogic Logo"
+                            className="h-9 w-auto md:h-10 drop-shadow-lg"
+                        />
+                        <span className="font-semibold text-lg md:text-xl text-black dark:text-white">
+                            SkillLogic<span className="hidden md:inline"> Technologies</span>
+                        </span>
+                    </Link>
 
-                {/* Desktop Navigation */}
-                <div className="justify-start items-center gap-4 lg:flex hidden flex-row">
-                    <div className="flex justify-start gap-4 flex-row">
-                        {navigationItems.map((item) => (
-                            <Link
-                                key={item.title}
-                                to={item.href}
-                                onClick={() => window.scrollTo(0, 0)}
-                                className="px-3 py-2 text-black dark:text-white font-medium hover:text-blue-600 transition-colors duration-200"
-                            >
-                                {item.title}
+                    {/* Desktop Navigation */}
+                    <div className="justify-start items-center gap-4 lg:flex hidden flex-row">
+                        <div className="flex justify-start gap-4 flex-row">
+                            {navigationItems.map((item) => (
+                                <Link
+                                    key={item.title}
+                                    to={item.href}
+                                    onClick={() => window.scrollTo(0, 0)}
+                                    className="px-3 py-2 text-black dark:text-white font-medium hover:text-blue-600 transition-colors duration-200"
+                                >
+                                    {item.title}
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Right Section */}
+                    <div className="flex items-center gap-4">
+                        <div className="flex justify-end w-full gap-4">
+                            {/* Desktop - text buttons */}
+                            <Link to="/about" className="hidden md:inline" onClick={() => window.scrollTo(0, 0)}>
+                                <Button variant="ghost">
+                                    About
+                                </Button>
                             </Link>
-                        ))}
+                            <div className="border-r hidden md:inline"></div>
+                            <Link to="/contact" className="hidden md:inline" onClick={() => window.scrollTo(0, 0)}>
+                                <Button variant="outline">Contact Us</Button>
+                            </Link>
+                            <Button className="hidden md:inline" onClick={() => window.scrollTo(0, 0)}>Get a Quote</Button>
+
+                            {/* Mobile - icon buttons */}
+                            <Link to="/contact" className="md:hidden" onClick={() => window.scrollTo(0, 0)}>
+                                <Button variant="outline" size="sm">
+                                    <Phone className="w-4 h-4" />
+                                </Button>
+                            </Link>
+                            <Button size="sm" className="md:hidden" onClick={() => window.scrollTo(0, 0)}>
+                                <FileText className="w-4 h-4" />
+                            </Button>
+
+                            {/* Mobile Menu Toggle */}
+                            <Button
+                                variant="ghost"
+                                className="lg:hidden"
+                                onClick={() => setOpen(!isOpen)}
+                            >
+                                {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                            </Button>
+                        </div>
                     </div>
                 </div>
 
-                {/* Right Section */}
-                <div className="flex items-center gap-4">
-                    <div className="flex justify-end w-full gap-4">
-                        {/* Desktop - text buttons */}
-                        <Link to="/about" className="hidden md:inline" onClick={() => window.scrollTo(0, 0)}>
-                            <Button variant="ghost">
-                                About
-                            </Button>
-                        </Link>
-                        <div className="border-r hidden md:inline"></div>
-                        <Link to="/contact" className="hidden md:inline" onClick={() => window.scrollTo(0, 0)}>
-                            <Button variant="outline">Contact Us</Button>
-                        </Link>
-                        <Button className="hidden md:inline" onClick={() => window.scrollTo(0, 0)}>Get a Quote</Button>
-
-                        {/* Mobile - icon buttons */}
-                        <Link to="/contact" className="md:hidden" onClick={() => window.scrollTo(0, 0)}>
-                            <Button variant="outline" size="sm">
-                                <Phone className="w-4 h-4" />
-                            </Button>
-                        </Link>
-                        <Button size="sm" className="md:hidden" onClick={() => window.scrollTo(0, 0)}>
-                            <FileText className="w-4 h-4" />
-                        </Button>
-
-                        {/* Mobile Menu Toggle */}
-                        <Button
-                            variant="ghost"
-                            className="lg:hidden"
-                            onClick={() => setOpen(!isOpen)}
-                        >
-                            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-                        </Button>
-                    </div>
-                </div>
-            </div>
-
-            {/* Mobile Navigation */}
-            {isOpen && (
-                <div className="lg:hidden bg-white dark:bg-black shadow-md border-t dark:border-gray-800">
-                    <div className="container mx-auto flex flex-col gap-4 py-4 px-4">
-                        {navigationItems.map((item) => (
+                {/* Mobile Navigation */}
+                {isOpen && (
+                    <div className="lg:hidden bg-white dark:bg-black shadow-md border-t dark:border-gray-800">
+                        <div className="container mx-auto flex flex-col gap-4 py-4 px-4">
+                            {navigationItems.map((item) => (
+                                <Link
+                                    key={item.title}
+                                    to={item.href}
+                                    className="text-black dark:text-white hover:underline"
+                                    onClick={() => {
+                                        setOpen(false);
+                                        window.scrollTo(0, 0);
+                                    }}
+                                >
+                                    {item.title}
+                                </Link>
+                            ))}
+                            {/* Add About link for mobile */}
                             <Link
-                                key={item.title}
-                                to={item.href}
+                                to="/about"
                                 className="text-black dark:text-white hover:underline"
                                 onClick={() => {
                                     setOpen(false);
                                     window.scrollTo(0, 0);
                                 }}
                             >
-                                {item.title}
+                                About
                             </Link>
-                        ))}
-                        {/* Add About link for mobile */}
-                        <Link
-                            to="/about"
-                            className="text-black dark:text-white hover:underline"
-                            onClick={() => {
-                                setOpen(false);
-                                window.scrollTo(0, 0);
-                            }}
-                        >
-                            About
-                        </Link>
+                        </div>
                     </div>
-                </div>
-            )}
+                )}
             </header>
         </>
     );
-}export { Navbar };
+} export { Navbar };

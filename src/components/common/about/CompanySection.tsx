@@ -1,10 +1,42 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { data } from "./data";
 import { HandPlatter, Rocket } from "lucide-react";
 
 const CompanySection = () => {
+    // Handle scroll to section when component mounts with hash
+    useEffect(() => {
+        const handleHashScroll = () => {
+            const hash = window.location.hash;
+            if (hash) {
+                // Remove the # from hash
+                const id = hash.substring(1);
+                const element = document.getElementById(id);
+                if (element) {
+                    // Add a small delay to ensure the component has rendered
+                    setTimeout(() => {
+                        element.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }, 100);
+                }
+            }
+        };
+
+        // Handle initial load
+        handleHashScroll();
+
+        // Handle hash changes (if user clicks another link while on the page)
+        window.addEventListener('hashchange', handleHashScroll);
+
+        // Cleanup
+        return () => {
+            window.removeEventListener('hashchange', handleHashScroll);
+        };
+    }, []);
+
     return (
-        <section className="w-full py-20 flex justify-center items-center body-bg">
+        <section id="about-section" className="w-full py-20 flex justify-center items-center body-bg">
             <div className="max-w-7xl w-full mx-auto px-6 flex flex-col items-center justify-center text-center">
                 {/* Section Label (same as Services) */}
                 <span
@@ -20,7 +52,7 @@ const CompanySection = () => {
 
                 {/* Heading (mirrors Services typography) */}
                 <h2 className="text-3xl md:text-6xl lg:text-6xl xl:text-[58px] leading-[38px] md:leading-[60px] lg:leading-[60px] xl:leading-[70px] font-extrabold text-zinc-900 text-center w-[70%] md:w-full mx-auto mb-5 md:mb-[30px] tracking-tight">
-                    About Us
+                    Our Focus
                 </h2>
 
                 {/* Description (same width + rhythm as Services) */}

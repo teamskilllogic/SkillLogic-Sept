@@ -170,7 +170,7 @@ const Services = () => {
     return (
         // w-full py-20 flex justify-center items-center
         // max-w-7xl  w-full mx-auto px-6 flex flex-col items-center justify-center text-center
-        <div className="w-full flex justify-center items-center body-bg">
+        <div id="services-section"  className="w-full flex justify-center items-center body-bg">
             <section className="w-full max-w-7xl mx-auto px-6 py-20 ">
                 {/* Header */}
                 <div className="text-center mb-16">

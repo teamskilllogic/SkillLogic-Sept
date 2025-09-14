@@ -1,6 +1,7 @@
 import React from "react";
 import { Settings, PenTool, Code2, BarChart3, Rocket } from "lucide-react";
 import { HandPlatter } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const services = [
     {
@@ -82,10 +83,10 @@ const Services: React.FC = () => {
 
                 {/* Enhanced Button */}
                 <div className="flex items-center gap-4 mt-8">
-                    <button className="flex items-center gap-2 bg-black text-white px-5 py-3 rounded-xl font-medium hover:bg-gray-800 transition-all duration-300 shadow-md hover:shadow-lg">
+                    <Link to="/services#services-section" className="flex items-center gap-2 bg-black text-white px-5 py-3 rounded-xl font-medium hover:bg-gray-800 transition-all duration-300 shadow-md hover:shadow-lg">
                         <Rocket size={20} />
                         Explore All Services
-                    </button>
+                    </Link>
                 </div>
 
                 <h3 className="text-lg font-bold text-blue-500 mt-8">

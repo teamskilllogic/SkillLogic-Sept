@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Rocket } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const logos = [
     { name: "NextJS", src: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg" },
@@ -70,10 +71,10 @@ const TechShowcase: React.FC = () => {
 
             {/* Buttons */}
             <div className="flex items-center gap-4 mt-4 text-center justify-center">
-                <button className="flex items-center gap-2 bg-black text-white px-3 py-2 rounded-xl font-medium hover:bg-gray-800 transition">
+                <Link to="/portfolio#portfolio-section" className="flex items-center gap-2 bg-black text-white px-3 py-2 rounded-xl font-medium hover:bg-gray-800 transition">
                     <Rocket size={18} />
                     View All Projects
-                </button>
+                </Link>
             </div>
 
 

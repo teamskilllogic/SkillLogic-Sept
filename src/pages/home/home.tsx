@@ -29,8 +29,8 @@ const Home = () => {
                 <ProjectShowcase />
                 <TechShowcase />
                 <Timeline />
-                <Pricing />
                 <Testimonial />
+                <Pricing />
                 <Team />
                 <FAQ />
                 <GetStarted />

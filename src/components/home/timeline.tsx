@@ -2,6 +2,7 @@ import React from "react";
 import "@/components/common/common.css";
 import { Rocket } from "lucide-react";
 import { Clock } from "lucide-react";
+import { Link } from "react-router-dom";
 
 type Step = {
     time: string;
@@ -78,10 +79,10 @@ const Timeline: React.FC = () => {
 
                     {/* Buttons */}
                     <div className="flex items-center gap-4 mt-4">
-                        <button className="flex items-center gap-2 bg-black text-white px-3 py-2 rounded-xl font-medium hover:bg-gray-800 transition">
+                        <Link to="/about#about-section" className="flex items-center gap-2 bg-black text-white px-3 py-2 rounded-xl font-medium hover:bg-gray-800 transition">
                             <Rocket size={18} />
-                            Have Any Questions? Contact Us
-                        </button>
+                            Have Any Questions? Read More About Us
+                        </Link>
                     </div>
 
 

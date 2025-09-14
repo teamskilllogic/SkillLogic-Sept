@@ -37,8 +37,8 @@ const MetricTile = ({ value, label, prefix, suffix, start, delayMs = 0 }: { valu
 		<div
 			ref={tileRef}
 			className={`group relative rounded-xl sm:rounded-2xl border border-gray-200 p-3 sm:p-5 shadow-lg transition-all duration-300 hover:shadow-xl sm:md:p-6 ${start ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}
-			style={{ 
-				transitionDelay: `${delayMs}ms`, 
+			style={{
+				transitionDelay: `${delayMs}ms`,
 				backgroundColor: '#ffffff',
 				boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
 				backdropFilter: 'blur(10px)',
