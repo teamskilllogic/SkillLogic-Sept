@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { CheckCircle, Layout, Code2, Palette, BarChart } from "lucide-react";
 import { Button } from "@/components/ui/button"; // using your custom button
 import "@/components/common/common.css";
 
 const services = [
     {
+        id: "website-development",
         icon: <Code2 className="h-6 w-6 text-blue-600" />,
         title: "Website Development",
         duration: "Timeline: 2–6 weeks",
@@ -20,6 +21,7 @@ const services = [
         image: "/public/images/web_development.png",
     },
     {
+        id: "mobile-app-development",
         icon: <Palette className="h-6 w-6 text-blue-600" />,
         title: "Mobile App Development",
         duration: "Timeline: 4–10 weeks",
@@ -35,6 +37,7 @@ const services = [
         image: "/public/images/mobile_development.png",
     },
     {
+        id: "crm-development",
         icon: <Layout className="h-6 w-6 text-blue-600" />,
         title: "CRM Development",
         duration: "Timeline: 3–8 weeks",
@@ -50,6 +53,7 @@ const services = [
         image: "/public/images/crm_development.png",
     },
     {
+        id: "erp-development",
         icon: <BarChart className="h-6 w-6 text-blue-600" />,
         title: "ERP Development",
         duration: "Timeline: 6–12 weeks",
@@ -65,6 +69,7 @@ const services = [
         image: "/public/images/erp_development.png",
     },
     {
+        id: "product-strategy",
         icon: <Layout className="h-6 w-6 text-blue-600" />,
         title: "Product Strategy",
         duration: "Timeline: 2–4 weeks",
@@ -80,6 +85,7 @@ const services = [
         image: "/public/images/strategy.png",
     },
     {
+        id: "design",
         icon: <Palette className="h-6 w-6 text-blue-600" />,
         title: "Design",
         duration: "Timeline: 3–6 weeks",
@@ -95,6 +101,7 @@ const services = [
         image: "/public/images/ui_ux_development.png",
     },
     {
+        id: "marketing",
         icon: <BarChart className="h-6 w-6 text-blue-600" />,
         title: "Marketing",
         duration: "Timeline: Ongoing",
@@ -110,6 +117,7 @@ const services = [
         image: "/public/images/marketing.png",
     },
     {
+        id: "other-services",
         icon: <CheckCircle className="h-6 w-6 text-blue-600" />,
         title: "Other Services",
         duration: "Timeline: Varies",
@@ -127,6 +135,38 @@ const services = [
 ];
 
 const Services = () => {
+    // Handle scroll to section when component mounts with hash
+    useEffect(() => {
+        const handleHashScroll = () => {
+            const hash = window.location.hash;
+            if (hash) {
+                // Remove the # from hash
+                const id = hash.substring(1);
+                const element = document.getElementById(id);
+                if (element) {
+                    // Add a small delay to ensure the component has rendered
+                    setTimeout(() => {
+                        element.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }, 100);
+                }
+            }
+        };
+
+        // Handle initial load
+        handleHashScroll();
+
+        // Handle hash changes (if user clicks another link while on the page)
+        window.addEventListener('hashchange', handleHashScroll);
+
+        // Cleanup
+        return () => {
+            window.removeEventListener('hashchange', handleHashScroll);
+        };
+    }, []);
+
     return (
         // w-full py-20 flex justify-center items-center
         // max-w-7xl  w-full mx-auto px-6 flex flex-col items-center justify-center text-center
@@ -155,10 +195,12 @@ const Services = () => {
                         const isEven = idx % 2 === 0;
                         return (
                             <div
+                                id={service.id}
                                 key={idx}
-                                className={`group relative bg-white rounded-3xl border border-gray-100 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2 ${!isEven ? 'lg:flex-row-reverse' : ''} flex flex-col lg:flex-row`}
+                                className={`service-card group relative bg-white rounded-3xl border border-gray-100 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2 ${!isEven ? 'lg:flex-row-reverse' : ''} flex flex-col lg:flex-row`}
                                 style={{
-                                    boxShadow: '0 4px 24px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.1)'
+                                    boxShadow: '0 4px 24px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.1)',
+                                    scrollMarginTop: '100px' // Offset for fixed navbar
                                 }}
                             >
                                 {/* Subtle gradient overlay */}

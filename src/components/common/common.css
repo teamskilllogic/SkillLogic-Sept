@@ -255,3 +255,26 @@
     background-position: center top;
     border-radius: 90px;
 }
+
+/* Service Card Targeting Styles */
+.service-card:target {
+    animation: highlightService 2s ease-in-out;
+    border-color: #3b82f6 !important;
+    box-shadow: 0 8px 32px rgba(59, 130, 246, 0.15), 0 4px 16px rgba(59, 130, 246, 0.1) !important;
+}
+
+@keyframes highlightService {
+    0% {
+        transform: scale(1);
+        border-color: #e5e7eb;
+    }
+    50% {
+        transform: scale(1.02);
+        border-color: #3b82f6;
+        box-shadow: 0 12px 40px rgba(59, 130, 246, 0.2), 0 6px 20px rgba(59, 130, 246, 0.15);
+    }
+    100% {
+        transform: scale(1);
+        border-color: #3b82f6;
+    }
+}

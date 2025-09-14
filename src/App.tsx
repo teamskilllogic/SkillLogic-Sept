@@ -55,11 +55,11 @@ const App = () => {
                         >
                             <Routes>
                                 <Route path="/" element={<Index />} />
-                                <Route path="/service" element={
+                                {/* <Route path="/service" element={
                                     <Suspense fallback={<BrandedPageLoader />}>
                                         <LazyService />
                                     </Suspense>
-                                } />
+                                } /> */}
                                 <Route path="/services" element={
                                     <Suspense fallback={<BrandedPageLoader />}>
                                         <LazyServices />

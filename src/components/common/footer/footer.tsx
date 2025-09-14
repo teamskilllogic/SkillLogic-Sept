@@ -41,13 +41,13 @@ const defaultSections = [
     {
         title: "Services",
         links: [
-            { name: "Website Development", href: "/" },
-            { name: "Mobile App Development", href: "/" },
-            { name: "CRM Development", href: "/" },
-            { name: "ERP Development", href: "/" },
-            { name: "SEO Services", href: "/" },
-            { name: "UI/UX Design", href: "/" },
-            { name: "Digital Marketing", href: "/" },
+            { name: "Website Development", href: "/services#website-development" },
+            { name: "Mobile App Development", href: "/services#mobile-app-development" },
+            { name: "CRM Development", href: "/services#crm-development" },
+            { name: "ERP Development", href: "/services#erp-development" },
+            { name: "UI/UX Design", href: "/services#design" },
+            { name: "Digital Marketing", href: "/services#marketing" },
+            { name: "Other Services", href: "/services#other-services" },
         ],
     },
     {
@@ -64,10 +64,10 @@ const defaultSections = [
 ];
 
 const defaultSocialLinks = [
-    { icon: <FaInstagram className="size-5" />, href: "#", label: "Instagram" },
-    { icon: <FaFacebook className="size-5" />, href: "#", label: "Facebook" },
-    { icon: <FaTwitter className="size-5" />, href: "#", label: "Twitter" },
-    { icon: <FaLinkedin className="size-5" />, href: "#", label: "LinkedIn" },
+    { icon: <FaInstagram className="size-5" />, href: "https://www.instagram.com/skilllogic.in?igsh=aml3dDNza2thZ2Q5", label: "Instagram" },
+    { icon: <FaFacebook className="size-5" />, href: "https://www.facebook.com/share/12KmFpRPYYR/", label: "Facebook" },
+    { icon: <FaLinkedin className="size-5" />, href: "https://www.linkedin.com/company/skilllogic-technologies/", label: "LinkedIn" },
+    // { icon: <FaTwitter className="size-5" />, href: "#", label: "Twitter" },
 ];
 
 const defaultLegalLinks = [
