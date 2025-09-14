@@ -9,123 +9,135 @@ const SQRT_5000 = Math.sqrt(5000);
 const testimonials = [
     {
         tempId: 0,
-        testimonial: "My favorite solution in the market. We work 5x faster with COMPANY.",
-        by: "Alex, CEO at TechCorp",
-        imgSrc: "https://i.pravatar.cc/150?img=1"
+        testimonial: "SkillLogic team made our restaurant website in just 2 weeks. Very professional work and price was also reasonable. Highly recommend!",
+        by: "Rajesh Kumar, Owner at Spice Garden Restaurant",
+        imgSrc: "https://ui-avatars.com/api/?name=Male&size=150&background=e5e7eb&color=374151&format=svg"
     },
     {
         tempId: 1,
-        testimonial: "I'm confident my data is safe with COMPANY. I can't say that about other providers.",
-        by: "Dan, CTO at SecureNet",
-        imgSrc: "https://i.pravatar.cc/150?img=2"
+        testimonial: "My e-commerce site for sarees is running perfectly since 8 months. Good customer support also, they respond quickly when I have any issue.",
+        by: "Priya Sharma, Founder of Elegant Sarees",
+        imgSrc: "https://ui-avatars.com/api/?name=Female&size=150&background=fce7f3&color=be185d&format=svg"
     },
     {
         tempId: 2,
-        testimonial: "I know it's cliche, but we were lost before we found COMPANY. Can't thank you guys enough!",
-        by: "Stephanie, COO at InnovateCo",
-        imgSrc: "https://i.pravatar.cc/150?img=3"
+        testimonial: "These guys are really good! Made our clinic management system exactly as we wanted. Now appointments booking is so easy for patients.",
+        by: "Dr. Amit Patel, Patel Medical Center",
+        imgSrc: "https://ui-avatars.com/api/?name=Male&size=150&background=e5e7eb&color=374151&format=svg"
     },
     {
         tempId: 3,
-        testimonial: "COMPANY's products make planning for the future seamless. Can't recommend them enough!",
-        by: "Marie, CFO at FuturePlanning",
-        imgSrc: "https://i.pravatar.cc/150?img=4"
+        testimonial: "Best decision we made for our coaching institute. The student portal they developed is helping us manage 200+ students easily. Worth every rupee!",
+        by: "Neha Gupta, Director at Excel Academy",
+        imgSrc: "https://ui-avatars.com/api/?name=Female&size=150&background=fce7f3&color=be185d&format=svg"
     },
     {
         tempId: 4,
-        testimonial: "If I could give 11 stars, I'd give 12.",
-        by: "Andre, Head of Design at CreativeSolutions",
-        imgSrc: "https://i.pravatar.cc/150?img=5"
+        testimonial: "I was tensed about my business website but SkillLogic team handled everything smoothly. Now getting more customers through online!",
+        by: "Vikash Singh, Singh Electronics",
+        imgSrc: "https://ui-avatars.com/api/?name=Male&size=150&background=e5e7eb&color=374151&format=svg"
     },
     {
         tempId: 5,
-        testimonial: "SO SO SO HAPPY WE FOUND YOU GUYS!!!! I'd bet you've saved me 100 hours so far.",
-        by: "Jeremy, Product Manager at TimeWise",
-        imgSrc: "https://i.pravatar.cc/150?img=6"
+        testimonial: "Excellent work yaar! My gym's mobile app is working fantastic. Members are very happy with online class booking feature.",
+        by: "Rohit Verma, FitLife Gym Owner",
+        imgSrc: "https://ui-avatars.com/api/?name=Male&size=150&background=e5e7eb&color=374151&format=svg"
     },
     {
         tempId: 6,
-        testimonial: "Took some convincing, but now that we're on COMPANY, we're never going back.",
-        by: "Pam, Marketing Director at BrandBuilders",
-        imgSrc: "https://i.pravatar.cc/150?img=7"
+        testimonial: "SkillLogic transformed our traditional jewellery business. Online catalogue and WhatsApp ordering system increased our sales by 40%.",
+        by: "Kiran Shah, Shah Jewellers",
+        imgSrc: "https://ui-avatars.com/api/?name=Male&size=150&background=e5e7eb&color=374151&format=svg"
     },
     {
         tempId: 7,
-        testimonial: "I would be lost without COMPANY's in-depth analytics. The ROI is EASILY 100X for us.",
-        by: "Daniel, Data Scientist at AnalyticsPro",
-        imgSrc: "https://i.pravatar.cc/150?img=8"
+        testimonial: "Very satisfied with their service. They completed our real estate website before deadline and also provided free training to use admin panel.",
+        by: "Suresh Agarwal, Agarwal Properties",
+        imgSrc: "https://ui-avatars.com/api/?name=Male&size=150&background=e5e7eb&color=374151&format=svg"
     },
     {
         tempId: 8,
-        testimonial: "It's just the best. Period.",
-        by: "Fernando, UX Designer at UserFirst",
-        imgSrc: "https://i.pravatar.cc/150?img=9"
+        testimonial: "Bahut accha kaam kiya hai! Our wedding planning website looks so beautiful and professional. Getting good inquiries now.",
+        by: "Kavita Jain, Dream Weddings",
+        imgSrc: "https://ui-avatars.com/api/?name=Female&size=150&background=fce7f3&color=be185d&format=svg"
     },
     {
         tempId: 9,
-        testimonial: "I switched 5 years ago and never looked back.",
-        by: "Andy, DevOps Engineer at CloudMasters",
-        imgSrc: "https://i.pravatar.cc/150?img=10"
+        testimonial: "Initially I was worried about budget, but SkillLogic gave us a website within our range. Quality is also very good for the price.",
+        by: "Manish Yadav, Yadav Auto Parts",
+        imgSrc: "https://ui-avatars.com/api/?name=Male&size=150&background=e5e7eb&color=374151&format=svg"
     },
     {
         tempId: 10,
-        testimonial: "I've been searching for a solution like COMPANY for YEARS. So glad I finally found one!",
-        by: "Pete, Sales Director at RevenueRockets",
-        imgSrc: "https://i.pravatar.cc/150?img=11"
+        testimonial: "Great team to work with! They understand our requirements perfectly and delivered exactly what we needed for our pharmacy.",
+        by: "Deepak Mishra, City Medical Store",
+        imgSrc: "https://ui-avatars.com/api/?name=Male&size=150&background=e5e7eb&color=374151&format=svg"
     },
     {
         tempId: 11,
-        testimonial: "It's so simple and intuitive, we got the team up to speed in 10 minutes.",
-        by: "Marina, HR Manager at TalentForge",
-        imgSrc: "https://i.pravatar.cc/150?img=12"
+        testimonial: "Our tuition classes website is getting so many admissions now! Simple design but very effective. Thank you SkillLogic team.",
+        by: "Sunita Devi, Bright Future Classes",
+        imgSrc: "https://ui-avatars.com/api/?name=Female&size=150&background=fce7f3&color=be185d&format=svg"
     },
     {
         tempId: 12,
-        testimonial: "COMPANY's customer support is unparalleled. They're always there when we need them.",
-        by: "Olivia, Customer Success Manager at ClientCare",
-        imgSrc: "https://i.pravatar.cc/150?img=13"
+        testimonial: "Amazing experience! They made our construction company website mobile-friendly and SEO optimized. Getting leads from Google now.",
+        by: "Ravi Chandra, RC Constructions",
+        imgSrc: "https://ui-avatars.com/api/?name=Male&size=150&background=e5e7eb&color=374151&format=svg"
     },
     {
         tempId: 13,
-        testimonial: "The efficiency gains we've seen since implementing COMPANY are off the charts!",
-        by: "Raj, Operations Manager at StreamlineSolutions",
-        imgSrc: "https://i.pravatar.cc/150?img=14"
+        testimonial: "SkillLogic helped us shift from offline to online during COVID. Our textile business survived because of their e-commerce solution.",
+        by: "Ashok Kumar, Kumar Textiles",
+        imgSrc: "https://ui-avatars.com/api/?name=Male&size=150&background=e5e7eb&color=374151&format=svg"
     },
     {
         tempId: 14,
-        testimonial: "COMPANY has revolutionized how we handle our workflow. It's a game-changer!",
-        by: "Lila, Workflow Specialist at ProcessPro",
-        imgSrc: "https://i.pravatar.cc/150?img=15"
+        testimonial: "Professional approach and reasonable pricing. My beauty parlour's booking system is working smoothly since 6 months. No complaints!",
+        by: "Pooja Tripathi, Glamour Beauty Salon",
+        imgSrc: "https://ui-avatars.com/api/?name=Female&size=150&background=fce7f3&color=be185d&format=svg"
     },
     {
         tempId: 15,
-        testimonial: "The scalability of COMPANY's solution is impressive. It grows with our business seamlessly.",
-        by: "Trevor, Scaling Officer at GrowthGurus",
-        imgSrc: "https://i.pravatar.cc/150?img=16"
+        testimonial: "They delivered our grocery delivery app on time and within budget. Customer response has been very positive. Recommended!",
+        by: "Arjun Pandey, Fresh Mart Grocery",
+        imgSrc: "https://ui-avatars.com/api/?name=Male&size=150&background=e5e7eb&color=374151&format=svg"
     },
     {
         tempId: 16,
-        testimonial: "I appreciate how COMPANY continually innovates. They're always one step ahead.",
-        by: "Naomi, Innovation Lead at FutureTech",
-        imgSrc: "https://i.pravatar.cc/150?img=17"
+        testimonial: "Best web development company in our area. Made our school's admission portal and fee management system. Parents are very happy now.",
+        by: "Sanjay Tiwari, Principal at Vidya Mandir School",
+        imgSrc: "https://ui-avatars.com/api/?name=Male&size=150&background=e5e7eb&color=374151&format=svg"
     },
     {
         tempId: 17,
-        testimonial: "The ROI we've seen with COMPANY is incredible. It's paid for itself many times over.",
-        by: "Victor, Finance Analyst at ProfitPeak",
-        imgSrc: "https://i.pravatar.cc/150?img=18"
+        testimonial: "SkillLogic team is very cooperative. They made changes in our hotel booking website whenever we asked. Good after-sales service.",
+        by: "Rakesh Joshi, Hotel Grand Palace",
+        imgSrc: "https://ui-avatars.com/api/?name=Male&size=150&background=e5e7eb&color=374151&format=svg"
     },
     {
         tempId: 18,
-        testimonial: "COMPANY's platform is so robust, yet easy to use. It's the perfect balance.",
-        by: "Yuki, Tech Lead at BalancedTech",
-        imgSrc: "https://i.pravatar.cc/150?img=19"
+        testimonial: "Honest pricing and quality work. Our diagnostic center's report management system is helping us serve patients better.",
+        by: "Dr. Shweta Singh, Singh Diagnostics",
+        imgSrc: "https://ui-avatars.com/api/?name=Female&size=150&background=fce7f3&color=be185d&format=svg"
     },
     {
         tempId: 19,
-        testimonial: "We've tried many solutions, but COMPANY stands out in terms of reliability and performance.",
-        by: "Zoe, Performance Manager at ReliableSystems",
-        imgSrc: "https://i.pravatar.cc/150?img=20"
+        testimonial: "Made our CA firm's website with client portal feature. Now document sharing with clients is so much easier. Great job!",
+        by: "Manoj Agrawal, CA & Associates",
+        imgSrc: "https://ui-avatars.com/api/?name=Male&size=150&background=e5e7eb&color=374151&format=svg"
+    },
+    {
+        tempId: 20,
+        testimonial: "Very happy with mobile app for my transport business. Driver tracking and customer notifications working perfectly since launch.",
+        by: "Satish Kumar, Kumar Travels",
+        imgSrc: "https://ui-avatars.com/api/?name=Male&size=150&background=e5e7eb&color=374151&format=svg"
+    },
+    {
+        tempId: 21,
+        testimonial: "SkillLogic understood our local market needs. E-commerce website for our handicrafts is bringing customers from other cities too!",
+        by: "Geeta Devi, Handmade Crafts",
+        imgSrc: "https://ui-avatars.com/api/?name=Female&size=150&background=fce7f3&color=be185d&format=svg"
     }
 ];
 
