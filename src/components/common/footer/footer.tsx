@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import GetAQuote from "@/components/common/modal/getAQuote";
 
 interface Footer7Props {
     logo?: {
@@ -88,6 +89,13 @@ export const Footer7 = ({
     copyright = "© 2025 SkillLogic. All rights reserved.",
     legalLinks = defaultLegalLinks,
 }: Footer7Props) => {
+    const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+
+    const handleGetQuoteClick = (e: React.MouseEvent) => {
+        e.preventDefault();
+        setIsQuoteModalOpen(true);
+    };
+
     return (
         <section className="py-32">
             <div className="container mx-auto">
@@ -134,7 +142,16 @@ export const Footer7 = ({
                                 <ul className="space-y-3 text-sm text-muted-foreground">
                                     {section.links.map((link, linkIdx) => (
                                         <li key={linkIdx} className="hover:text-primary">
-                                            <a href={link.href}>{link.name}</a>
+                                            {link.name === "Get a Quote" ? (
+                                                <button
+                                                    onClick={handleGetQuoteClick}
+                                                    className="text-left hover:text-primary transition-colors cursor-pointer"
+                                                >
+                                                    {link.name}
+                                                </button>
+                                            ) : (
+                                                <a href={link.href}>{link.name}</a>
+                                            )}
                                         </li>
                                     ))}
                                 </ul>
@@ -154,6 +171,12 @@ export const Footer7 = ({
                     </ul>
                 </div>
             </div>
+
+            {/* Get A Quote Modal */}
+            <GetAQuote
+                isOpen={isQuoteModalOpen}
+                onClose={() => setIsQuoteModalOpen(false)}
+            />
         </section>
     );
 };

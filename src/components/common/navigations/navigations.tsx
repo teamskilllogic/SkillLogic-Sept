@@ -3,16 +3,18 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/common/button";
 import { Menu, X, Phone, FileText } from "lucide-react";
+import GetAQuote from "@/components/common/modal/getAQuote";
 
 function Navbar() {
     const navigationItems = [
-        { title: "Home", href: "/home" },
+        { title: "Home", href: "/" },
         { title: "Services", href: "/services" },
         { title: "Portfolio", href: "/portfolio" },
         { title: "Testimonials", href: "/testimonials" },
     ];
 
     const [isOpen, setOpen] = useState(false);
+    const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
     const [theme, setTheme] = useState(
         localStorage.getItem("theme") === "dark" ? "dark" : "light"
     );
@@ -107,7 +109,8 @@ function Navbar() {
                             <Link to="/contact" className="hidden md:inline" onClick={() => window.scrollTo(0, 0)}>
                                 <Button variant="outline">Contact Us</Button>
                             </Link>
-                            <Button className="hidden md:inline" onClick={() => window.scrollTo(0, 0)}>Get a Quote</Button>
+
+                            <Button className="hidden md:inline" onClick={() => setIsQuoteModalOpen(true)}>Get a Quote</Button>
 
                             {/* Mobile - icon buttons */}
                             <Link to="/contact" className="md:hidden" onClick={() => window.scrollTo(0, 0)}>
@@ -115,7 +118,7 @@ function Navbar() {
                                     <Phone className="w-4 h-4" />
                                 </Button>
                             </Link>
-                            <Button size="sm" className="md:hidden" onClick={() => window.scrollTo(0, 0)}>
+                            <Button size="sm" className="md:hidden" onClick={() => setIsQuoteModalOpen(true)}>
                                 <FileText className="w-4 h-4" />
                             </Button>
 
@@ -163,6 +166,12 @@ function Navbar() {
                     </div>
                 )}
             </header>
+
+            {/* Get A Quote Modal */}
+            <GetAQuote
+                isOpen={isQuoteModalOpen}
+                onClose={() => setIsQuoteModalOpen(false)}
+            />
         </>
     );
 } export { Navbar };

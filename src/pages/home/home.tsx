@@ -18,13 +18,11 @@ const Home = () => {
         <div className="min-h-screen body-bg">
             <Navbar />
             <main>
-                {/* Section 2: Banner */}
                 <Hero
                     page="Skilllogic Technologies"
                     title="Its time to make your software in weeks"
                     description={`Ready to build your next Website, Mobile App, CRM, or ERP ? \n We empower startups and businesses to scale and grow—fast. \n Get started today and launch in weeks!`}
                 />
-                {/* Section 3: Timeline */}
                 <Services />
                 <ProjectShowcase />
                 <TechShowcase />

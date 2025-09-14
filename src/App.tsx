@@ -32,10 +32,8 @@ const App = () => {
     useEffect(() => {
         // Initialize performance monitoring
         new PerformanceMonitor();
-
         // Preload critical resources
         preloadCriticalResources();
-
         // Detect memory leaks in development
         detectMemoryLeaks();
     }, []);
@@ -54,12 +52,17 @@ const App = () => {
                             }}
                         >
                             <Routes>
-                                <Route path="/" element={<Index />} />
+                                <Route path="/home" element={<Index />} />
                                 {/* <Route path="/service" element={
                                     <Suspense fallback={<BrandedPageLoader />}>
                                         <LazyService />
                                     </Suspense>
                                 } /> */}
+                                <Route path="/" element={
+                                    <Suspense fallback={<BrandedPageLoader />}>
+                                        <LazyHome />
+                                    </Suspense>
+                                } />
                                 <Route path="/services" element={
                                     <Suspense fallback={<BrandedPageLoader />}>
                                         <LazyServices />
@@ -70,24 +73,19 @@ const App = () => {
                                         <LazyTestimonialsPage />
                                     </Suspense>
                                 } />
+                                <Route path="/portfolio" element={
+                                    <Suspense fallback={<BrandedPageLoader />}>
+                                        <LazyPortfolio />
+                                    </Suspense>
+                                } />
                                 <Route path="/about" element={
                                     <Suspense fallback={<BrandedPageLoader />}>
                                         <LazyAbout />
                                     </Suspense>
                                 } />
-                                <Route path="/home" element={
-                                    <Suspense fallback={<BrandedPageLoader />}>
-                                        <LazyHome />
-                                    </Suspense>
-                                } />
                                 <Route path="/contact" element={
                                     <Suspense fallback={<BrandedPageLoader />}>
                                         <LazyContact />
-                                    </Suspense>
-                                } />
-                                <Route path="/portfolio" element={
-                                    <Suspense fallback={<BrandedPageLoader />}>
-                                        <LazyPortfolio />
                                     </Suspense>
                                 } />
                                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

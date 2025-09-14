@@ -20,54 +20,82 @@ const WhyTrustUs = () => {
                 We deliver, we communicate, we stay accountable
             </h2>
             {/* Description */}
-            <p className="text-zinc-600 text-base md:text-base xl:text-lg font-medium tracking-normal leading-6 md:leading-[30px] w-[94%] md:w-[90%] lg:w-[80%] xl:w-[56%] mx-auto tracking-tight">
+            <p className="text-zinc-600 text-base md:text-base xl:text-lg font-medium tracking-normal leading-6 md:leading-[30px] w-[96%] md:w-[95%] lg:w-[88%] xl:w-[70%] mx-auto tracking-tight text-center">
                 From discovery to launch, you get transparent progress updates, predictable
                 timelines, and senior engineers focused on business impact—not just code.
+                We understand that your success is our success, which is why we prioritize clear communication,
+                meet every deadline, and ensure your project delivers real value to your customers and business growth.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <ul className="space-y-4">
-                        <li className="flex items-start gap-3">
-                            <span className="mt-1 h-2 w-2 rounded-full bg-blue-500" />
-                            <div>
-                                <div className="font-semibold text-black">Proven delivery</div>
-                                <p className="text-gray-600 text-sm">Battle‑tested playbooks and checklists for reliable releases.</p>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center mt-16 mb-12">
+                {/* Features List */}
+                <div className="space-y-8">
+
+                    <div className="group hover:transform hover:translate-x-2 transition-all duration-300 ease-out">
+                        <div className="flex items-start gap-4 p-6 rounded-2xl bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 border border-blue-200 hover:border-blue-300 transition-all duration-300 shadow-sm hover:shadow-md">
+                            <div className="flex-shrink-0 mt-1">
+                                <div className="h-3 w-3 rounded-full bg-gradient-to-r from-blue-500 to-blue-700 shadow-lg"></div>
                             </div>
-                        </li>
-                        <li className="flex items-start gap-3">
-                            <span className="mt-1 h-2 w-2 rounded-full bg-blue-500" />
-                            <div>
-                                <div className="font-semibold text-black">Business-first approach</div>
-                                <p className="text-gray-600 text-sm">Design and engineering decisions tied to measurable outcomes.</p>
+                            <div className="flex-1">
+                                <h3 className="font-bold text-lg text-black mb-2 group-hover:text-blue-700 transition-colors">
+                                    Proven Delivery
+                                </h3>
+                                <p className="text-gray-700 text-sm leading-relaxed">
+                                    Battle‑tested playbooks and checklists for reliable releases that ensure your project launches on time, every time.
+                                </p>
                             </div>
-                        </li>
-                        <li className="flex items-start gap-3">
-                            <span className="mt-1 h-2 w-2 rounded-full bg-blue-500" />
-                            <div>
-                                <div className="font-semibold text-black">Clear communication</div>
-                                <p className="text-gray-600 text-sm">Weekly demos, shared roadmaps, and single point of contact.</p>
+                        </div>
+                    </div>
+
+                    <div className="group hover:transform hover:translate-x-2 transition-all duration-300 ease-out">
+                        <div className="flex items-start gap-4 p-6 rounded-2xl bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 border border-blue-200 hover:border-blue-300 transition-all duration-300 shadow-sm hover:shadow-md">
+                            <div className="flex-shrink-0 mt-1">
+                                <div className="h-3 w-3 rounded-full bg-gradient-to-r from-blue-500 to-blue-700 shadow-lg"></div>
                             </div>
-                        </li>
-                    </ul>
+                            <div className="flex-1">
+                                <h3 className="font-bold text-lg text-black mb-2 group-hover:text-blue-700 transition-colors">
+                                    Business-First Approach
+                                </h3>
+                                <p className="text-gray-700 text-sm leading-relaxed">
+                                    Design and engineering decisions tied to measurable outcomes that drive real growth for your business.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="group hover:transform hover:translate-x-2 transition-all duration-300 ease-out">
+                        <div className="flex items-start gap-4 p-6 rounded-2xl bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 border border-blue-200 hover:border-blue-300 transition-all duration-300 shadow-sm hover:shadow-md">
+                            <div className="flex-shrink-0 mt-1">
+                                <div className="h-3 w-3 rounded-full bg-gradient-to-r from-blue-500 to-blue-700 shadow-lg"></div>
+                            </div>
+                            <div className="flex-1">
+                                <h3 className="font-bold text-lg text-black mb-2 group-hover:text-blue-700 transition-colors">
+                                    Clear Communication
+                                </h3>
+                                <p className="text-gray-700 text-sm leading-relaxed">
+                                     Weekly demos, shared roadmaps, and single point of contact so you're always in the loop.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div className="flex justify-center">
-                    <img
-                        src="/images/strategy.png"
-                        alt="Why trust us"
-                        className="w-full max-w-md rounded-lg"
-                    />
+
+                {/* Image Section */}
+                <div className="flex justify-center lg:justify-end">
+                    <div className="relative group">
+                        <div className="absolute -inset-4 bg-gradient-to-r from-blue-200 via-slate-200 to-blue-300 rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
+                        <img
+                            src="/images/strategy.png"
+                            alt="Why trust us - Professional strategy and delivery"
+                            className="relative w-full max-w-lg rounded-2xl shadow-2xl transform group-hover:scale-105 transition-transform duration-500 border-4 border-white"
+                        />
+                    </div>
                 </div>
             </div>
 
             {/* Unique value add - impact metrics */}
             <ImpactMetrics />
 
-            {/* CTA + concluding line */}
-            <div className="flex items-center justify-center mb-6 mt-6">
-                <button className="flex items-center gap-2 bg-black text-white px-4 py-3 rounded-xl font-medium hover:bg-gray-800 transition text-sm sm:text-base">
-                    Why Choose Us?
-                </button>
-            </div>
             <h3 className="text-center text-base sm:text-lg font-bold text-blue-500 mt-4 sm:mt-6 mb-8">
                 <span className="block text-blue-500 font-bold mb-2">Trust built on delivery.</span>
                 <span className="text-gray-500 font-normal text-sm sm:text-base">Transparent process, predictable outcomes, and support beyond launch.</span>
