@@ -11,7 +11,6 @@ const PortfolioPage: React.FC = () => {
     return (
         <div className="min-h-screen bg-white body-bg">
             <Navbar />
-
             <main>
                 <Hero
                     page="Skilllogic Technologies | Portfolio"

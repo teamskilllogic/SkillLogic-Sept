@@ -76,7 +76,7 @@ export default function PortfolioMain({ items }: Props) {
     }, []);
 
     return (
-        <section id="portfolio-section" className="body-bg py-16 px-6">
+        <section id="portfolio-section" className="body-bg px-6">
             {/* Section Intro */}
             <ContainerStagger className="relative z-[10] place-self-center px-6 text-center mb-12">
                 {/* Background Half Circle */}

@@ -61,7 +61,7 @@ const GetStarted: React.FC = () => {
                     {/* Button */}
                     <div className="mt-6 md:mt-0">
                         <a
-                            href="https://wa.me/1234567890" // <-- replace with your WhatsApp number
+                            href="https://wa.me/918318943040?text=Hi%20SkillLogic%20Team!%20I%20want%20to%20chat%20with%20you%20about%20my%20project%20requirements.%20Could%20you%20please%20help%20me%20get%20started?"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center px-6 py-3 rounded-full border border-gray-400 text-white font-medium hover:bg-gray-900 transition"

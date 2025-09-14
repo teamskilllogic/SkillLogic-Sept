@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ContactForm from "./ContactForm";
 import ContactMap from "./ContactMap";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,8 +6,40 @@ import { MapPin } from "lucide-react";
 import { mapConfig, generateMapEmbedUrl, generateMapSearchUrl } from "@/config/mapConfig";
 
 const ContactSection = () => {
+    // Handle scroll to section when component mounts with hash
+    useEffect(() => {
+        const handleHashScroll = () => {
+            const hash = window.location.hash;
+            if (hash) {
+                // Remove the # from hash
+                const id = hash.substring(1);
+                const element = document.getElementById(id);
+                if (element) {
+                    // Add a small delay to ensure the component has rendered
+                    setTimeout(() => {
+                        element.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }, 100);
+                }
+            }
+        };
+
+        // Handle initial load
+        handleHashScroll();
+
+        // Handle hash changes (if user clicks another link while on the page)
+        window.addEventListener('hashchange', handleHashScroll);
+
+        // Cleanup
+        return () => {
+            window.removeEventListener('hashchange', handleHashScroll);
+        };
+    }, []);
+
     return (
-        <section className="w-full max-w-7xl mx-auto px-6 py-20">
+        <section id="contact-section" className="w-full max-w-7xl mx-auto px-6 py-20">
             <div className="text-center mb-8 mt-9">
                 <span
                     className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200 mb-4"

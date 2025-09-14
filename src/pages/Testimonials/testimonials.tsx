@@ -24,15 +24,15 @@ const TestimonialsPage = () => {
                     className="bg-transparent"
                 />
                 <div className="typography-testimonials px-4 sm:px-6 lg:px-8">
-                    {/* Section 2: Tech We Use (reuse from Services) */}
-                    <TechWeUse />
-                    {/* Section 3: Why you should trust us */}
+                    {/* Why you should trust us */}
                     <WhyTrustUs />
-                    {/* Section 4: Reviews from customers (main highlight) */}
+                    {/* Reviews from customers (main highlight) */}
                     <Testimonial />
-                    {/* Section 4.1: Unique value add - impact metrics */}
+                    {/* Unique value add - impact metrics */}
                     <TestimonialsMetrics />
-                    {/* Section 5: Get Started with Skill Logic */}
+                    {/* Tech We Use (reuse from Services) */}
+                    <TechWeUse />
+                    {/* Get Started with Skill Logic */}
                     <GetStarted />
                 </div>
             </main>

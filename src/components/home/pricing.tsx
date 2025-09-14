@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check, Rocket } from "lucide-react";
 import { IndianRupee } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const plans = [
     {
@@ -75,44 +76,61 @@ const Pricing: React.FC = () => {
 
                 {/* Pricing Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 max-w-6xl w-full" style={{ zIndex: 1, position: 'relative' }}>
-                    {plans.map((plan, idx) => (
-                        <Card key={idx} className="flex flex-col justify-between text-white border border-gray-800  rounded-3xl "  style={{ background: '#131316' }}>
-                            <CardHeader>
-                                <CardTitle className="text-xl text-white">{plan.name}</CardTitle>
-                                <p className="text-gray-300 mt-2">{plan.description}</p>
-                                <div className="mt-4 text-3xl font-bold text-white">
-                                    {plan.price}
-                                    <span className="text-base font-normal text-gray-400"> / month</span>
-                                </div>
-                            </CardHeader>
-                            <CardContent className="flex flex-col gap-4 flex-1">
-                                <ul className="space-y-3 mt-4">
-                                    {plan.features.map((feature, i) => (
-                                        <li key={i} className="flex items-start gap-2 text-sm">
-                                            <Check className="w-5 h-5 text-white shrink-0" />
-                                            <div>
-                                                <span className="font-medium text-white">{feature}</span>
-                                                <p className="text-gray-400 text-xs">
-                                                    We've made it fast and reliable.
-                                                </p>
-                                            </div>
-                                        </li>
-                                    ))}
-                                </ul>
-                                <div className="flex-1" />
-                                <div className="mt-6">
-                                    <Button
-                                        variant={plan.button.variant as "default" | "outline"}
-                                        className={`w-full ${plan.name === 'Business' && plan.button.variant === 'default'
-                                            ? 'bg-white text-black border border-black hover:bg-black hover:text-white hover:border-white transition-colors duration-200'
-                                            : 'bg-black text-white border border-white hover:bg-white hover:text-black hover:border-black transition-colors duration-200'}`}
-                                    >
-                                        {plan.button.text}
-                                    </Button>
-                                </div>
-                            </CardContent>
-                        </Card>
-                    ))}
+                    {plans.map((plan, idx) => {
+                        const isMiddleCard = plan.name === 'Business';
+                        return (
+                            <Card key={idx} className={`flex flex-col justify-between rounded-3xl ${
+                                isMiddleCard
+                                    ? 'text-white border border-gray-800'
+                                    : 'text-black border border-gray-200 bg-white'
+                            }`} style={isMiddleCard ? { background: '#131316' } : {}}>
+                                <CardHeader>
+                                    <CardTitle className={`text-xl ${isMiddleCard ? 'text-white' : 'text-black'}`}>
+                                        {plan.name}
+                                    </CardTitle>
+                                    <p className={`mt-2 ${isMiddleCard ? 'text-gray-300' : 'text-gray-600'}`}>
+                                        {plan.description}
+                                    </p>
+                                    <div className={`mt-4 text-3xl font-bold ${isMiddleCard ? 'text-white' : 'text-black'}`}>
+                                        {plan.price}
+                                        <span className={`text-base font-normal ${isMiddleCard ? 'text-gray-400' : 'text-gray-500'}`}>
+                                            {' '} / month
+                                        </span>
+                                    </div>
+                                </CardHeader>
+                                <CardContent className="flex flex-col gap-4 flex-1">
+                                    <ul className="space-y-3 mt-4">
+                                        {plan.features.map((feature, i) => (
+                                            <li key={i} className="flex items-start gap-2 text-sm">
+                                                <Check className={`w-5 h-5 shrink-0 ${isMiddleCard ? 'text-white' : 'text-black'}`} />
+                                                <div>
+                                                    <span className={`font-medium ${isMiddleCard ? 'text-white' : 'text-black'}`}>
+                                                        {feature}
+                                                    </span>
+                                                    <p className={`text-xs ${isMiddleCard ? 'text-gray-400' : 'text-gray-500'}`}>
+                                                        We've made it fast and reliable.
+                                                    </p>
+                                                </div>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <div className="flex-1" />
+                                    <div className="mt-6">
+                                        <Button
+                                            variant={plan.button.variant as "default" | "outline"}
+                                            className={`w-full ${
+                                                isMiddleCard
+                                                    ? 'bg-white text-black border border-white hover:bg-black hover:text-white hover:border-white transition-colors duration-200'
+                                                    : 'bg-black text-white border border-black hover:bg-gray-800 hover:text-white transition-colors duration-200'
+                                            }`}
+                                        >
+                                            {plan.button.text}
+                                        </Button>
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        );
+                    })}
                 </div>
 
                 {/* Custom Plan Card */}
@@ -181,10 +199,10 @@ const Pricing: React.FC = () => {
 
                 {/* Buttons */}
                 <div className="flex items-center gap-4 mt-4">
-                    <button className="flex items-center gap-2 bg-black text-white px-3 py-2 rounded-xl font-medium hover:bg-gray-800 transition">
+                    <Link to="/contact#contact-section" className="flex items-center gap-2 bg-black text-white px-3 py-2 rounded-xl font-medium hover:bg-gray-800 transition">
                         <Rocket size={18} />
                         Have Any Questions? Contact Us
-                    </button>
+                    </Link>
                 </div>
 
                 <h3 className="text-lg font-bold text-blue-500 mt-8">

@@ -2,54 +2,26 @@ import React from "react";
 
 // Integration logos (public domain or CC-licensed)
 const techWeUse = [
-    {
-        name: "ReactJS",
-        logo: "https://cdn.worldvectorlogo.com/logos/react-2.svg", // ✅ Reliable React logo
-    },
-    {
-        name: "NextJS",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg",
-    },
-    {
-        name: "Laravel",
-        logo: "https://cdn.worldvectorlogo.com/logos/laravel-2.svg", // ✅ Fixed Laravel logo
-    },
-    {
-        name: "Node.js",
-        logo: "https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg",
-    },
-    {
-        name: "TypeScript",
-        logo: "https://cdn.worldvectorlogo.com/logos/typescript.svg",
-    },
-    {
-        name: "Python",
-        logo: "https://cdn.worldvectorlogo.com/logos/python-5.svg",
-    },
-    {
-        name: "MongoDB",
-        logo: "https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg",
-    },
-    {
-        name: "PostgreSQL",
-        logo: "https://cdn.worldvectorlogo.com/logos/postgresql.svg",
-    },
-    {
-        name: "AWS",
-        logo: "https://cdn.worldvectorlogo.com/logos/aws-2.svg",
-    },
-    {
-        name: "Docker",
-        logo: "https://cdn.worldvectorlogo.com/logos/docker.svg",
-    },
-    {
-        name: "Git",
-        logo: "https://cdn.worldvectorlogo.com/logos/git-icon.svg",
-    },
-    {
-        name: "Figma",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg", // ✅ Wikimedia always works
-    }
+    { name: "NextJS", logo: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg" },
+    { name: "TypeScript", logo: "https://cdn.worldvectorlogo.com/logos/typescript.svg" },
+    { name: "ReactJS", logo: "https://cdn.worldvectorlogo.com/logos/react-2.svg" },
+    { name: "Node.js", logo: "https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg" },
+    { name: "Express.js", logo: "https://cdn.worldvectorlogo.com/logos/express-109.svg" },
+    { name: "Javascript", logo: "https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg" },
+    { name: "Tailwind CSS", logo: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" },
+    { name: "Bootstrap", logo: "https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg" },
+    { name: "MySQL", logo: "https://www.mysql.com/common/logos/logo-mysql-170x115.png" },
+    { name: "PostgreSQL", logo: "https://cdn.worldvectorlogo.com/logos/postgresql.svg" },
+    { name: "MongoDB", logo: "https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg" },
+    { name: "Firebase", logo: "https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" },
+    { name: "Flutter", logo: "https://cdn.worldvectorlogo.com/logos/flutter.svg" },
+    { name: "Laravel", logo: "https://cdn.worldvectorlogo.com/logos/laravel-2.svg" },
+    { name: "Python", logo: "https://cdn.worldvectorlogo.com/logos/python-5.svg" },
+    { name: "AWS", logo: "https://cdn.worldvectorlogo.com/logos/aws-2.svg" },
+    { name: "Docker", logo: "https://cdn.worldvectorlogo.com/logos/docker.svg" },
+    { name: "Git", logo: "https://cdn.worldvectorlogo.com/logos/git-icon.svg" },
+    { name: "Figma", logo: "https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" },
+    { name: "Razorpay", logo: "https://cdn.worldvectorlogo.com/logos/razorpay.svg" }
 ];
 
 
@@ -76,7 +48,7 @@ const TechWeUse = () => (
             </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
             {techWeUse.map((tech, idx) => (
                 <div
                     key={idx}

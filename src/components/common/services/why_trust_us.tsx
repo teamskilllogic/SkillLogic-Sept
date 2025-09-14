@@ -4,7 +4,7 @@ import { ImpactMetrics } from "./impact_metrics";
 
 const WhyTrustUs = () => {
     return (
-        <section className="w-full max-w-7xl mx-auto px-6 py-20 mt-16">
+        <section className="w-full max-w-7xl mx-auto px-6 py-20 mt-6">
             <div className="flex justify-center">
                 {/* Section Label */}
                 <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white text-gray-700 text-base font-semibold border border-gray-200 mb-4"

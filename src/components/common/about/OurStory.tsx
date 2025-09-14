@@ -4,10 +4,9 @@ import { HandPlatter, Rocket } from "lucide-react";
 
 // Static data
 const STATS_DATA = [
-    { value: "1000+", label: "Completed Projects" },
-    { value: "1500", label: "Satisfied Customers" },
-    { value: "10+", label: "Years Of Mastery" },
-    { value: "45+", label: "Worldwide Honors" },
+    { value: "20+", label: "Completed Projects" },
+    { value: "25+", label: "Satisfied Customers" },
+    { value: "1+", label: "Years Of Mastery" },
 ];
 
 const OurStory = () => {
@@ -55,12 +54,6 @@ const OurStory = () => {
                                     className="w-full rounded-2xl hover:scale-105 transition-transform duration-300 cursor-pointer"
                                     loading="lazy"
                                 />
-                                <span className="absolute top-3 left-3 bg-white text-black text-xs px-3 py-1 rounded-full shadow">
-                                    Tech Blog
-                                </span>
-                                <span className="absolute top-3 right-3 bg-white text-black text-xs px-3 py-1 rounded-full shadow">
-                                    Trends
-                                </span>
                             </div>
 
                             <div className="relative w-1/2">
@@ -70,12 +63,6 @@ const OurStory = () => {
                                     className="w-full rounded-2xl hover:scale-105 transition-transform duration-300 cursor-pointer"
                                     loading="lazy"
                                 />
-                                <span className="absolute top-3 left-3 bg-white text-black text-xs px-3 py-1 rounded-full shadow">
-                                    Tech Blog
-                                </span>
-                                <span className="absolute top-3 right-3 bg-white text-black text-xs px-3 py-1 rounded-full shadow">
-                                    Trends
-                                </span>
                             </div>
                         </div>
 
@@ -126,10 +113,15 @@ const OurStory = () => {
 
                 {/* CTA Button */}
                 <div className="flex items-center gap-4 mt-12">
-                    <button className="flex items-center gap-2 bg-black text-white px-5 py-3 rounded-xl font-medium hover:bg-gray-800 transition-colors duration-200">
+                    <a
+                        href="https://wa.me/918318943040?text=Hi%20SkillLogic%20Team!%20I%20read%20your%20story%20and%20I'm%20impressed%20with%20your%20expertise.%20I%20would%20like%20to%20drop%20a%20message%20and%20discuss%20how%20you%20can%20help%20transform%20my%20business%20ideas%20into%20reality."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 bg-black text-white px-5 py-3 rounded-xl font-medium hover:bg-gray-800 transition-colors duration-200"
+                    >
                         <Rocket size={18} />
-                        WATCH INTRO
-                    </button>
+                        Just Drop A Message
+                    </a>
                 </div>
 
                 {/* Closing tagline */}
