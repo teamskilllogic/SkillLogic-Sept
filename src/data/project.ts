@@ -8,6 +8,15 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    id: "vardaan",
+    title: "VARDAAN HOSPITAL",
+    description:
+      "A dynamic and patient-focused website that emphasizes modern healthcare facilities and compassionate medical services in Bhadohi. With clear navigation and service sections, it builds confidence for patients. The site also reflects the hospital’s dedication to quality healthcare delivery.",
+    tags: ["Hospital in Bhadohi", "Health Care", "Web Design"],
+    image: "/images/Vardan.jpg",
+    link: "https://www.vardaanhealth.com/",
+  },
     {
     id: "ishwar-rugs",
     title: "Ishwar Rugs",
@@ -16,34 +25,6 @@ export const projects: Project[] = [
     tags: ["Rugs in Bhadohi", "Carpets", "Web Design"],
     image: "/images/ishwar.jpg",
     link: "http://52.66.121.231",
-  },
-    {
-    id: "brantashop",
-    title: "Brantashop",
-    description:
-      "A stylish e-commerce platform for imitation jewelry, designed to offer a seamless shopping journey with modern aesthetics and elegance. The site emphasizes product detail pages, fast navigation, and secure checkout. It enhances brand presence while engaging jewelry enthusiasts online.",
-    tags: ["Jewellery", "E-commerce", "Web Design"],
-    image: "/images/Brantashop.jpg",
-    link: "https://brantashop.com/",
-  },
-  
-  {
-    id: "famzoa",
-    title: "Famzoa",
-    description:
-      "A premium online store for trendy imitation jewelry collections, blending visual appeal with smooth user experience and performance. The design focuses on fashion-driven layouts, high-quality product showcases, and ease of purchase. It positions Famzoa as a modern lifestyle jewelry brand.",
-    tags: ["Jewellery", "E-commerce", "Web Design"],
-    image: "/images/famzoa.jpg",
-    link: "https://famzoa.com/",
-  },
-  {
-    id: "anant-digital",
-    title: "Anant Digital Advertising Agency",
-    description:
-      "A sleek, high-performing digital agency website crafted to reflect innovation, creativity, and brand impact in the online space. Designed with user-centric layouts, it highlights services, portfolios, and client success stories. The interface ensures easy navigation and positions the agency as a leader in digital branding.",
-    tags: ["Corporate Site", "Web Design", "Digital Agency"],
-    image: "/images/adada.png",
-    link: "https://adada.co.in",
   },
   {
     id: "as-constructs",
@@ -63,16 +44,7 @@ export const projects: Project[] = [
     image: "/images/sknph.jpg",
     link: "https://www.sknph.com/",
   },
-  {
-    id: "vardaan",
-    title: "VARDAAN HOSPITAL",
-    description:
-      "A dynamic and patient-focused website that emphasizes modern healthcare facilities and compassionate medical services in Bhadohi. With clear navigation and service sections, it builds confidence for patients. The site also reflects the hospital’s dedication to quality healthcare delivery.",
-    tags: ["Hospital in Bhadohi", "Health Care", "Web Design"],
-    image: "/images/Vardan.jpg",
-    link: "https://www.vardaanhealth.com/",
-  },
-,
+  
   {
     id: "smile-care",
     title: "Smile Care Dental Clinic",
@@ -82,5 +54,35 @@ export const projects: Project[] = [
     image: "/images/smilecare.jpeg",
     link: "https://smilecaredentalclinic.com/",
   },
+
+    {
+    id: "brantashop",
+    title: "Brantashop",
+    description:
+      "A stylish e-commerce platform for imitation jewelry, designed to offer a seamless shopping journey with modern aesthetics and elegance. The site emphasizes product detail pages, fast navigation, and secure checkout. It enhances brand presence while engaging jewelry enthusiasts online.",
+    tags: ["Jewellery", "E-commerce", "Web Design"],
+    image: "/images/Brantashop.jpg",
+    link: "https://brantashop.com/",
+  },
+    {
+    id: "anant-digital",
+    title: "Anant Digital Advertising Agency",
+    description:
+      "A sleek, high-performing digital agency website crafted to reflect innovation, creativity, and brand impact in the online space. Designed with user-centric layouts, it highlights services, portfolios, and client success stories. The interface ensures easy navigation and positions the agency as a leader in digital branding.",
+    tags: ["Corporate Site", "Web Design", "Digital Agency"],
+    image: "/images/adada.png",
+    link: "https://adada.co.in",
+  },
+  
+  {
+    id: "famzoa",
+    title: "Famzoa",
+    description:
+      "A premium online store for trendy imitation jewelry collections, blending visual appeal with smooth user experience and performance. The design focuses on fashion-driven layouts, high-quality product showcases, and ease of purchase. It positions Famzoa as a modern lifestyle jewelry brand.",
+    tags: ["Jewellery", "E-commerce", "Web Design"],
+    image: "/images/famzoa.jpg",
+    link: "https://famzoa.com/",
+  },
+  
 
 ];

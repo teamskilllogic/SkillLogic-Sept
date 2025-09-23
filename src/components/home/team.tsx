@@ -1,58 +1,75 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "@/components/common/common.css";
 import { Rocket, Users } from "lucide-react";
 
+// 👇 TeamMember type define kiya
+interface TeamMember {
+    name: string;
+    role: string;
+    description: string;
+    img: string;
+}
 
-const teamMembers = [
+// 👇 Array ka type specify kiya
+const teamMembers: TeamMember[] = [
     {
         name: "Satyam Srivastava",
         role: "Founder, CEO & Technical Architect",
-        description: "Expert in Web Development and DevOps with over 8 years of experience building high-performance websites and managing scalable infrastructure.",
-        img: "/images/Satyam.jpeg",
+        description:
+            "Expert in Web Development and DevOps with over 8 years of experience building high-performance websites and managing scalable infrastructure.",
+        img: "/images/Satyam.png",
     },
     {
         name: "Shreya Srivastava",
         role: "SEO & Digital Marketing Specialist",
-        description: "Data-driven SEO & Digital Marketing expert who helps businesses improve their search rankings and visibility.",
+        description:
+            "Data-driven SEO & Digital Marketing expert who helps businesses improve their search rankings and visibility.",
         img: "/images/shreya.jpg",
     },
     {
         name: "Arpit Srivastava",
-        role: "Software Engineerr",
-        description: "Software Engineer specializing in Web Development, focused on building robust and high-performance web applications.",
+        role: "Strategy, Tech & Growth Lead",
+        description:
+            "Driving strategy, technology, and growth at Skilllogic with a focus on building impactful software solutions and lasting client success.",
         img: "/images/arpit.jpeg",
     },
     {
         name: "Ankit Srivastava",
         role: "DevOps Manager",
-        description: "Expert in DevOps with over 2+ years of experience in automating and optimizing mission-critical deployments in AWS, Azure, and GCP.",
+        description:
+            "Expert in DevOps with over 2+ years of experience in automating and optimizing mission-critical deployments in AWS, Azure, and GCP.",
         img: "/images/ankit_sirvastava.jpeg",
     },
     {
-        name: "James Wilson",
-        role: "Product Manager",
-        description: "Expert in Web Development and DevOps with over 8 years of experience building high-performance websites and managing scalable infrastructure.",
-        img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=3687&auto=format&fit=crop",
+        name: "Ayush B Mishra",
+        role: "Technical Lead & Full Stack Developer",
+        description:
+            "Website Development Expert with proven expertise in building modern, responsive, and high-performance websites. Skilled in delivering scalable digital solutions and ensuring seamless user experiences.",
+        img: "images/Ayush.png",
     },
 ];
 
 const Team: React.FC = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [animating, setAnimating] = useState(false);
+    const [currentIndex, setCurrentIndex] = useState<number>(0); // 👈 type added
+    const [animating, setAnimating] = useState<boolean>(false); // 👈 type added
 
-    const updateCarousel = (newIndex: number) => {
-        if (animating) return;
-        setAnimating(true);
+    // ✅ useCallback se wrap + type fix
+    const updateCarousel = useCallback(
+        (newIndex: number) => {
+            if (animating) return;
+            setAnimating(true);
 
-        setCurrentIndex((prev) => {
-            const len = teamMembers.length;
-            return (newIndex + len) % len;
-        });
+            setCurrentIndex(() => {
+                const len = teamMembers.length;
+                return (newIndex + len) % len;
+            });
 
-        setTimeout(() => setAnimating(false), 800); // match transition duration
-    };
+            setTimeout(() => setAnimating(false), 800); // match transition duration
+        },
+        [animating]
+    );
 
-    // Keyboard navigation
+    // ✅ Keyboard navigation
     useEffect(() => {
         const handleKey = (e: KeyboardEvent) => {
             if (e.key === "ArrowLeft") updateCarousel(currentIndex - 1);
@@ -60,7 +77,7 @@ const Team: React.FC = () => {
         };
         window.addEventListener("keydown", handleKey);
         return () => window.removeEventListener("keydown", handleKey);
-    }, [currentIndex]);
+    }, [currentIndex, updateCarousel]);
 
     return (
         <section className="w-full py-20 flex justify-center items-center mt-16">
@@ -74,11 +91,10 @@ const Team: React.FC = () => {
                                 "0px 15px 25px rgba(0,0,0,0.15), 0px 5px 10px rgba(0,0,0,0.05)",
                         }}
                     >
-                        {/* Icon */}
                         <Users className="w-4 h-4 text-black-500" />
-                        {/* {page} text */}
                         Services
                     </span>
+
                     {/* Heading */}
                     <h2 className="text-3xl md:text-6xl lg:text-6xl xl:text-[58px] leading-[38px] md:leading-[60px] lg:leading-[60px] xl:leading-[70px] font-extrabold text-zinc-900 text-center w-[70%] md:w-full lg:w-full xl:w-full mx-auto mb-5 md:mb-[30px] tracking-tight">
                         Meet Our Talented Team
@@ -88,11 +104,11 @@ const Team: React.FC = () => {
                         expertise, creativity, and passion to every project we build
                         together.
                     </p>
+
                     {/* Carousel */}
                     <div className="relative w-full max-w-6xl h-[450px] mt-6 perspective">
-                        {/* Cards */}
                         <div className="w-full h-full relative flex items-center justify-center preserve-3d transition-transform duration-700">
-                            {teamMembers.map((member, i) => {
+                            {teamMembers.map((member: TeamMember, i: number) => {
                                 const offset =
                                     (i - currentIndex + teamMembers.length) % teamMembers.length;
 
@@ -162,18 +178,6 @@ const Team: React.FC = () => {
                         </p>
                     </div>
 
-                    {/* Dots */}
-                    {/* <div className="flex gap-3 mt-12">
-                        {teamMembers.map((_, i) => (
-                            <div
-                                key={i}
-                                className={`w-3 h-3 rounded-full cursor-pointer transition ${i === currentIndex ? "scale-125" : ""}`}
-                                style={{ backgroundColor: i === currentIndex ? '#6b7280' : '#d1d5db' }}
-                                onClick={() => updateCarousel(i)}
-                            />
-                        ))}
-                    </div> */}
-
                     {/* Buttons */}
                     <div className="flex items-center gap-4 mt-4">
                         <button className="flex items-center gap-2 bg-black text-white px-3 py-2 rounded-xl font-medium hover:bg-gray-800 transition">
@@ -187,9 +191,9 @@ const Team: React.FC = () => {
                             Collaboration powers innovation.
                         </span>
                         <span className="text-gray-500 font-normal">
-                            Our team’s diverse skills and shared passion drive every project’s
-                            success. Together, we turn ideas into reality and help your
-                            business grow.
+                            Our team’s diverse skills and shared passion drive every
+                            project’s success. Together, we turn ideas into reality and help
+                            your business grow.
                         </span>
                     </h3>
                 </div>

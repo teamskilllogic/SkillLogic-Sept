@@ -13,6 +13,7 @@ import { Services } from "@/components/home/services";
 import { FAQ } from "@/components/home/faqs";
 import "@/components/common/common.css";
 
+
 const Home = () => {
     return (
         <div className="min-h-screen body-bg">

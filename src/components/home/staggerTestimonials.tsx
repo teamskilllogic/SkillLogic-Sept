@@ -9,136 +9,46 @@ const SQRT_5000 = Math.sqrt(5000);
 const testimonials = [
     {
         tempId: 0,
-        testimonial: "SkillLogic team made our restaurant website in just 2 weeks. Very professional work and price was also reasonable. Highly recommend!",
-        by: "Rajesh Kumar, Owner at Spice Garden Restaurant",
+        testimonial: "SkillLogic team delivered a modern and user-friendly website on time. Very professional and committed to quality. Highly recommended!",
+        by: "Mr Abdul Salam, Owner at A.S. Construction Company",
         imgSrc: "https://ui-avatars.com/api/?name=Male&size=150&background=e5e7eb&color=374151&format=svg"
     },
-    {
-        tempId: 1,
-        testimonial: "My e-commerce site for sarees is running perfectly since 8 months. Good customer support also, they respond quickly when I have any issue.",
-        by: "Priya Sharma, Founder of Elegant Sarees",
-        imgSrc: "https://ui-avatars.com/api/?name=Female&size=150&background=fce7f3&color=be185d&format=svg"
-    },
-    {
+
+     {
         tempId: 2,
-        testimonial: "These guys are really good! Made our clinic management system exactly as we wanted. Now appointments booking is so easy for patients.",
-        by: "Dr. Amit Patel, Patel Medical Center",
+        testimonial: "We are very happy with the website SkillLogic built for Vardaan Hospital. Professional, timely, and high-quality service!",
+        by: "Dr. Piyush Jaiswal, Founder at Vardaan Hospital",
         imgSrc: "https://ui-avatars.com/api/?name=Male&size=150&background=e5e7eb&color=374151&format=svg"
     },
-    {
+
+     {
         tempId: 3,
-        testimonial: "Best decision we made for our coaching institute. The student portal they developed is helping us manage 200+ students easily. Worth every rupee!",
-        by: "Neha Gupta, Director at Excel Academy",
-        imgSrc: "https://ui-avatars.com/api/?name=Female&size=150&background=fce7f3&color=be185d&format=svg"
+        testimonial: "SkillLogic created a stunning website for us that beautifully showcases our handcrafted rugs. The design is elegant, smooth to navigate, and truly reflects our brand’s identity. Highly recommended!",
+        by: "Mr Ishwar  Srivastava, Owner at Ishwar Rugs",
+        imgSrc: "https://ui-avatars.com/api/?name=Male&size=150&background=e5e7eb&color=374151&format=svg"
     },
-    {
+
+     {
         tempId: 4,
-        testimonial: "I was tensed about my business website but SkillLogic team handled everything smoothly. Now getting more customers through online!",
-        by: "Vikash Singh, Singh Electronics",
+        testimonial: "Our hospital website designed by SkillLogic is user-friendly, informative, and professional. Great work and timely delivery!",
+        by: "Dr. Nitish Kumar Yadav, Owner at Shri Krishna Neuro-Psychiatry Hospital",
         imgSrc: "https://ui-avatars.com/api/?name=Male&size=150&background=e5e7eb&color=374151&format=svg"
     },
-    {
+
+     {
         tempId: 5,
-        testimonial: "Excellent work yaar! My gym's mobile app is working fantastic. Members are very happy with online class booking feature.",
-        by: "Rohit Verma, FitLife Gym Owner",
+        testimonial: "Our new website by SkillLogic is responsive, professional, and highlights our services perfectly. Smooth experience and timely delivery!",
+        by: "Dr. Raj Kumar Yadav, Founder at Smile Care Dental Clinic",
         imgSrc: "https://ui-avatars.com/api/?name=Male&size=150&background=e5e7eb&color=374151&format=svg"
     },
-    {
+
+     {
         tempId: 6,
-        testimonial: "SkillLogic transformed our traditional jewellery business. Online catalogue and WhatsApp ordering system increased our sales by 40%.",
-        by: "Kiran Shah, Shah Jewellers",
+        testimonial: "Our new website by SkillLogic is modern, responsive, and perfectly aligned with our agency’s identity. Great work and timely delivery!",
+        by: "Mr Nityesh Srivastava, Owner at Anant Digital Advertising Agency",
         imgSrc: "https://ui-avatars.com/api/?name=Male&size=150&background=e5e7eb&color=374151&format=svg"
     },
-    {
-        tempId: 7,
-        testimonial: "Very satisfied with their service. They completed our real estate website before deadline and also provided free training to use admin panel.",
-        by: "Suresh Agarwal, Agarwal Properties",
-        imgSrc: "https://ui-avatars.com/api/?name=Male&size=150&background=e5e7eb&color=374151&format=svg"
-    },
-    {
-        tempId: 8,
-        testimonial: "Bahut accha kaam kiya hai! Our wedding planning website looks so beautiful and professional. Getting good inquiries now.",
-        by: "Kavita Jain, Dream Weddings",
-        imgSrc: "https://ui-avatars.com/api/?name=Female&size=150&background=fce7f3&color=be185d&format=svg"
-    },
-    {
-        tempId: 9,
-        testimonial: "Initially I was worried about budget, but SkillLogic gave us a website within our range. Quality is also very good for the price.",
-        by: "Manish Yadav, Yadav Auto Parts",
-        imgSrc: "https://ui-avatars.com/api/?name=Male&size=150&background=e5e7eb&color=374151&format=svg"
-    },
-    {
-        tempId: 10,
-        testimonial: "Great team to work with! They understand our requirements perfectly and delivered exactly what we needed for our pharmacy.",
-        by: "Deepak Mishra, City Medical Store",
-        imgSrc: "https://ui-avatars.com/api/?name=Male&size=150&background=e5e7eb&color=374151&format=svg"
-    },
-    {
-        tempId: 11,
-        testimonial: "Our tuition classes website is getting so many admissions now! Simple design but very effective. Thank you SkillLogic team.",
-        by: "Sunita Devi, Bright Future Classes",
-        imgSrc: "https://ui-avatars.com/api/?name=Female&size=150&background=fce7f3&color=be185d&format=svg"
-    },
-    {
-        tempId: 12,
-        testimonial: "Amazing experience! They made our construction company website mobile-friendly and SEO optimized. Getting leads from Google now.",
-        by: "Ravi Chandra, RC Constructions",
-        imgSrc: "https://ui-avatars.com/api/?name=Male&size=150&background=e5e7eb&color=374151&format=svg"
-    },
-    {
-        tempId: 13,
-        testimonial: "SkillLogic helped us shift from offline to online during COVID. Our textile business survived because of their e-commerce solution.",
-        by: "Ashok Kumar, Kumar Textiles",
-        imgSrc: "https://ui-avatars.com/api/?name=Male&size=150&background=e5e7eb&color=374151&format=svg"
-    },
-    {
-        tempId: 14,
-        testimonial: "Professional approach and reasonable pricing. My beauty parlour's booking system is working smoothly since 6 months. No complaints!",
-        by: "Pooja Tripathi, Glamour Beauty Salon",
-        imgSrc: "https://ui-avatars.com/api/?name=Female&size=150&background=fce7f3&color=be185d&format=svg"
-    },
-    {
-        tempId: 15,
-        testimonial: "They delivered our grocery delivery app on time and within budget. Customer response has been very positive. Recommended!",
-        by: "Arjun Pandey, Fresh Mart Grocery",
-        imgSrc: "https://ui-avatars.com/api/?name=Male&size=150&background=e5e7eb&color=374151&format=svg"
-    },
-    {
-        tempId: 16,
-        testimonial: "Best web development company in our area. Made our school's admission portal and fee management system. Parents are very happy now.",
-        by: "Sanjay Tiwari, Principal at Vidya Mandir School",
-        imgSrc: "https://ui-avatars.com/api/?name=Male&size=150&background=e5e7eb&color=374151&format=svg"
-    },
-    {
-        tempId: 17,
-        testimonial: "SkillLogic team is very cooperative. They made changes in our hotel booking website whenever we asked. Good after-sales service.",
-        by: "Rakesh Joshi, Hotel Grand Palace",
-        imgSrc: "https://ui-avatars.com/api/?name=Male&size=150&background=e5e7eb&color=374151&format=svg"
-    },
-    {
-        tempId: 18,
-        testimonial: "Honest pricing and quality work. Our diagnostic center's report management system is helping us serve patients better.",
-        by: "Dr. Shweta Singh, Singh Diagnostics",
-        imgSrc: "https://ui-avatars.com/api/?name=Female&size=150&background=fce7f3&color=be185d&format=svg"
-    },
-    {
-        tempId: 19,
-        testimonial: "Made our CA firm's website with client portal feature. Now document sharing with clients is so much easier. Great job!",
-        by: "Manoj Agrawal, CA & Associates",
-        imgSrc: "https://ui-avatars.com/api/?name=Male&size=150&background=e5e7eb&color=374151&format=svg"
-    },
-    {
-        tempId: 20,
-        testimonial: "Very happy with mobile app for my transport business. Driver tracking and customer notifications working perfectly since launch.",
-        by: "Satish Kumar, Kumar Travels",
-        imgSrc: "https://ui-avatars.com/api/?name=Male&size=150&background=e5e7eb&color=374151&format=svg"
-    },
-    {
-        tempId: 21,
-        testimonial: "SkillLogic understood our local market needs. E-commerce website for our handicrafts is bringing customers from other cities too!",
-        by: "Geeta Devi, Handmade Crafts",
-        imgSrc: "https://ui-avatars.com/api/?name=Female&size=150&background=fce7f3&color=be185d&format=svg"
-    }
+
 ];
 
 interface TestimonialCardProps {
