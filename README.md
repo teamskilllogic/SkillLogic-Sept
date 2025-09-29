@@ -1,4 +1,4 @@
-# SkillLogic Technologies
+SkillLogic Technologies
 
 Official repository for SkillLogic Technologies - Professional web development and digital transformation services.
 
@@ -105,3 +105,4 @@ Professional Web Development & Digital Transformation
 ---
 
 **Copyright © 2024 SkillLogic Technologies. All rights reserved.**
+
