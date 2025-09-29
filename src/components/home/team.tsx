@@ -29,7 +29,7 @@ const teamMembers: TeamMember[] = [
     name: "Vidhi Srivastava",
     role: "CloudOps Engineer Intern",
     description:
-      "Data-driven SEO & Digital Marketing expert who helps businesses improve their search rankings and visibility.",
+      "Work with DevOps teams to ensure scalability, reliability, and security.",
     img: "/images/vidhi.png",
   },
 
